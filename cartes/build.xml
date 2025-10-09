@@ -83,7 +83,7 @@
 <!-- Create application JAR file -->
 <jar jarfile="${dist.home}/${app.fullname}.jar" basedir="${build.home}">
 <manifest>
-<attribute name="Main-Class" value="cartes.MainClass"/>
+<attribute name="Main-Class" value="modele.cartes.MainClass"/>
 <!--
  <attribute name="Class-Path" value="lib/utilsGL.jar" /> 
 -->

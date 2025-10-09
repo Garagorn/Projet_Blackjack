@@ -37,13 +37,30 @@ public class Paquet extends AbstractModeleEcoutable {
     }
     
     
-    public Paquet melanger(){
-        return Collections.shuffle(this);
+    public void melanger(){
+        Collections.shuffle(paquet);
+        fireChangement();
     }
     
     //Couper apres les 3 premieres et avant les 3 dernieres
-    public Paquet couper(){
-        //Math.random() * ( paquet.size()-3 - 3 )
+    public void couper(){
+        int taille  = paquet.size();
+        ArrayList<Carte> nouveau=new ArrayList<>();
+        
+        int index = 3 + (int)(Math.random() * (taille - 6));
+        for (int i = index; i < taille; i++) {
+            nouveau.add(paquet.get(i));
+        }
+        
+        for (int i = 0; i < index; i++) {
+            nouveau.add(paquet.get(i));
+        }
+        paquet.clear();
+        for (int i = 0; i < nouveau.size(); i++) {
+            paquet.add(nouveau.get(i));
+        }
+        nouveau.clear();
+        fireChangement();
     }
     
     @Override
@@ -69,6 +86,6 @@ public class Paquet extends AbstractModeleEcoutable {
                 p.ajouter(new Carte(valeur, couleur));
             }
         }
-    return p;
+        return p;
     }
 }
