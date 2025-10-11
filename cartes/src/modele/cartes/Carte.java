@@ -4,6 +4,8 @@
  */
 package modele.cartes;
 
+import java.util.Objects;
+
 /**
  *
  * @author siaghi231
@@ -20,5 +22,25 @@ public class Carte {
     @Override
     public String toString() {
         return "Carte : " + hauteur + " de " + couleur;
+    }
+    
+    @Override
+    public int hashCode() {
+      return Objects.hash(hauteur, couleur);
+    }
+
+    /**
+     * Compare 2 Cartes, Les deux cartes sont egales si elles partagent la  meme hauteur et  couleur
+     * @param o
+     * @return Bool Les 2 cartes sont  egales ?
+     */
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) { //Compare a lui meme
+        return true;
+      }
+      if (!(o instanceof Carte)) return false; //L'objet de la omparaison n'est pas une carte 
+      Carte autre = (Carte) o; //Recuperation  de l'autre carte
+      return this.hauteur.equals(autre.hauteur) && this.couleur.equals(autre.couleur); //Meme (hauteur,couleur) 
     }
 }
