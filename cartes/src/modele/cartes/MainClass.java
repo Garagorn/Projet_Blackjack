@@ -3,10 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modele.cartes;
-/**
- *
- * @author siaghi231
- */
+
 public class MainClass {
     
     public static void main(String[] args){
@@ -15,6 +12,15 @@ public class MainClass {
         Carte c2=new Carte("valet", "coeur");
         System.out.println(c1);
         System.out.println(c2);
+        System.out.println("Comparaison As pique = Valet Coeur");
+        System.out.println(c1==c2);
+        System.out.println("Comparaison As pique != Valet Coeur");
+        System.out.println(c1!=c2);
+        System.out.println("Comparaison As pique == As pique");
+        System.out.println(c1==c1);
+        Carte c3=new Carte("as", "pique");
+        System.out.println("Comparaison As pique c1 == As pique c3");
+        System.out.println(c1==c3);
         //1er  test  pour la creation d'un paquet
         System.out.println("\n Test Création paquet :  ");
         Paquet p1 = new Paquet();

@@ -7,13 +7,17 @@ package modele.cartes;
 import java.util.Objects;
 
 /**
- *
- * @author siaghi231
+ * Representation d'une cartes
  */
 public class Carte {
-    public String couleur;
+    public String couleur; 
     public String hauteur;
 
+    /**
+     * Constructeur pour une carte
+     * @param hauteur Hauteur de la carte
+     * @param couleur Couleur de la carte
+     */
     public Carte(String hauteur,String couleur) {
         this.couleur = couleur;
         this.hauteur = hauteur;
@@ -31,7 +35,7 @@ public class Carte {
 
     /**
      * Compare 2 Cartes, Les deux cartes sont egales si elles partagent la  meme hauteur et  couleur
-     * @param o
+     * @param o Autre carte a comparer
      * @return Bool Les 2 cartes sont  egales ?
      */
     @Override

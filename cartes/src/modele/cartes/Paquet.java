@@ -5,10 +5,7 @@
 package modele.cartes;
 import java.util.*;
 import modele.event.*;
-/**
- *
- * @author siaghi231
- */
+
 public class Paquet extends AbstractModeleEcoutable {
     private final ArrayList<Carte> paquet;
     private final static String[] TABLE_VAL_52={"As", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Valet", "Dame", "Roi"};
@@ -28,7 +25,7 @@ public class Paquet extends AbstractModeleEcoutable {
 
     /**
      * Ajoute une carte c au paquet sur lequel la methode est appelee
-     * @param c 
+     * @param c Carte a ajouter
      */
     public void ajouter(Carte c){
         paquet.add(c);
@@ -36,7 +33,7 @@ public class Paquet extends AbstractModeleEcoutable {
     
     /**
      * Retire une carte c au paquet sur lequel la methode est appelee
-     * @param c 
+     * @param c Carte a retirer
      */
     public void retirer(Carte c){
         paquet.remove(c);
@@ -63,8 +60,8 @@ public class Paquet extends AbstractModeleEcoutable {
     
     /**
      * Couper un paquet de carte
-     * @requires couper apres les 3 premieres cartes
-     * @requires couper avant les  3 dernieres cartes
+     * Requires couper apres les 3 premieres cartes
+     * Requires couper avant les  3 dernieres cartes
      */
     public void couper(){
         int taille  = paquet.size();
