@@ -58,6 +58,15 @@ public class MainClass {
         Paquet nvjeu52 = Paquet.creerJeu52();
         nvjeu52.couper();
         System.out.println("Une paquet de 52 couper : "+jeu52);
+        
+        //Test pour les joueurs
+        System.out.println("\n Test joueurs :  ");
+        Joueur j1 = new JoueurHumain("Toto");
+        Joueur j2 = new JoueurIA("Otto");
+        j1.recevoirCarte(new Carte("As", "Pique"));
+        j2.recevoirCarte(new Carte("Roi", "Carreau"));
+        System.out.println(j1);
+        System.out.println(j2);
     }
     
 }
