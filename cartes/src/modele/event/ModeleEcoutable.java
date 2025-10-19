@@ -1,14 +1,27 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package  modele.event;
+package modele.event;
+
 /**
- *
+ * Interface représentant un modèle observable.
+ * 
+ * Un modèle écoutable permet d'ajouter ou de retirer des écouteurs
+ * qui seront notifiés lors de changements dans le modèle.
+ * 
  * @author siaghi231
  */
-interface ModeleEcoutable {
+public interface ModeleEcoutable {
+
+    /**
+     * Ajoute un écouteur au modèle.
+     * 
+     * @param e L'écouteur à ajouter.
+     */
     void ajouterEcouteur(EcouteurModele e);
+
+    /**
+     * Retire un écouteur du modèle.
+     * 
+     * @param e L'écouteur à retirer.
+     */
     void retirerEcouteur(EcouteurModele e);
-        
+
 }
