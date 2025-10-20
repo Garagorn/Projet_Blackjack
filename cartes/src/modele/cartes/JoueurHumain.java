@@ -77,3 +77,4 @@ public class JoueurHumain implements Joueur {
     public String toString() {
         return "Je suis un joueur humain : " + nom + ", j'ai en main= " + main + ", et j'ai " + score + " de score.";
     }
+}

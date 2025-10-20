@@ -10,7 +10,6 @@ import vue.VueFrame;
  * @author ...
  */
 public class MainClass {
-<<<<<<< HEAD
 
     /**
      * Constructeur par défaut.
