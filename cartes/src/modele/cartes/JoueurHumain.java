@@ -9,7 +9,7 @@ package modele.cartes;
  * @author tellier212
  */
 public class JoueurHumain implements Joueur {
-    
+
     private final String nom;
     private final Paquet main;
     private final int score;
@@ -77,4 +77,3 @@ public class JoueurHumain implements Joueur {
     public String toString() {
         return "Je suis un joueur humain : " + nom + ", j'ai en main= " + main + ", et j'ai " + score + " de score.";
     }
-}

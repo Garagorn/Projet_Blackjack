@@ -1,3 +1,4 @@
+
 package modele.cartes;
 
 import java.util.Random;
@@ -78,6 +79,7 @@ public class JoueurIA implements Joueur {
      * 
      * @return La carte jouée.
      */
+ 
     public Carte jouerCarte() {
         int i = rand.nextInt(main.getPaquet().size());
         return main.getPaquet().remove(i);

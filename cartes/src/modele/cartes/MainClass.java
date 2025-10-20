@@ -10,6 +10,7 @@ import vue.VueFrame;
  * @author ...
  */
 public class MainClass {
+<<<<<<< HEAD
 
     /**
      * Constructeur par défaut.
@@ -34,4 +35,5 @@ public class MainClass {
             new VueFrame(pioche, mainJoueur, defausse);
         });
     }
+    
 }
