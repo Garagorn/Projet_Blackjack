@@ -45,10 +45,11 @@
  ==================== Prepare Target ================================== 
 -->
 <target name="prepare">
-<mkdir dir="${build.home}"/>
-<mkdir dir="${build.test.home}"/>
-<mkdir dir="${dist.home}"/>
-<mkdir dir="${test.report.home}"/>
+    <mkdir dir="${build.home}"/>
+    <mkdir dir="${build.test.home}"/>
+    <mkdir dir="${dist.home}"/>
+    <mkdir dir="${test.report.home}"/>
+    <mkdir dir="${lib.home}"/> <!-- création du dossier lib -->
 </target>
 <!--
  ==================== Compile Target ================================== 

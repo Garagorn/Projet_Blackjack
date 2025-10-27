@@ -15,7 +15,6 @@ public class JoueurIA implements Joueur {
     
     private final String nom;
     private final Paquet main;
-    private final int score;
     private final Random rand;
     
     /**
@@ -27,7 +26,6 @@ public class JoueurIA implements Joueur {
     public JoueurIA(String nom) {
         this.nom = nom;
         this.main = new Paquet();
-        this.score = 0;
         this.rand = new Random();
     }
     
@@ -51,16 +49,6 @@ public class JoueurIA implements Joueur {
         return main;
     }
     
-    /**
-     * Récupère le score actuel du joueur IA.
-     * 
-     * @return Le score du joueur IA.
-     */
-    @Override
-    public int getScore() {
-        return this.score;
-    }
-    
     //public Carte jouerCarte() { } // Cette méthode est ici implémentée en-dessous
     
     /**
@@ -79,7 +67,6 @@ public class JoueurIA implements Joueur {
      * 
      * @return La carte jouée.
      */
- 
     public Carte jouerCarte() {
         int i = rand.nextInt(main.getPaquet().size());
         return main.getPaquet().remove(i);
@@ -92,6 +79,6 @@ public class JoueurIA implements Joueur {
      */
     @Override
     public String toString() {
-        return "Je suis un bot : " + nom + ", j'ai en main= " + main + ", et j'ai " + score + " de score.";
+        return "Je suis un bot : " + nom + ", j'ai en main= " + main + " .";
     }
 }

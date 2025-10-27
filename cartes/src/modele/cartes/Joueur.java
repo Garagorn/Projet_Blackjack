@@ -19,13 +19,6 @@ public interface Joueur {
     public String getNom();
 
     /**
-     * Obtient le score actuel du joueur.
-     * 
-     * @return Le score du joueur sous forme d'entier.
-     */
-    public int getScore();
-
-    /**
      * Obtient la main du joueur, c'est-à-dire le paquet de cartes qu'il possède.
      * 
      * @return Le paquet représentant la main du joueur.

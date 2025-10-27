@@ -4,7 +4,7 @@
  */
 package blackjack;
 
-import cartes.Carte;
+import modele.cartes.Carte;
 
 /**
  *
@@ -14,6 +14,7 @@ public class MainClass {
     
     public static void main(String[] args)
     {
-        System.out.println("Dans BlackJack"+new Carte());
+        System.out.println("Dans BlackJack"+new Carte("As","Pique"));
+        System.out.println("Dans BlackJack"+new Carte("As","Pique"));
     }
 }
