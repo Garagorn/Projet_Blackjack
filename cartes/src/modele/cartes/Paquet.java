@@ -79,6 +79,7 @@ public class Paquet extends AbstractModeleEcoutable {
         int n = rand.nextInt(this.paquet.size());
         return this.paquet.get(n);
     }
+   
     
     /**
      * Mélange aléatoirement les cartes du paquet.
@@ -123,10 +124,14 @@ public class Paquet extends AbstractModeleEcoutable {
         
         fireChangement();
     }
+    
         
     @Override
     public String toString() {
-        return "Paquet{" + "paquet=" + paquet + '}';
+        return "Paquet : {" + paquet + '}';
+    }
+    public boolean estVide(){
+        return this.paquet.isEmpty();
     }
     
     /**

@@ -3,8 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package blackjack;
+import blackjack.modele.jeu.Blackjack;
+import blackjack.modele.joueurs.JoueurBlackjackH;
+import blackjack.vue.JeuFrame;
+import blackjack.vue.VueBlackjack;
+import blackjack.controleur.ControleurJeu;
 
-import modele.cartes.Carte;
 
 /**
  *
@@ -14,7 +18,11 @@ public class MainClass {
     
     public static void main(String[] args)
     {
-        System.out.println("Dans BlackJack"+new Carte("As","Pique"));
-        System.out.println("Dans BlackJack"+new Carte("As","Pique"));
+        JoueurBlackjackH joueur = new JoueurBlackjackH("Massi", 1000);
+        Blackjack bj = new Blackjack(joueur);
+        JeuFrame fenetreJeu = new JeuFrame(bj);
+        ControleurJeu cj =  new ControleurJeu(bj,fenetreJeu);
+        bj.demarrer();
+        fenetreJeu.setControleur(cj);
     }
 }

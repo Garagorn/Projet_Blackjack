@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package blackjack.modele;
+package blackjack.modele.joueurs;
 
 import modele.cartes.Carte;
 import modele.cartes.Joueur;
@@ -41,19 +41,14 @@ public interface JoueurBlackjack extends Joueur{
      */
     public void recevoirCarte(Carte c);
 
-    /**
-     * Tirer une carte, le joueur à le droit ou non de tirer une carte
-     * 
-     * @return bool Son droit de recevoir une carte
-     */
-    public boolean tirerCarte();
-    
+ 
+     
     /**
      * Savoir si le joueur à dépasser les 21 de scores
      * 
      * @return bool 
      */
-    public boolean aDepasse();
+    public boolean aDepasse21();
     
     /**
      * Savoir si le joueur à fini de jouer, il s'est couché et doit attendre la fin de la partie
