@@ -1,0 +1,243 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage[table]{xcolor}
+
+
+\usepackage{caption}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta, positioning}
+
+
+\usepackage{float}
+
+\geometry{margin=1.5cm}
+\pagestyle{fancy}
+\fancyhead[L]{Projet Blackjack}
+\fancyhead[R]{4 Novembre 2025}
+\fancyfoot[C]{\thepage}
+
+
+\begin{document}
+
+% -- Page de garde --
+\begin{titlepage}
+    \centering
+
+    %\includegraphics[width=0.6\textwidth]{images/logo.png} 				
+    %\nocite{LogoUnicaen}
+
+    \vspace{0.5cm}
+
+    \vfill
+    {\Huge \textbf{Projet 1 :}}\\[1.5cm]
+    {\Huge \textbf{Développement d’un jeu de Blackjack}}\\[2cm]
+    
+    %THOMAS Matthieu : NUM_ETU\\[0.5cm]
+    %SIAGHI Massinissa : 22312276\\[0.5cm]
+    %TELLIER Basile : NUM_ETU\\[1.0cm]
+
+
+
+    {\Large 4 novemvre 2025}
+
+\end{titlepage}
+
+\newpage
+
+\tableofcontents
+
+\newpage   
+
+
+% 1. Introduction
+\section{Introduction}
+
+\subsection{Présentation générale du projet}
+
+
+
+\subsection{Problématique et points clés}
+\begin{itemize}
+    \item \textbf{Créer une interface utilisateur explicite et pédagogique}~: L'interface graphique devait à la fois représenter l’état de la mémoire, l’avancement de chaque guerrier, et permettre d’observer l’évolution du match en temps réel. Cela implique une gestion précise des événements et des notifications entre le modèle et la vue (via le pattern Observer).
+
+    \item \textbf{Maintenir la modularité du code}~: Enfin, toute cette architecture devait rester claire, maintenable et évolutive. Le respect du modèle \textbf{MV-C}, ainsi qu’une séparation stricte des responsabilités, ont été déterminants pour conserver une bonne lisibilité du projet.
+\end{itemize}
+
+\newpage
+
+\subsection{Présentation du plan du rapport}
+
+Ce rapport a pour objectif de retracer de manière claire et progressive le développement du projet \textbf{Blackjack}. Il est structuré en six sections, chacune correspondant à une phase essentielle du projet :
+
+\begin{itemize}
+    \item \textbf{Section 1 – Introduction} : pose le contexte du projet, ses objectifs pédagogiques et les motivations ayant guidé notre équipe.
+    
+    \item \textbf{Section 2 – Structuration du projet} : décrit les besoins fonctionnels et techniques, les fonctionnalités envisagées, ainsi que l’organisation du travail collaboratif.
+    
+    \item \textbf{Section 3 – Éléments techniques} : détaille les algorithmes et structures de données au cœur de la simulation, notamment le moteur d’exécution, la mémoire circulaire, et les opérateurs génétiques.
+    
+    \item \textbf{Section 4 – Architecture du projet} : propose une vue d’ensemble de l’architecture logicielle, articulée autour du patron MVC. Cette partie s’appuie sur des diagrammes UML pour illustrer les relations entre les différentes classes et modules.
+    
+    \item \textbf{Section 5 – Expérimentations et usages} : illustre l’utilisation concrète du simulateur à travers des cas d’usage commentés et des captures d’écran, en soulignant les résultats observés.
+    
+    \item \textbf{Section 6 – Conclusion} : dresse un bilan général du projet, récapitule les fonctionnalités implémentées et propose plusieurs axes d’amélioration pour la suite.
+\end{itemize}
+
+\newpage   
+
+
+% 2. Structuration du projet
+\section{Structuration du projet}
+
+\subsection{Analyse des besoins}
+
+
+\subsection{Fonctionnalités implémentées}
+
+
+\subsection{Organisation du travail}
+
+Le travail a été réparti entre les trois membres du groupe de manière à valoriser les compétences de chacun :
+
+\vspace{0.5cm}
+
+Une collaboration régulière a été assurée via un dépôt Git, avec un suivi des commits et une validation croisée du code. Des séances hebdomadaires de synchronisation ont permis de maintenir une vision partagée de l’avancement.
+
+\newpage   
+
+
+\subsection{Frise chronologique du projet}
+
+La planification et la progression du projet de Blackjack se sont organisées autour de jalons bien définis. La frise suivante illustre les grandes étapes de développement, depuis la compréhension du sujet jusqu’à la rédaction finale du rapport. Chaque étape a mobilisé les membres du groupe selon leur domaine d’expertise et les modules en charge.
+
+\vspace{0.5cm}
+
+\begin{figure}[H]
+\centering
+\makebox[\textwidth]{%
+\begin{tikzpicture}[
+    timeline/.style={draw, thick},
+    milestone/.style={circle, draw=black, fill=blue!20, minimum size=8pt, inner sep=2pt},
+    label/.style={font=\scriptsize, align=center, text width=2.2cm},
+    date/.style={font=\scriptsize, align=center, text width=2.2cm, color=gray}
+]
+
+% Ligne de base
+\draw[timeline] (0,0) -- (16,0);
+
+% Jalons avec texte
+\foreach \x/\label/\month in {
+    0/Lancement/Septembre,
+    2.2/Analyse du sujet/Septembre,
+    4.4/Architecture MVC/Octobre,
+    6.6/Implémentation du Modèle/Octobre,
+    8.8/Implémentation du Contrôleur/Octobre,
+    11/Interface graphique/Octobre,
+    15.4/Tests \& Rapport/Novembre
+} {
+    \node[milestone] at (\x,0) {};
+    \node[label] at (\x,-1.1) {\label};
+    \node[date] at (\x,-2.0) {\month};
+}
+
+\end{tikzpicture}%
+}
+\caption{Frise chronologique des grandes étapes du projet }
+\end{figure}
+
+
+
+\vspace{0.5cm}
+
+
+\newpage   
+
+
+% 3. Éléments techniques
+\section{Éléments techniques}
+
+\subsection{Structures de données utilisées}
+
+
+
+
+
+\subsection{Algorithmes notables}
+
+
+
+\subsubsection*{4. Évolution génétique multi-niveaux}
+
+
+\subsubsection*{6. Observer Pattern pour l'affichage}
+
+
+
+\newpage
+
+
+
+
+% Section 4 : Architecture du projet
+\section{Architecture du projet}
+
+
+
+\subsection{Contrôleur : orchestration de la simulation}
+
+\subsection{Vue : interface graphique réactive}
+
+\subsubsection*{Communication modèle \(\leftrightarrow\) vue}
+
+\subsection{Synthèse : une architecture MV-C }
+
+\section{expérimentations et usages}
+
+\subsection{Cas d’utilisation : }
+
+\subsection{Cas d’utilisation : }
+
+\subsection{Cas d’utilisation : }
+
+
+
+\subsection{Cas d’utilisation : }
+
+
+\subsection{Cas d’utilisation : }
+
+
+\subsection{Cas d’utilisation : }
+
+\subsection{Performances} 
+
+
+\newpage
+
+% 6. Conclusion
+\section{Conclusion}
+
+\subsection*{Récapitulatif des fonctionnalités principales}
+
+\subsection*{Propositions d’améliorations}
+
+
+\newpage   
+
+
+% Bibliographie
+\begin{thebibliography}{9}
+
+\end{thebibliography}
+
+
+\end{document}
