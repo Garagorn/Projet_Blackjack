@@ -88,6 +88,7 @@
       </dia:composite>
     </dia:attribute>
   </dia:diagramdata>
+  <dia:layer name="Arrière-plan" visible="true" connectable="false"/>
   <dia:layer name="Arrière-plan" visible="true" connectable="true" active="true">
     <dia:object type="UML - Class" version="0" id="O0">
       <dia:attribute name="obj_pos">
@@ -961,7 +962,7 @@
         <dia:point val="12.4301,16.05"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="12.3801,15.25;26.2505,16.85"/>
+        <dia:rectangle val="12.3801,15.29;26.2505,16.89"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
@@ -996,7 +997,7 @@
         <dia:string>#Carte(s)#</dia:string>
       </dia:attribute>
       <dia:attribute name="multipicity_a">
-        <dia:string>#0**1#</dia:string>
+        <dia:string>#0***n#</dia:string>
       </dia:attribute>
       <dia:attribute name="visibility_a">
         <dia:enum val="3"/>
@@ -1914,7 +1915,7 @@
         <dia:point val="7.8325,38.8499"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="7.4325,32.9;8.2325,38.8999"/>
+        <dia:rectangle val="7.4325,32.35;8.2325,38.8999"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
@@ -1957,7 +1958,7 @@
         <dia:point val="21.9505,30.3706"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="13.4145,29.9292;22.0008,31.1294"/>
+        <dia:rectangle val="13.4145,29.7294;22.0008,30.7297"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
