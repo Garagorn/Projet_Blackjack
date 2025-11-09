@@ -69,6 +69,15 @@
         </javac> 
 
 -->
+
+<!-- Compilation des tests -->
+<javac srcdir="${src.test.home}" destdir="${build.test.home}" includeantruntime="false">
+        <classpath>
+            <pathelement location="${build.home}"/>
+            <path refid="compile.classpath"/>
+        </classpath>
+    </javac>
+    
 <!-- Copy application resources -->
 <copy todir="${build.home}">
 <fileset dir="${src.home}" excludes="**/*.java"/>
@@ -156,6 +165,9 @@
 -->
 </junit>
 </target>
+<!--
+ ==================== Junitreport Target ===================================== 
+-->
 <target name="junitreport" depends="test">
 <junitreport todir="${test.report.home}">
 <fileset dir="${test.report.home}" includes="TEST-*.xml"/>
