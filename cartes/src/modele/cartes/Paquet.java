@@ -127,11 +127,30 @@ public class Paquet extends AbstractModeleEcoutable {
     
         
     @Override
+    /**
+     * Méthode pour l'affichage d'un paquet
+     * Elle affiche toutes les cartes du paquet
+     */
     public String toString() {
         return "Paquet : {" + paquet + '}';
     }
+    
+    
+    /**
+     * Méthode pour savoir si le paquet est vide     
+     * @return booleen : True si le paquet est vide, False sinon
+     */
     public boolean estVide(){
         return this.paquet.isEmpty();
+    }
+    
+    /**
+     * Methode de test sur paquet, pour savoir si il contient une carte
+     * @param c La carte  que l'on cherche dans le paquet
+     * @return boolean : True si la carte se trouve  dans le paquet ou  False sinon
+     */
+    public boolean contient(Carte c){
+        return paquet.contains(c);
     }
     
     /**
