@@ -14,8 +14,6 @@ public class PaquetTest {
     public PaquetTest() {
     }
     
-    //ant junitreport
-    
     private static Carte PA;
     private static Carte C2;
     private static Paquet p;
@@ -93,4 +91,25 @@ public class PaquetTest {
         assertEquals(52, jeu52.nbr_carte());
     }
     
+    
+    @Test 
+    public void testMelange(){
+        Paquet jeu32 = Paquet.creerJeu32();
+        Paquet jeuCopie = Paquet.creerJeu32();
+        jeu32.melanger();
+        assertEquals(jeu32.nbr_carte(),jeuCopie.nbr_carte()); //Pas de perte de classe
+        
+        //assertTrue(jeu32.contains(jeuCopie));
+        
+        //Test avec un 2e melange
+        jeu32.melanger();
+        assertEquals(jeu32.nbr_carte(),jeuCopie.nbr_carte()); //Perte de carte ?
+        
+        //Test contient les memes cartes
+        //assertTrue(jeu32.contains(jeuCopie));
+
+        //Tester c1 != c2
+        
+        //Test sur les doublons
+    }
 }
