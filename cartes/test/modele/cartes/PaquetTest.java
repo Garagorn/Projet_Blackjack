@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-
+import java.util.*;
 /**
  *
  * @author tellier212@CAMPUS
@@ -82,6 +82,9 @@ public class PaquetTest {
         assertFalse(p2.contient(C2));
     }
     
+    /**
+     * Test sur la factory methode de création  de  carte
+     */
     @Test
     public void testCreer32et52(){
         Paquet jeu32 = Paquet.creerJeu32();
@@ -92,6 +95,14 @@ public class PaquetTest {
     }
     
     
+    /**
+     * Test sur le melange d'un paquet
+     * 1) Nombre égal de carte
+     * 2) Possede les memes cartes et pas de pertes
+     * 3) Changement de l'odre des cartes
+     * 
+     * 4) Essai avec un 2e melange
+     */
     @Test 
     public void testMelange(){
         Paquet jeu32 = Paquet.creerJeu32();
@@ -99,17 +110,119 @@ public class PaquetTest {
         jeu32.melanger();
         assertEquals(jeu32.nbr_carte(),jeuCopie.nbr_carte()); //Pas de perte de classe
         
-        //assertTrue(jeu32.contains(jeuCopie));
+        boolean memes;
+        memes = true;
+        for(Carte c :jeuCopie.getPaquet()){
+            if(!jeu32.contient(c)){
+                memes=false;
+            }
+        }
+        assertTrue(memes);
+        //Ordre changé
+        boolean ordre = true;
+        for(int i=0;i<6;i++){
+            if (!jeu32.getPaquet().get(i).equals(jeuCopie.getPaquet().get(i))) {
+                memes = false;
+                break;
+            }
+        }
+        assertFalse(memes);
         
         //Test avec un 2e melange
         jeu32.melanger();
         assertEquals(jeu32.nbr_carte(),jeuCopie.nbr_carte()); //Perte de carte ?
         
         //Test contient les memes cartes
-        //assertTrue(jeu32.contains(jeuCopie));
-
-        //Tester c1 != c2
+        boolean meme;
+        meme = true;
+        for(Carte c :jeuCopie.getPaquet()){
+            if(!jeu32.contient(c)){
+                meme=false;
+            }
+        }
+        assertTrue(meme);
         
         //Test sur les doublons
+        Set<Carte> main = new  HashSet<>(jeu32.getPaquet());
+        assertEquals(jeu32.nbr_carte(),main.size());
+        //Deuxieme melange et test doublon
+        jeu32.melanger();
+        assertEquals(jeuCopie.nbr_carte(), jeu32.nbr_carte());
+        boolean egal;
+        egal = true;
+        for(Carte c : jeuCopie.getPaquet()){
+            if(!jeu32.contient(c)){
+                egal=false;
+            }
+        }
+        assertTrue(egal);
     }
+    
+    //Test sur n itérations
+    //@Test  public void testCouperAvance(){}
+    
+    /**
+     * Test sur la coupe d'un paquet
+     * 1) Nombre égal de carte
+     * 2) Possede les memes cartes et pas de pertes
+     * 3) Changement de l'odre des cartes
+     * 
+     * 4) Essai avec une 2e coupe
+     */
+    @Test 
+    public void testCouper(){
+        Paquet jeu32 = Paquet.creerJeu32();
+        Paquet jeuCopie = Paquet.creerJeu32();
+        jeu32.couper();
+        assertEquals(jeu32.nbr_carte(),jeuCopie.nbr_carte()); //Pas de perte de classe
+        
+        boolean memes;
+        memes = true;
+        for(Carte c :jeuCopie.getPaquet()){
+            if(!jeu32.contient(c)){
+                memes=false;
+            }
+        }
+        assertTrue(memes);
+        //Ordre changé
+        boolean ordre = true;
+        for(int i=0;i<6;i++){
+            if (!jeu32.getPaquet().get(i).equals(jeuCopie.getPaquet().get(i))) {
+                memes = false;
+                break;
+            }
+        }
+        assertFalse(memes);
+        
+        //Test avec une 2e coupe
+        jeu32.couper();
+        assertEquals(jeu32.nbr_carte(),jeuCopie.nbr_carte()); //Perte de carte ?
+        
+        //Test contient les memes cartes
+        boolean meme;
+        meme = true;
+        for(Carte c :jeuCopie.getPaquet()){
+            if(!jeu32.contient(c)){
+                meme=false;
+            }
+        }
+        assertTrue(meme);
+        
+        //Test sur les doublons
+        Set<Carte> main = new  HashSet<>(jeu32.getPaquet());
+        assertEquals(jeu32.nbr_carte(),main.size());
+        //Deuxieme coupe et test doublon
+        jeu32.couper();
+        assertEquals(jeuCopie.nbr_carte(), jeu32.nbr_carte());
+        boolean egal;
+        egal = true;
+        for(Carte c : jeuCopie.getPaquet()){
+            if(!jeu32.contient(c)){
+                egal=false;
+            }
+        }
+        assertTrue(egal);
+    }
+    
+    //@Test  public void testCouperAvance(){}
 }
