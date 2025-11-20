@@ -19,10 +19,10 @@
 
 \usepackage{float}
 
-\geometry{margin=2.5cm}
+\geometry{margin=1.5cm}
 \pagestyle{fancy}
-\fancyhead[L]{Projet CoreWar}
-\fancyhead[R]{18 Avril 2025}
+\fancyhead[L]{Projet Blackjack}
+\fancyhead[R]{4 Novembre 2025}
 \fancyfoot[C]{\thepage}
 
 
@@ -32,24 +32,22 @@
 \begin{titlepage}
     \centering
 
-    \includegraphics[width=0.6\textwidth]{images/logo.png} 				
-    \nocite{LogoUnicaen}
+    %\includegraphics[width=0.6\textwidth]{images/logo.png} 				
+    %\nocite{LogoUnicaen}
 
     \vspace{0.5cm}
 
     \vfill
     {\Huge \textbf{Projet 1 :}}\\[1.5cm]
-    {\Huge \textbf{Développement d’un générateur de programmes efficaces pour CoreWar}}\\[2cm]
+    {\Huge \textbf{Développement d’un jeu de Blackjack}}\\[2cm]
     
-    \vfill
-    {\Large \textbf{BENSADI Aris : 22410069}}\\[0.5cm]
-    {\Large \textbf{CHAIB SETTI Mohamed : 22310564}}\\[0.5cm]
-    {\Large \textbf{CHERIF Ayman : 22308799}}\\[0.5cm]
-    {\Large \textbf{SIAGHI Massinissa : 22312276}}\\[1.5cm]
+    %THOMAS Matthieu : NUM_ETU\\[0.5cm]
+    %SIAGHI Massinissa : 22312276\\[0.5cm]
+    %TELLIER Basile : NUM_ETU\\[1.0cm]
 
 
 
-    {\Large 18 Avril 2025}
+    {\Large 4 novemvre 2025}
 
 \end{titlepage}
 
@@ -65,72 +63,20 @@
 
 \subsection{Présentation générale du projet}
 
-Le projet que nous avons réalisé s'inscrit dans le cadre de l'UE Projet 1. Il consiste à concevoir et développer une plateforme complète permettant de simuler et d'exploiter le fonctionnement du jeu \textbf{CoreWar}.
-
-CoreWar est un jeu de programmation dans lequel plusieurs programmes, appelés \textit{guerriers}, s’affrontent au sein d’une machine virtuelle appelée \textbf{MARS} (Memory Array Redcode Simulator). Chaque programme est écrit dans un langage spécifique appelé \textbf{RedCode}, inspiré de l’assembleur\footnote{Un assembleur est un langage de programmation bas niveau, proche du langage machine, dans lequel chaque instruction correspond presque directement à une opération du processeur.}. Son objectif est d’occuper la mémoire et de neutraliser les programmes adverses. Le dernier programme actif dans la mémoire est déclaré vainqueur.
-
-Notre projet s’est donc articulé en deux grandes étapes complémentaires~: d’une part la mise en place d’un simulateur fonctionnel de la machine MARS, d’autre part une extension évoluée permettant la génération automatique de programmes RedCode compétitifs.
-
-\vspace{0.5cm}
-
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}[
-        node distance=1.8cm and 2.4cm,
-        box/.style={draw, rounded corners, minimum width=4.8cm, minimum height=1.2cm, align=center, font=\small},
-        arrow/.style={->, thick}
-    ]
-
-    % Étapes principales
-    \node[box, fill=blue!10] (simulator) {Simulateur MARS \\
-        \footnotesize Chargement et exécution des programmes RedCode};
-
-    \node[box, fill=green!10, below=of simulator] (generation) {Génération automatique \\
-        \footnotesize Création de guerriers efficaces via un algorithme évolutionnaire};
-
-    % Liens
-    \draw[arrow] (simulator) -- (generation);
-
-    \end{tikzpicture}
-    \caption{Présentation des deux grandes étapes du projet CoreWar}
-\end{figure}
-
-\vspace{0.5cm}
-
-Ces deux volets complémentaires sont décrits brièvement ci-dessous :
-
-\begin{itemize}
-    \item L’implémentation d’un simulateur de machine MARS capable de charger, exécuter et faire interagir des programmes RedCode ;
-    \item La génération automatique de programmes RedCode optimisés, en s’appuyant sur des méthodes d’\textbf{algorithmique évolutionnaire} (comme les algorithmes génétiques ou le recuit simulé).
-\end{itemize}
-
-\newpage   
-
 
 
 \subsection{Problématique et points clés}
-
-La réalisation de ce projet soulève plusieurs défis majeurs, tant sur le plan algorithmique que logiciel. Ces défis sont au cœur de la complexité et de l’intérêt du jeu CoreWar :
-
 \begin{itemize}
-    \item \textbf{Comprendre et implémenter le langage RedCode}~: Ce langage assembleur spécifique repose sur une sémantique simple en apparence, mais complexe dans ses effets. Chaque instruction (comme \texttt{MOV}, \texttt{ADD}, \texttt{CMP}, etc.) peut manipuler la mémoire avec des effets indirects, via des modes d’adressage variés (immédiat, direct, indirect, pré-décrémenté). Il fallait donc respecter avec rigueur la spécification ICWS-88 tout en permettant une exécution fluide et fidèle.
-
-    \item \textbf{Modéliser la mémoire MARS et le comportement des guerriers}~: La mémoire MARS fonctionne comme un tableau circulaire dans lequel les instructions peuvent être copiées, écrasées ou déplacées. Chaque guerrier y agit indépendamment, via un système de file d’instructions à exécuter. Il a fallu concevoir un système de mémoire robuste, capable de supporter cette logique concurrente sans erreurs de synchronisation.
-
-    \item \textbf{Gérer l’exécution concurrente des guerriers}~: Chaque guerrier possède une file FIFO d'instructions à exécuter. Une mauvaise gestion du multitraitement pouvait conduire à des déséquilibres ou à des comportements incohérents. Il fallait donc un système de file d’exécution stable, isolé et juste.
-
-    \item \textbf{Générer automatiquement des guerriers efficaces}~: Cette partie du projet relève de l’intelligence artificielle. Elle consiste à créer, faire évoluer et sélectionner automatiquement des programmes RedCode efficaces selon des critères de survie, d'agressivité ou de stratégie. Nous avons choisi d’exploiter un algorithme génétique simple pour générer et affiner les programmes au fil des générations. Cela demande un mécanisme de mutation, de croisement et de sélection bien intégré au reste de l’architecture.
-
     \item \textbf{Créer une interface utilisateur explicite et pédagogique}~: L'interface graphique devait à la fois représenter l’état de la mémoire, l’avancement de chaque guerrier, et permettre d’observer l’évolution du match en temps réel. Cela implique une gestion précise des événements et des notifications entre le modèle et la vue (via le pattern Observer).
 
-    \item \textbf{Maintenir la modularité du code}~: Enfin, toute cette architecture devait rester claire, maintenable et évolutive. Le respect du modèle \textbf{MVC}, ainsi qu’une séparation stricte des responsabilités, ont été déterminants pour conserver une bonne lisibilité du projet.
+    \item \textbf{Maintenir la modularité du code}~: Enfin, toute cette architecture devait rester claire, maintenable et évolutive. Le respect du modèle \textbf{MV-C}, ainsi qu’une séparation stricte des responsabilités, ont été déterminants pour conserver une bonne lisibilité du projet.
 \end{itemize}
 
 \newpage
 
 \subsection{Présentation du plan du rapport}
 
-Ce rapport a pour objectif de retracer de manière claire et progressive le développement du projet \textbf{CoreWar}. Il est structuré en six sections, chacune correspondant à une phase essentielle du projet :
+Ce rapport a pour objectif de retracer de manière claire et progressive le développement du projet \textbf{Blackjack}. Il est structuré en six sections, chacune correspondant à une phase essentielle du projet :
 
 \begin{itemize}
     \item \textbf{Section 1 – Introduction} : pose le contexte du projet, ses objectifs pédagogiques et les motivations ayant guidé notre équipe.
@@ -154,106 +100,15 @@ Ce rapport a pour objectif de retracer de manière claire et progressive le dév
 
 \subsection{Analyse des besoins}
 
-Ce projet s’inscrit dans un contexte pédagogique visant à renforcer nos compétences en architecture logicielle, en conception algorithmique, ainsi qu’en développement système. Il s’agit de concevoir un simulateur complet du jeu \textbf{CoreWar}, respectant les règles de la spécification ICWS-88, tout en intégrant des composantes d’intelligence artificielle.
-
-Deux grands besoins fonctionnels se sont imposés dès le début du projet :
-
-\begin{itemize}
-    \item \textbf{Simulation fidèle de l’environnement CoreWar}~: Le cœur du projet repose sur une machine virtuelle \textbf{MARS} capable d’exécuter plusieurs programmes RedCode en concurrence. Cette exigence inclut :
-    \begin{itemize}
-        \item une mémoire circulaire cohérente ;
-        \item un moteur d’exécution respectant les priorités de chaque guerrier ;
-        \item une modélisation fine des instructions RedCode et des modes d’adressage.
-    \end{itemize}
-
-    \item \textbf{Génération automatique de guerriers efficaces}~: Au-delà de la simulation, il fallait concevoir un système capable de produire automatiquement des programmes optimisés pour la victoire. Ce besoin implique :
-    \begin{itemize}
-        \item la mise en place d’un algorithme d’évolution basé sur la sélection, la mutation et la reproduction ;
-        \item une évaluation objective des performances de chaque guerrier ;
-        \item une boucle d’évolution itérative, permettant une amélioration progressive des stratégies.
-    \end{itemize}
-\end{itemize}
 
 \subsection{Fonctionnalités implémentées}
 
-Le projet couvre l’ensemble des fonctionnalités attendues d’un simulateur CoreWar intelligent. Voici un récapitulatif des modules principaux implémentés :
-
-\begin{itemize}
-    \item \textbf{Chargement de programmes RedCode}~: Un interpréteur (\texttt{Interpretor.java}) convertit les chaînes de caractères en instructions internes exploitables par la machine virtuelle.
-
-    \item \textbf{Implémentation complète du langage RedCode}~: Toutes les instructions définies dans la spécification ICWS-88 ont été implémentées dans le package \texttt{instruction}, avec leurs effets spécifiques et leurs modes d’adressage (\texttt{Immediate}, \texttt{Direct}, \texttt{Indirect}, \texttt{PreDecrement}).
-
-    \item \textbf{Simulation de la mémoire MARS}~: Le composant \texttt{Ram.java} permet de modéliser une mémoire circulaire, dans laquelle les guerriers sont placés de facon équitable. Il est possible d’y lire, modifier ou dupliquer des instructions à tout moment.
-
-    \item \textbf{Gestion de l’exécution concurrente}~: Chaque guerrier (classe \texttt{Warrior}) possède sa propre file d’exécution (\texttt{Fifo}), qui évolue au fur et à mesure que les instructions \texttt{SPL} ou \texttt{DAT} sont rencontrées.
-
-    \item \textbf{Détection automatique de fin de partie}~: Le contrôleur (\texttt{ControlUnit.java}) gère la boucle d’exécution globale, identifie les guerriers éliminés et déclare un vainqueur lorsque tous les adversaires ont été neutralisés.
-
-    \item \textbf{Visualisation en temps réel (interface graphique)}~: Grâce aux panneaux Java Swing situés dans le package \texttt{vue.graphics}, l’utilisateur peut observer l’état de la mémoire, la progression des guerriers et les effets de chaque instruction.
-
-    \item \textbf{Générateur de guerriers optimisés}~: Le package \texttt{genetic} contient l’implémentation d’un algorithme génétique complet :
-    \begin{itemize}
-        \item création de guerriers aléatoires ;
-        \item simulation de plusieurs matchs pour chaque génération ;
-        \item évaluation de performance et sélection des meilleurs ;
-        \item mutation contrôlée pour explorer de nouvelles stratégies.
-    \end{itemize}
-\end{itemize}
 
 \subsection{Organisation du travail}
 
-Le travail a été réparti entre les quatres membres du groupe de manière à valoriser les compétences de chacun :
+Le travail a été réparti entre les trois membres du groupe de manière à valoriser les compétences de chacun :
 
 \vspace{0.5cm}
-
-
-\begin{table}[H]
-    \centering
-    \renewcommand{\arraystretch}{1.4}
-    \begin{tabular}{|c|p{10cm}|}
-        \hline
-        \textbf{Membre} & \textbf{Responsabilités principales} \\
-        \hline
-        \textbf{Mohamed} & Implémentation du \texttt{modèle} :
-        \begin{itemize}
-            \item Classes \texttt{instruction}, \texttt{operand}, \texttt{warrior}.
-            \item Conception de la logique modèle du jeu CoreWar
-            \item rédaction du rapport
-
-
-        \end{itemize} \\
-        \hline
-        \textbf{Massinissa} & Développement de la \texttt{vue} :
-        \begin{itemize}
-            \item Interfaces graphiques (\texttt{RamPanel}, \texttt{MainPanel}, etc.)
-            \item Interaction utilisateur, affichage mémoire et programmes
-            \item rédaction du rapport
-
-        \end{itemize} \\
-        \hline
-        \textbf{Aris} & Conception du \texttt{contrôleur} :
-        \begin{itemize}
-            \item Exécution des programmes, interpréteur RedCode
-            \item Gestion de la mémoire circulaire et du déroulement du match
-            \item rédaction du rapport
-            \item Conception de la logique métier du jeu CoreWar
-
-
-        \end{itemize} \\
-        \hline
-        \textbf{Ayman} & Développement de la \texttt{partie évolutionnaire} :
-        \begin{itemize}
-            \item Module \texttt{genetic} dans \texttt{controler} et \texttt{modele}
-            \item Tests complets 
-             \item rédaction du rapport
-        \end{itemize} \\
-        \hline
-    \end{tabular}
-    \caption{Répartition des rôles au sein de l’équipe}
-\end{table}
-
-\vspace{0.5cm}
-
 
 Une collaboration régulière a été assurée via un dépôt Git, avec un suivi des commits et une validation croisée du code. Des séances hebdomadaires de synchronisation ont permis de maintenir une vision partagée de l’avancement.
 
@@ -262,7 +117,7 @@ Une collaboration régulière a été assurée via un dépôt Git, avec un suivi
 
 \subsection{Frise chronologique du projet}
 
-La planification et la progression du projet CoreWar se sont organisées autour de jalons bien définis. La frise suivante illustre les grandes étapes de développement, depuis la compréhension du sujet jusqu’à la rédaction finale du rapport. Chaque étape a mobilisé les membres du groupe selon leur domaine d’expertise et les modules en charge.
+La planification et la progression du projet de Blackjack se sont organisées autour de jalons bien définis. La frise suivante illustre les grandes étapes de développement, depuis la compréhension du sujet jusqu’à la rédaction finale du rapport. Chaque étape a mobilisé les membres du groupe selon leur domaine d’expertise et les modules en charge.
 
 \vspace{0.5cm}
 
@@ -281,14 +136,13 @@ La planification et la progression du projet CoreWar se sont organisées autour 
 
 % Jalons avec texte
 \foreach \x/\label/\month in {
-    0/Lancement/Janvier,
-    2.2/Analyse du sujet/Janvier,
-    4.4/Architecture MVC/Janvier,
-    6.6/Implémentation du Modèle/Février,
-    8.8/Implémentation du Contrôleur/Mars,
-    11/Interface graphique/Mars,
-    13.2/Évolution génétique/Avril,
-    15.4/Tests \& Rapport/Avril
+    0/Lancement/Septembre,
+    2.2/Analyse du sujet/Septembre,
+    4.4/Architecture MVC/Octobre,
+    6.6/Implémentation du Modèle/Octobre,
+    8.8/Implémentation du Contrôleur/Octobre,
+    11/Interface graphique/Octobre,
+    15.4/Tests \& Rapport/Novembre
 } {
     \node[milestone] at (\x,0) {};
     \node[label] at (\x,-1.1) {\label};
@@ -297,7 +151,7 @@ La planification et la progression du projet CoreWar se sont organisées autour 
 
 \end{tikzpicture}%
 }
-\caption{Frise chronologique des grandes étapes du projet CoreWar}
+\caption{Frise chronologique des grandes étapes du projet }
 \end{figure}
 
 
@@ -313,255 +167,20 @@ La planification et la progression du projet CoreWar se sont organisées autour 
 
 \subsection{Structures de données utilisées}
 
-La réussite du projet repose sur une modélisation rigoureuse des données en mémoire et de leur comportement au sein du simulateur MARS. Plusieurs structures non triviales ont été développées :
-
-\vspace{0.4cm}
 
 
-\begin{itemize}
-    \item \textbf{La mémoire RAM} : modélisée sous forme de tableau circulaire de \texttt{Cellules}. Chaque cellule contient une instruction et un marqueur indiquant l’auteur du dernier accès. Cette mémoire assure un accès en lecture/écriture cyclique, conforme à la spécification CoreWar.
-
-\vspace{0.4cm}
-
-
-    \item \textbf{La classe \texttt{Cell}} : Chaque cellule encapsule deux éléments clés :
-
-    \vspace{0.4cm}
-
-    
-        \begin{itemize}
-        \item une instance d'\texttt{AbstractInstruction} (ex : \texttt{MOV}, \texttt{ADD}, \texttt{DAT}, etc.) représentant une opération RedCode, par ailleurs toutes les instructions seront détaillés ci-dessous dans un tableau (cf.Table 2) ;
-        \item un \texttt{Marker} qui conserve l'identifiant du guerrier ayant accédé à la cellule ainsi que le type d’action effectuée (exécution, écriture, lecture).
-    \end{itemize}
-    
-\vspace{0.4cm}
-
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}
-        % Cadre global élargi
-        \draw[thick, rounded corners=4pt] (0,0) rectangle (11,2.5);
-        
-        % Séparation instruction / marker
-        \draw[thick] (6,0) -- (6,2.5);
-
-        % Instruction (à gauche)
-        \node[align=center] at (3,1.8) {\textbf{Instruction}};
-        \node[font=\ttfamily] at (3,1.1) {MOV 2, 5};
-        \node[font=\scriptsize, text=gray] at (3,0.4) {type : AbstractInstruction};
-
-        % Marker (à droite)
-        \node[align=center] at (8.5,1.8) {\textbf{Marqueur}};
-        \node[font=\ttfamily] at (8.5,1.1) {Warrior ID: 1 READ};
-        \node[font=\scriptsize, text=gray] at (8.5,0.4) {type : Marker};
-    \end{tikzpicture}
-    \caption{Exemple de la structure interne d’une cellule dans la RAM du simulateur CoreWar}
-\end{figure}
-
-
-\vspace{0.3cm}
-
-\newpage
-
-    Le tableau suivant présente les principales instructions du langage \textit{RedCode}, accompagnées de leur fonction et de leur effet dans le simulateur \textit{CoreWar}.
-
-    
-\vspace{0.4cm}
-\begin{table}[H]
-    \centering
-    \renewcommand{\arraystretch}{1.2} % Pour aérer un peu les lignes
-    \begin{tabular}{|>{\centering\arraybackslash}m{2.5cm}|>{\arraybackslash}m{7.2cm}|>{\arraybackslash}m{6.5cm}|}
-        \hline
-        \rowcolor{gray!20}
-        \textbf{Instruction} & \textbf{Fonction} & \textbf{Effet en simulation} \\
-        \hline
-        \texttt{MOV} & Copie une donnée ou une instruction & Réplique une cellule d’un endroit à un autre \\
-        \hline
-        \texttt{ADD} & Additionne une valeur à une autre & Modifie le champ B d’une instruction \\
-        \hline
-        \texttt{SUB} & Soustrait une valeur d’une autre & Altère le champ B d’une instruction \\
-        \hline
-        \texttt{JMP} & Saut inconditionnel à une adresse & Change l’ordre d’exécution \\
-        \hline
-        \texttt{JMZ} & Saut si zéro & Teste et saute si le champ est nul \\
-        \hline
-        \texttt{JMN} & Saut si non zéro & Saut conditionnel sur champ non nul \\
-        \hline
-        \texttt{DJN} & Décrémente puis saute si non zéro & Contrôle de boucle, saut répété \\
-        \hline
-        \texttt{CMP} & Compare deux instructions & Saute si les deux instructions sont identiques \\
-        \hline
-        \texttt{SPL} & Crée un nouveau processus & Ajoute une adresse à la file d’exécution \\
-        \hline
-        \texttt{DAT} & Donnée ou terminaison & Tue le processus s’il tente d’exécuter \texttt{DAT} \\
-        \hline
-    \end{tabular}
-    \caption{Tableau synthétique des instructions RedCode et leur effet}
-\end{table}
-
-    
-    
-
-
-    \item \textbf{Les instructions RedCode} : représentées par une hiérarchie orientée objet. La classe abstraite \texttt{AbstractInstruction} est étendue par chaque instruction réelle (comme \texttt{MOV}, \texttt{ADD}, \texttt{DJN}...). Cela favorise l’extensibilité du langage.
-
-    \item \textbf{Les opérandes} : Il existe différents modes d’adressage (immédiat, direct, indirect, pré-décrément), chacun implémenté par une sous-classe de \texttt{AbstractOperand}. Chaque opérande est capable de calculer dynamiquement l'adresse réelle qu’il désigne dans la RAM.
-
-    \item \textbf{Les guerriers} : Chaque guerrier est modélisé par un objet \texttt{Warrior}, qui contient une \texttt{Fifo} d’instructions actives. À chaque tour, il exécute l’instruction en tête de file. Si une instruction de type \texttt{SPL} est rencontrée, une nouvelle adresse est ajoutée à la file, simulant un processus concurrent.
-
-    \item \textbf{La mémoire logique (\texttt{Ram})} : classe centrale de gestion mémoire, elle fournit des méthodes \texttt{read()} et \texttt{write()} avec gestion automatique du wrap-around (mémoire circulaire), ainsi qu’une protection contre les débordements.
-
-    \item \textbf{Les marqueurs (\texttt{Marker} et \texttt{ActionType})} : chaque action (lecture, écriture, exécution) est tracée par un marqueur qui permet de visualiser l’activité mémoire, et d’enrichir les représentations graphiques.
-
-    \item \textbf{La file d’exécution (\texttt{Fifo})} : utilisée par les guerriers pour gérer la concurrence, elle implémente une structure de type FIFO (first-in, first-out) essentielle au modèle d’exécution concurrente de CoreWar.
-
-    \item \textbf{Structures évolutionnaires (\texttt{Generation} et \texttt{Generations})} : ces classes modélisent les populations de guerriers générés automatiquement, en conservant pour chaque individu son programme, son score, son rang dans l’évolution et son historique de performance.
-\end{itemize}
-
-\newpage   
 
 
 \subsection{Algorithmes notables}
 
-Le cœur de la simulation repose sur plusieurs familles d’algorithmes majeurs, dont certains sortent du cadre académique classique par leur sophistication et leur pertinence dans un contexte évolutif.
 
-\subsubsection*{1. Exécution des instructions RedCode}
-
-Chaque instruction suit une logique propre. Prenons l'exemple de \texttt{MOV}, représentée ici en pseudo-code :
-
-\begin{verbatim}
-Si A est de type IMMÉDIAT (#) :
-    Lire la valeur de A
-    Calculer l’adresse de B
-    Écrire la valeur dans le champ B de la cellule cible
-
-Sinon :
-    Calculer l’adresse source depuis A
-    Calculer l’adresse cible depuis B
-    Copier l’instruction source vers la cellule cible
-\end{verbatim}
-
-Le traitement standard d'une instruction comprend :
-\begin{enumerate}
-    \item L'évaluation du mode d’adressage A et B via \texttt{AbstractOperand} ;
-    \item Le calcul des adresses sources et cibles avec wrap-around (mémoire circulaire) ;
-    \item L’extraction ou la copie de l’instruction ;
-    \item L’écriture en mémoire et la mise à jour du \texttt{Marker} ;
-    \item Le passage à la prochaine instruction du guerrier.
-\end{enumerate}
-
-\subsubsection*{2. Boucle d’exécution d’un guerrier}
-
-Chaque guerrier maintient une file d’adresses à exécuter :
-
-\begin{verbatim}
-Tant que la file n’est pas vide :
-    extraire l’adresse de l’instruction à exécuter
-    exécuter l’instruction
-    si le guerrier n’est pas mort :
-        ajouter l’adresse suivante dans la file
-\end{verbatim}
-
-Ce mécanisme permet d’exécuter dynamiquement les instructions SPL (multi-thread) tout en assurant un contrôle strict du cycle de vie.
-
-\subsubsection*{3. Parsing évolué du RedCode}
-
-L’interpréteur, contenu dans \texttt{Interpretor.java}, intègre :
-\begin{itemize}
-    \item Une gestion des étiquettes via une table de symboles ;
-    \item La conversion de pseudo-instructions avec prétraitement ;
-    \item Un \textbf{parseur d’expressions arithmétiques} (\texttt{MathParser.java}) utilisant une pile d’opérateurs et de valeurs, similaire à un analyseur descendant.
-\end{itemize}
-
-\begin{verbatim}
-Pour chaque ligne du fichier RedCode :
-    Si la ligne contient une étiquette :
-        L'ajouter à la table des symboles avec l'adresse courante
-
-    Si la ligne contient une expression mathématique :
-        La parser avec MathParser
-        Évaluer récursivement l'expression
-\end{verbatim}
 
 \subsubsection*{4. Évolution génétique multi-niveaux}
 
-La partie la plus originale du projet réside dans l’algorithme d’évolution implémenté dans \texttt{GeneticEvolver.java} :
-\begin{itemize}
-    \item \textbf{Prise en entrée des Warriors} : En prenant des guerriers en entrée, il est capable de générer de nouveaux programmes;
-
-
-    \item \textbf{Évaluation des performances} : Chaque guerrier affronte un panel d’adversaires et reçoit un score basé sur sa longévité et ses victoires ;
-    \item \textbf{Sélection stochastique} : Les parents sont choisis proportionnellement à leur score ;
-    \item \textbf{Croisement génétique} : Des segments d'instructions sont échangés entre deux programmes ;
-    \item \textbf{Mutation} : De manière probabiliste, certaines instructions ou opérandes sont modifiées :
-
-\begin{verbatim}
-Pour chaque instruction du programme :
-    Tirer un nombre aléatoire entre 0 et 1
-    Si ce nombre < taux_de_mutation :
-        Modifier le type OU les opérandes
-\end{verbatim}
-\end{itemize}
-
-\subsubsection*{5. Historique de performance et tri dynamique}
-
-Les classes \texttt{Generations.java} et \texttt{Generation.java} conservent une mémoire évolutive des meilleures stratégies. Chaque génération est notée, triée et mémorisée, ce qui permet une forme d’apprentissage collectif entre générations.
-
-\begin{verbatim}
-À chaque fin de génération :
-    Trier les guerriers par score décroissant
-    Sauvegarder les n meilleurs dans l’historique
-    Réutiliser ces guerriers pour la génération suivante
-\end{verbatim}
 
 \subsubsection*{6. Observer Pattern pour l'affichage}
 
-La classe \texttt{Generations} implémente \texttt{Ecoutable}, ce qui permet de notifier dynamiquement la vue graphique des nouvelles performances via un mécanisme d’observation (pattern Observer).
 
-\newpage
-
-\subsubsection*{7. Accès mémoire sécurisé (\texttt{Ram})}
-
-La classe \texttt{Ram} représente la mémoire circulaire du simulateur CoreWar. Elle contient un tableau de 4000 cellules mémoire, chacune représentée par un objet \texttt{Cell}.
-
-\vspace{0.3cm}
-
-\textbf{Principales fonctionnalités de \texttt{Ram.java} :}
-\begin{itemize}
-    \item \texttt{read(int address, int warriorId)}~: lit une instruction à une adresse donnée, et met à jour le \texttt{Marker} associé avec l'action \texttt{READ}.
-    \item \texttt{write(int address, AbstractInstruction instruction, int warriorId)}~: écrit une instruction dans la cellule ciblée, et met à jour le \texttt{Marker} avec l'action \texttt{WRITE}.
-    \item \texttt{execute(int address, Warrior warrior)}~: exécute l’instruction présente dans la cellule, et trace l’action \texttt{EXECUTE}.
-    \item \texttt{reset()}~: vide toute la mémoire en supprimant instructions et marqueurs.
-\end{itemize}
-
-\vspace{0.3cm}
-
-\textbf{Extrait simplifié du code~:}
-
-\begin{verbatim}
-public void execute(int address, Warrior warrior){
-    cells[address].updateMarker(ActionType.EXECUTE, warrior.getWarriorId());
-    cells[address].getInstruction().execute(this, warrior, address);
-}
-
-public void write(int address, AbstractInstruction instr, int warriorId){
-    cells[address].updateMarker(ActionType.WRITE, warriorId);
-    cells[address].setInstruction(instr);
-}
-
-public AbstractInstruction read(int address, int warriorId){
-    cells[address].updateMarker(ActionType.READ, warriorId);
-    return cells[address].getInstruction();
-}
-\end{verbatim}
-
-\vspace{0.3cm}
-
-\textbf{Remarque importante~:} le fichier fourni ne réalise pas de vérification de dépassement d’adresse dans la classe \texttt{Ram}. Le wrap-around est donc probablement géré \textit{en amont}, au moment du calcul des adresses effectives, via les opérandes (\texttt{AbstractOperand}) ou dans la \texttt{ControlUnit}.
-
-\vspace{0.3cm}
-
-Ce design place la classe \texttt{Ram} comme un gestionnaire central, passif et sécurisé, de la mémoire circulaire. Chaque modification est tracée par un \texttt{Marker}, assurant ainsi la synchronisation entre le modèle et la vue via le patron Observateur.
 
 \newpage
 
@@ -571,313 +190,35 @@ Ce design place la classe \texttt{Ram} comme un gestionnaire central, passif et 
 % Section 4 : Architecture du projet
 \section{Architecture du projet}
 
-Cette section présente l'architecture complète de notre projet CoreWar, structurée autour du patron MVC (Modèle–Vue–Contrôleur). Elle s'appuie sur les diagrammes UML réalisés pour illustrer les composants clés et les relations entre les différentes couches.
-
-\subsection{Modèle : logiques internes de la simulation}
-
-Le modèle regroupe les éléments représentant l'état du système (instructions, mémoire, guerriers, génétique).
-
-\subsubsection*{Instructions et opérandes (RedCode)}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.65\textwidth]{images/AbstractOperand.png}
-    \caption{Hiérarchie des opérandes du langage RedCode}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{images/instruction.png}
-    \caption{Hiérarchie des instructions RedCode}
-\end{figure}
-
-Les instructions sont des entités polymorphes héritant d'une classe abstraite \texttt{AbstractInstruction}. Chaque instruction dispose de deux opérandes (A et B), qui eux-mêmes dérivent de \texttt{AbstractOperand}, selon leur mode d’adressage (immédiat, direct, indirect, pré-décrémenté).
-
-\textbf{Avantages} :
-\begin{itemize}
-    \item Polymorphisme permettant une exécution dynamique.
-    \item Respect du principe \textit{Open/Closed}.
-    \item Encapsulation claire du comportement par instruction.
-\end{itemize}
-
-\subsubsection*{Mémoire circulaire et cellules RAM}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.95\textwidth]{images/Ram.png}
-    \caption{Architecture mémoire – RAM, cellules, instructions et marqueurs}
-\end{figure}
-
-La mémoire \texttt{Ram} est un tableau circulaire de cellules (\texttt{Cell}), chacune contenant une instruction et un marqueur (\texttt{Marker}) traçant les actions effectuées. Chaque modification appelle la méthode \texttt{ModeleMisAJour()} qui informe la Vue via le patron Observateur (\texttt{Ecoutable} \(\rightarrow\) \texttt{Ecouteur}).
-
-\subsubsection*{Guerriers et files d’exécution (FIFO)}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{images/warrior.png}
-    \caption{Structure d’un guerrier et de sa file d’exécution FIFO}
-\end{figure}
-
-Chaque guerrier est un programme RedCode autonome qui exécute ses instructions tour par tour depuis une file FIFO (\texttt{Fifo}). Cette file est observable graphiquement (\texttt{Ecoutable}). Lorsqu’un guerrier perd tous ses processus actifs, il est éliminé.
-
-\\subsubsection*{Évolution génétique}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.78\textwidth]{images/genetic.png}
-    \caption{Architecture du module génétique pour la génération évolutive de guerriers}
-\end{figure}
-
-Le module \texttt{genetic} repose sur la classe centrale \texttt{GeneticEvolver.java}, qui implémente l’algorithme génétique. Ce dernier applique successivement des phases de sélection, croisement et mutation afin de produire une nouvelle génération de guerriers.
-
-Une fois l’évolution appliquée, une instance de \texttt{Generation} est créée, contenant l’ensemble des nouveaux guerriers générés. Ceux-ci sont ensuite injectés dans la mémoire pour être évalués lors d’un tournoi automatique.
-
-Le système est totalement autonome du reste de la simulation classique, mais reste connecté à la vue via l’interface \texttt{Ecoutable}, permettant un affichage en temps réel de l’évolution.
-
 
 
 \subsection{Contrôleur : orchestration de la simulation}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.82\textwidth]{images/Vm.png}
-    \caption{Architecture de la machine virtuelle MARS et des composants de contrôle}
-\end{figure}
-
-La classe \texttt{Mars} orchestre la simulation en interagissant avec la mémoire, les guerriers et le parsing RedCode. \texttt{ControlUnit} applique la logique de round-robin. \texttt{Interpretor} convertit les fichiers RedCode en objets exécutables. Le parsing est enrichi par \texttt{MathParser}.
-
-\textbf{Forces} :
-\begin{itemize}
-    \item Mémoire circulaire robuste.
-    \item Modularité : contrôle, parsing et évolution bien séparés.
-    \item Préparation à une interface graphique ou console.
-\end{itemize}
-
 \subsection{Vue : interface graphique réactive}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.82\textwidth]{images/VueMars.png}
-    \caption{Diagramme UML de la classe VueMars, point d’entrée graphique du simulateur}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.82\textwidth]{images/sidePanel.png}
-    \caption{Diagramme UML du panneau latéral dédié à l’évolution des guerriers}
-\end{figure}
-
-La vue suit le patron \textbf{Observer}. \texttt{VueMars} centralise les panneaux : \texttt{MainPanel}, \texttt{SidePanel}, \texttt{ButtonsPanel}, \texttt{ProgrammsPanel}. Ces derniers implémentent \texttt{Ecouteur}, et sont informés via les appels à \texttt{ModeleMisAJour()} depuis le modèle.
 
 \subsubsection*{Communication modèle \(\leftrightarrow\) vue}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.55\textwidth]{images/"ecouteur ecoutable.png"}
-    \caption{Diagramme UML du couple Observer : Ecoutable \(\leftrightarrow\) Ecouteur}
-\end{figure}
-
-Les vues s'abonnent via \texttt{ajouterEcouteur()}, et réagissent aux modifications par \texttt{modeleMisAJour()}. Ce mécanisme garantit la synchronisation en temps réel.
-
-\vspace{0.4cm}
-
-
-\subsection{Synthèse : une architecture MVC évolutive}
-
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}[
-        font=\footnotesize,
-        node distance=2.0cm and 2.0cm,
-        class/.style={draw, rounded corners, minimum width=3.2cm, minimum height=1.2cm, align=center, fill=blue!8},
-        control/.style={draw, rounded corners, minimum width=3.4cm, minimum height=1.4cm, align=center, fill=orange!10},
-        model/.style={draw, rounded corners, minimum width=3.4cm, minimum height=1.4cm, align=center, fill=green!10},
-        vue/.style={draw, rounded corners, minimum width=3.4cm, minimum height=1.4cm, align=center, fill=purple!10},
-        arrow/.style={->, thick}
-    ]
-
-    % Contrôleur
-    \node[control] (interpretor) {\textbf{Interpretor.java} \\ (assembleur RedCode)};
-    \node[control, below=of interpretor] (controlunit) {\textbf{ControlUnit.java} \\ (orchestration de la partie)};
-    \node[control, below=of controlunit] (mars) {\textbf{Mars.java} \\ (moteur MARS global)};
-
-    % Modèle
-    \node[model, right=5.5cm of interpretor] (instruction) {\textbf{AbstractInstruction} \\ + sous-classes RedCode};
-    \node[model, below=of instruction] (warrior) {\textbf{Warrior} \\ (file d'exécution)};
-    \node[model, below=of warrior] (ram) {\textbf{Ram} \\ (mémoire circulaire)};
-    \node[model, below=of ram] (cell) {\textbf{Cell} + Marker};
-
-    % Vue
-    \node[vue, below=of cell, yshift=-0.8cm] (vue) {\textbf{RamPanel / MainPanel} \\ via \texttt{Ecouteur}};
-
-    % Flèches
-    \draw[arrow] (interpretor) -- node[above] {\scriptsize génère des instructions} (instruction);
-    \draw[arrow] (controlunit) -- node[above] {\scriptsize pilote les guerriers} (warrior);
-    \draw[arrow] (controlunit) -- node[left] {\scriptsize appel lecture/écriture} (ram);
-    \draw[arrow] (mars) -- (controlunit);
-
-    \draw[arrow] (ram) -- (cell);
-    \draw[arrow, dashed] (cell) -- (vue) node[midway, right] {\scriptsize notifie via \texttt{Ecoutable}};
-    \draw[arrow, dashed] (warrior) -- (ram);
-
-    \end{tikzpicture}
-    \caption{Interactions entre les classes clés du simulateur CoreWar}
-\end{figure}
-
-
-\textbf{Résumé des responsabilités} :
-\begin{itemize}
-    \item \textbf{Modèle} : RAM, instructions, opérandes, guerriers, évolution.
-    \item \textbf{Contrôleur} : parsing RedCode, exécution, gestion du match.
-    \item \textbf{Vue} : affichage interactif, configuration de l’évolution.
-\end{itemize}
-
-\textbf{Atouts de l’architecture} :
-\begin{itemize}
-    \item Haute modularité (MVC).
-    \item Simulation réaliste (wrap-around, exécution concurrente).
-    \item Intégration naturelle d’un moteur d’évolution.
-    \item Synchronisation modèle/vue via Observer.
-\end{itemize}
-
-Cette architecture constitue un socle solide pour l’évolution future du projet, l’ajout de fonctionnalités (moteur IA, nouvelles instructions) ou une portabilité vers une interface web.
-
-\newpage   
+\subsection{Synthèse : une architecture MV-C }
 
 \section{expérimentations et usages}
 
-Cette partie illustre le fonctionnement concret du simulateur \textbf{CoreWar} à travers plusieurs cas d'utilisation. Elle s'appuie sur des captures d’écran et commente les actions de l’utilisateur, les boutons disponibles ainsi que les résultats observables.
+\subsection{Cas d’utilisation : }
 
-\subsection{Cas d’utilisation : interface vierge avant simulation}
+\subsection{Cas d’utilisation : }
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{rapport/images/start.png}
-    \caption{Interface vide avant lancement d’une simulation}
-\end{figure}
-
-Vue de départ du simulateur, mémoire totalement vide.
-
-\textbf{Boutons disponibles} :
-\begin{itemize}
-    \item \texttt{Start} : exécute une simulation manuelle.
-    \item \texttt{Genetic} : démarre une évolution automatique.
-\end{itemize}
-
-\textbf{Observation :} Interface prête pour injecter des programmes RedCode ou expérimenter un algorithme évolutionnaire.
-
-\subsection{Cas d’utilisation : chargement manuel des programmes RedCode}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{rapport/images/programme.png}
-    \caption{Interface d’importation manuelle des fichiers RedCode}
-\end{figure}
-
-Cette interface permet à l’utilisateur de charger un ou plusieurs programmes RedCode depuis des fichiers texte. Chaque zone représente un programme distinct, avec possibilité de visualisation et modification directe.
-
-\textbf{Boutons} :
-\begin{itemize}
-    \item \texttt{Ajouter un fichier texte} : charge un fichier RedCode local dans un éditeur intégré.
-    \item \texttt{Delete} : supprime le programme sélectionné de la liste avant exécution.
-    \item \texttt{Ajouter un programme} (au centre) : permet d’ajouter un nouveau guerrier dans la mémoire RAM.
-\end{itemize}
-
-\textbf{Utilité :} Cette étape est essentielle pour les utilisateurs souhaitant tester des programmes personnalisés, analyser leurs comportements ou les comparer à d'autres guerriers dans l’arène.
-
-\newpage
-
-\subsection{Cas d’utilisation : chargement et exécution d’un programme RedCode}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.4\textwidth]{rapport/images/error.png}
-    \caption{Erreur lors du chargement d’un programme RedCode invalide}
-\end{figure}
-
-Lorsque le code contient des erreurs (ex. : label inexistant ou opérande invalide), une fenêtre explicite s’affiche. Ce mécanisme repose sur la classe \texttt{CodeParsingException} dans le contrôleur.
-
-\begin{itemize}
-    \item \textbf{Utilité :} Aide au débogage pour l’utilisateur.
-    \item \textbf{Temps de détection :} Instantané.
-\end{itemize}
+\subsection{Cas d’utilisation : }
 
 
-\subsection{Cas d’utilisation : visualisation dynamique des instructions}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{rapport/images/instructions.png}
-    \caption{Affichage des guerriers et des dernières instructions exécutées}
-\end{figure}
-
-Le panneau de droite affiche en temps réel les dernières instructions utilisées par chaque guerrier actif (ex : \texttt{MOV @3, 192}).
-
-\textbf{Boutons supplémentaires} :
-\begin{itemize}
-    \item Boîte de saisie : contrôle la vitesse d’exécution (ex : 10 cycles/sec).
-\end{itemize}
-
-\textbf{Utilité :} Utile pour le débogage ou l’analyse comportementale des guerriers.
+\subsection{Cas d’utilisation : }
 
 
-\subsection{Cas d’utilisation : exécution de plusieurs générations de guerriers}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{rapport/images/genetics.png}
-    \caption{Affichage visuel de la mémoire RAM après génération de plusieurs guerriers}
-\end{figure}
-
-Cette image montre la mémoire RAM remplie de guerriers colorés issus d’une évolution génétique.
-
-\textbf{Boutons} :
-\begin{itemize}
-    \item \texttt{Resume} : relance l’exécution.
-    \item \texttt{Pause} : interrompt la simulation.
-    \item \texttt{Reset} (rouge) : redémarre entièrement la RAM.
-\end{itemize}
-
-\textbf{Avantages} :
-\begin{itemize}
-    \item Visualisation directe de la compétition entre générations.
-    \item Synchronisation fluide entre RAM et scores.
-\end{itemize}
-
-\vspace{0.5cm}
+\subsection{Cas d’utilisation : }
 
 
-Également lorsqu'on clique sur les boutons positionnés à droite de l'image à savoir : 
-\begin{itemize}
-    \item génération 0
-    \item génération 1
-    \item génération 2
-    \end{itemize}
-cela nous redirige vers la figure suivante. (Cf. Figure 19)
-
-
-\subsection{Cas d’utilisation : évaluation de la performance génétique}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{rapport/images/score.png}
-    \caption{Classement des guerriers d’une génération par score}
-\end{figure}
-
-Chaque guerrier est évalué selon ses performances en combat. Les scores sont affichés dynamiquement dans l’ordre décroissant, ce qui permet à l’utilisateur de visualiser l'efficacité relative des différentes stratégies produites par l’algorithme génétique.
+\subsection{Cas d’utilisation : }
 
 \subsection{Performances} 
-\begin{itemize}
-    \item \textbf{Initialisation de la RAM}~: se fait en $O(n)$ où $n$ est le nombre de cellules mémoire, afin d’insérer les programmes guerriers.
-    \item \textbf{Exécution des instructions}~:
-    \begin{itemize}
-        \item La majorité des instructions (\texttt{MOV}, \texttt{ADD}, \texttt{JMP}, etc.) s’exécutent en temps constant : $O(1)$.
-        \item Seule l’instruction \texttt{DAT} (terminaison du processus) peut nécessiter un balayage global de la RAM, avec une complexité potentiellement en $O(n)$.
-    \end{itemize}
-    \item \textbf{Mise à jour graphique}~: grâce au modèle MVC, seules les cellules modifiées notifient la vue, permettant des mises à jour efficaces en $O(1)$.
-\end{itemize}
-
-\textbf{Observation}~: le classement par score offre un retour immédiat sur les effets de la sélection, du croisement et des mutations dans le moteur évolutionnaire. Cela permet de suivre en temps réel l’émergence de stratégies gagnantes.
 
 
 \newpage
@@ -887,40 +228,7 @@ Chaque guerrier est évalué selon ses performances en combat. Les scores sont a
 
 \subsection*{Récapitulatif des fonctionnalités principales}
 
-Le projet \textbf{CoreWar} que nous avons développé propose une plateforme complète et interactive de simulation de combats entre programmes RedCode. Voici les fonctionnalités majeures que nous avons intégrées :
-
-\begin{itemize}
-    \item \textbf{Machine virtuelle MARS}~: exécution fidèle des instructions RedCode dans une mémoire circulaire, avec gestion des processus et du wrap-around.
-    \item \textbf{Parsing robuste du RedCode}~: détection d’erreurs syntaxiques ou sémantiques avec retours visuels explicites à l’utilisateur.
-    \item \textbf{Interface graphique modulaire}~: visualisation temps réel des instructions, de la RAM, des files d’exécution et des scores.
-    \item \textbf{Architecture MVC}~: séparation claire entre Modèle, Vue et Contrôleur pour une meilleure lisibilité et maintenabilité du code.
-    \item \textbf{Algorithme génétique}~: génération automatique de guerriers via croisement, mutation, et sélection selon la performance.
-    \item \textbf{Mode expérimental interactif}~: lancement manuel ou automatique de simulations avec contrôle du rythme et affichage des générations.
-\end{itemize}
-
 \subsection*{Propositions d’améliorations}
-
-Plusieurs axes d’amélioration peuvent être envisagés pour enrichir encore le projet :
-
-\begin{itemize}
-    \item \textbf{Amélioration du moteur génétique} : actuellement, la génération initiale débute avec un maximum de 10 programmes définis manuellement par l’utilisateur. Le moteur génère ensuite aléatoirement 100 guerriers par génération. À l’avenir, il serait pertinent d’augmenter cette capacité à 1000 guerriers par génération, avec la possibilité de démarrer dès la première génération avec 1000 guerriers préconfigurés. Cela améliorerait la diversité initiale et la qualité de l’évolution.
-    
-
-    \item \textbf{Multithreading} : parallélisation de l’exécution des guerriers pour accélérer les combats et supporter des volumes importants de générations.
-
-    \item \textbf{Support du standard ICWS-94} : extension du langage RedCode vers la norme ICWS-94 pour proposer davantage d'instructions et une richesse tactique accrue.
-
-    \item \textbf{Historique et statistiques} : mise en place d’un tableau de bord retraçant l’évolution des performances des guerriers au fil des générations, avec graphes, moyennes et tendances.
-
-    \item \textbf{Mode tournoi} : ajout d’un système de matchs automatisés entre guerriers, avec classement, règles de compétition et élimination directe.
-
-\end{itemize}
-
-\vspace{0.3cm}
-
-\noindent En somme, ce projet nous a permis de mettre en œuvre une architecture logicielle avancée, de concevoir un simulateur stable et évolutif, et d’explorer des concepts d’intelligence artificielle à travers les algorithmes génétiques. Le simulateur \textbf{CoreWar} dépasse aujourd’hui le simple cadre d’un outil pédagogique : il constitue une véritable plateforme expérimentale pour les passionnés d’algorithmique, de simulation et d’optimisation..
-
-
 
 
 \newpage   
@@ -928,29 +236,6 @@ Plusieurs axes d’amélioration peuvent être envisagés pour enrichir encore l
 
 % Bibliographie
 \begin{thebibliography}{9}
-
-\bibitem{corewar_spec}
-ICWS-88 CoreWar Specification. \\
-\url{https://corewar.co.uk/icws88.htm}
-
-\vspace{0."cm}
-
-
-\bibitem{redcode_tutorial}
-Mark Durham. \textit{An Introduction to Redcode and Core War}. \\
-\url{http://vyznev.net/corewar/guide.html}
-
-\vspace{0.3cm}
-
-
-\bibitem{ai_genetics}
-David E. Goldberg. \textit{Genetic Algorithms in Search, Optimization and Machine Learning}. Addison-Wesley, 1989.
-
-\vspace{0.3cm}
-
-
-\bibitem{mvc_architecture}
-Krasner, G. E., & Pope, S. T. (1988). \textit{A Cookbook for Using the Model-View-Controller User Interface Paradigm in Smalltalk-80}. Journal of Object-Oriented Programming.
 
 \end{thebibliography}
 
