@@ -1,28 +1,42 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package blackjack;
-import blackjack.modele.jeu.Blackjack;
-import blackjack.modele.joueurs.JoueurBlackjackH;
-import blackjack.vue.JeuFrame;
-import blackjack.vue.VueBlackjack;
-import blackjack.controleur.ControleurJeu;
 
+import blackjack.vue.AppWindows;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 /**
- *
- * @author siaghi231
+ * Classe principale de l'application Blackjack.
+ * Point d'entrée du programme.
  */
 public class MainClass {
     
-    public static void main(String[] args)
-    {
-        JoueurBlackjackH joueur = new JoueurBlackjackH("Massi", 1000);
-        Blackjack bj = new Blackjack(joueur);
-        JeuFrame fenetreJeu = new JeuFrame(bj);
-        ControleurJeu cj =  new ControleurJeu(bj,fenetreJeu);
-        bj.demarrer();
-        fenetreJeu.setControleur(cj);
+    /**
+     * Point d'entrée de l'application
+     * @param args arguments de ligne de commande (non utilisés)
+     */
+    public static void main(String[] args) {
+        // Configurer le Look and Feel du système
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            System.err.println("Impossible de définir le Look and Feel : " + e.getMessage());
+            // Continuer avec le Look and Feel par défaut
+        }
+        
+        // Lancer l'application dans le thread Swing (EDT)
+        SwingUtilities.invokeLater(() -> {
+            try {
+                AppWindows application = new AppWindows();
+                application.setVisible(true);
+                
+                System.out.println("=================================");
+                System.out.println("   BLACKJACK - Application lancée");
+                System.out.println("=================================");
+                
+            } catch (Exception e) {
+                System.err.println("Erreur lors du lancement de l'application : " + e.getMessage());
+                e.printStackTrace();
+            }
+        });
     }
 }

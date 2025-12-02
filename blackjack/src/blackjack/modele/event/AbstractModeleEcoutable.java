@@ -49,7 +49,7 @@ public abstract class AbstractModeleEcoutable implements ModeleEcoutable {
     /**
      * Notifie tous les écouteurs enregistrés que le modèle a changé.
      */
-    protected void fireChangement() {
+    public void fireChangement() {
         for (EcouteurModele e : ecouteurs) {
             e.modeleMiseAJour(this);
         }

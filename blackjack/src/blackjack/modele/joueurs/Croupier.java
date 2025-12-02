@@ -1,67 +1,115 @@
 package blackjack.modele.joueurs;
 
-import blackjack.modele.util.RegleDeJeu;
 import modele.cartes.Carte;
 import modele.cartes.Paquet;
 
-public class Croupier implements JoueurBlackjack {
-
-    private String nom;
-    private int score;
-    private Paquet main;
-    private boolean aFini;
-
-    public Croupier() {
-        this.nom = "Le Croupier";
-        this.main = new Paquet();
-        this.score = 0;
-        this.aFini = false;
-    }
-
-    @Override
-    public boolean getFini() {
-        return this.aFini;
-    }
-
-    @Override
-    public String getNom() {
-        return this.nom;
-    }
-
-    @Override
-    public Paquet getMain() {
-        return this.main;
-    }
-
-    @Override
-    public void recevoirCarte(Carte c) {
-        main.ajouter(c);
-    }
-
-    public int getScore() {
-        return this.score;
-    }
-    public void setScore(int sc){
+public class Croupier {
     
-        this.score = sc;
+    private static final int SCORE_MINIMUM = 17;
+    private Main main;
+    private boolean revelerDeuxiemeCarte;
+    public Croupier() {
+        this.revelerDeuxiemeCarte = false;
+        this.main = new Main();
     }
-    public boolean aDepasse21() {
-        if (this.score > 21) {
-            aFini = true;
-            return true;
-        }
-        return false;
+    
+    public void ajouterCarte(Carte carte) {
+        main.ajouterCarte(carte);
     }
-
-    public void tirerCarte(Paquet pioche) {
-        while(this.score < 17){
+    
+    /**
+     * Le croupier joue selon les règles standard : il tire jusqu'à atteindre 17 ou plus.
+     * @param pioche le paquet depuis lequel tirer les cartes
+     */
+    public void jouer(Paquet pioche) {
+        while (getScore() < SCORE_MINIMUM) {
+            if (pioche.estVide()) break;
+            
             Carte carte = pioche.getPaquet().get(0);
-            this.recevoirCarte(carte);
+            ajouterCarte(carte);
             pioche.retirer(carte);
-            int scoreCroupier = RegleDeJeu.calculerScore(this.getMain());
-            this.setScore(scoreCroupier);
         }
-        aFini = true;
     }
-
+    
+    public void afficherDeuxiemeCarte() {
+        this.revelerDeuxiemeCarte = true;
+    }
+    public void  cacherDeuxiemeCarte(){
+        this.revelerDeuxiemeCarte = false;
+    }
+    
+    public boolean getRevelerDeuxiemeCarte(){
+        return this.revelerDeuxiemeCarte;
+    }
+   
+    public Carte getCarteVisible() {
+        return main.getPaquetMain().getPaquet().isEmpty() ? null : main.getPaquetMain().getPaquet().get(0);
+    }
+    
+    /**
+     * Retourne le score visible du croupier (uniquement la première carte).
+     */
+    public int getScoreVisible() {
+        Carte carteVisible = getCarteVisible();
+        return carteVisible != null ? calculerValeurCarte(carteVisible) : 0;
+    }
+    
+    private int calculerValeurCarte(Carte carte) {
+        switch (carte.hauteur) {
+            case "As":
+                return 11;
+            case "Valet":
+            case "Dame":
+            case "Roi":
+                return 10;
+            default:
+                try {
+                    return Integer.parseInt(carte.hauteur);
+                } catch (NumberFormatException e) {
+                    return 0;
+                }
+        }
+    }
+    
+    public boolean aBlackjack() {
+        return main.estBlackjack();
+    }
+    
+    public boolean estBuste() {
+        return main.estBuste();
+    }
+    
+    public void reinitialiserMain() {
+        main.reinitialiser();
+    }
+    
+    public int getScore() {
+        return main.getScore();
+    }
+    
+    public Main getMain() {
+        return main;
+    }
+    
+    /**
+     * Retourne le paquet visible (pour l'affichage avec cartes cachées)
+     * @return 
+     */
+    public Paquet getPaquetVisible() {
+        Paquet paquetVisible = new Paquet();
+        if (!main.getPaquetMain().getPaquet().isEmpty()) {
+            paquetVisible.ajouter(main.getPaquetMain().getPaquet().get(0));
+        }
+        return paquetVisible;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Croupier [");
+        sb.append("Score: ").append(main.getScore());
+        if (aBlackjack()) sb.append(", BLACKJACK!");
+        if (estBuste()) sb.append(", BRÛLÉ!");
+        sb.append("]");
+        return sb.toString();
+    }
 }
