@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.15)  15 NOV 2025 18:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.15)  2 DEC 2025 23:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -811,7 +811,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.58 \newpage
+l.56 \newpage
               [1]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -831,6 +831,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [3]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+20.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -881,27 +886,28 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 4B0A2450DE70B01209CF592A2DCC475D;4579.
+(rerunfilecheck)             Checksum: DAC9615A504688870AC80F3BF2715C45;5932.
  ) 
 Here is how much of TeX's memory you used:
- 24659 strings out of 474222
- 452769 string characters out of 5748732
- 1936975 words of memory out of 5000000
- 46487 multiletter control sequences out of 15000+600000
- 570327 words of font info for 64 fonts, out of 8000000 for 9000
+ 24705 strings out of 474222
+ 453811 string characters out of 5748732
+ 1946975 words of memory out of 5000000
+ 46518 multiletter control sequences out of 15000+600000
+ 570640 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,11n,87p,428b,830s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,12n,87p,428b,830s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
 r/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/
 type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-supe
 r/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr
 /share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/t
 ype1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super
-/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb>
-Output written on rapport.pdf (9 pages, 167399 bytes).
+/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/
+share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on rapport.pdf (9 pages, 204344 bytes).
 PDF statistics:
- 239 PDF objects out of 1000 (max. 8388607)
- 207 compressed objects within 3 object streams
- 41 named destinations out of 1000 (max. 500000)
- 213 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 281 PDF objects out of 1000 (max. 8388607)
+ 247 compressed objects within 3 object streams
+ 52 named destinations out of 1000 (max. 500000)
+ 261 words of extra memory for PDF output out of 10000 (max. 10000000)
 

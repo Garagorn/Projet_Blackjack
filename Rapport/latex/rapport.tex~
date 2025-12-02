@@ -67,6 +67,7 @@
 
 \subsection{Problématique et points clés}
 \begin{itemize}
+    \item \textbf{A MODIFIER}
     \item \textbf{Créer une interface utilisateur explicite et pédagogique}~: L'interface graphique devait à la fois représenter l’état de la mémoire, l’avancement de chaque guerrier, et permettre d’observer l’évolution du match en temps réel. Cela implique une gestion précise des événements et des notifications entre le modèle et la vue (via le pattern Observer).
 
     \item \textbf{Maintenir la modularité du code}~: Enfin, toute cette architecture devait rester claire, maintenable et évolutive. Le respect du modèle \textbf{MV-C}, ainsi qu’une séparation stricte des responsabilités, ont été déterminants pour conserver une bonne lisibilité du projet.
@@ -76,20 +77,21 @@
 
 \subsection{Présentation du plan du rapport}
 
-Ce rapport a pour objectif de retracer de manière claire et progressive le développement du projet \textbf{Blackjack}. Il est structuré en six sections, chacune correspondant à une phase essentielle du projet :
+Ce rapport a pour objectif de retracer de manière claire et progressive le développement du projet \textbf{Blackjack}. Il est structuré en septs sections, chacune correspondant à une phase essentielle du projet :
 
 \begin{itemize}
-    \item \textbf{Section 1 – Introduction} : pose le contexte du projet, ses objectifs pédagogiques et les motivations ayant guidé notre équipe.
+    \item \textbf{Section 1 – Introduction} : Pose le contexte du projet, ses objectifs pédagogiques et les motivations ayant guidé notre équipe.
     
     \item \textbf{Section 2 – Structuration du projet} : décrit les besoins fonctionnels et techniques, les fonctionnalités envisagées, ainsi que l’organisation du travail collaboratif.
-    
     \item \textbf{Section 3 – Éléments techniques} : détaille les algorithmes et structures de données au cœur de la simulation, notamment le moteur d’exécution, la mémoire circulaire, et les opérateurs génétiques.
-    
+    \textbf{A MODIFIER}
     \item \textbf{Section 4 – Architecture du projet} : propose une vue d’ensemble de l’architecture logicielle, articulée autour du patron MVC. Cette partie s’appuie sur des diagrammes UML pour illustrer les relations entre les différentes classes et modules.
     
-    \item \textbf{Section 5 – Expérimentations et usages} : illustre l’utilisation concrète du simulateur à travers des cas d’usage commentés et des captures d’écran, en soulignant les résultats observés.
+    \item \textbf{Section 5 – Tests du modele} : démontre les différents tests réalisés pour éprouver la robustesse des méthodes des modele de Cartes et de Blackjack.
     
-    \item \textbf{Section 6 – Conclusion} : dresse un bilan général du projet, récapitule les fonctionnalités implémentées et propose plusieurs axes d’amélioration pour la suite.
+    \item \textbf{Section 6 – Expérimentations et usages} : illustre l’utilisation concrète du simulateur à travers des cas d’usage commentés et des captures d’écran, en soulignant les résultats observés.
+    
+    \item \textbf{Section 7 – Conclusion} : dresse un bilan général du projet, récapitule les fonctionnalités implémentées et propose plusieurs axes d’amélioration pour la suite.
 \end{itemize}
 
 \newpage   
@@ -107,6 +109,50 @@ Ce rapport a pour objectif de retracer de manière claire et progressive le dév
 \subsection{Organisation du travail}
 
 Le travail a été réparti entre les trois membres du groupe de manière à valoriser les compétences de chacun :
+
+\vspace{0.5cm}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{|c|p{10cm}|}
+        \hline
+        \textbf{Membre} & \textbf{Responsabilités principales} \\
+        \hline
+        \textbf{Matthieu} & Implémentation du \texttt{modèle} :
+        \begin{itemize}
+            \item Conception de la logique modèle du Blackjack
+            \item Tests pour le modèle de Blackjack
+            \item UML des classes de  Blackjack
+            \item Aide au rapport
+
+
+        \end{itemize} \\
+        \hline
+        \textbf{Massinissa} & Développement de la \texttt{vue} :
+        \begin{itemize}
+            \item Interfaces graphiques (\texttt{Cartes}, \texttt{Blackjack}, etc.)
+            \item Modèle MVC Cartes \& Blackjack
+            \item Mise en place du Contrôleur Cartes
+            \item Mise en place du Contrôleur Blackjack
+            \item Mise en place du Modèle \& Vue Blackjack
+            \item Aide à l'uml Blackjack et au rapport
+
+        \end{itemize} \\
+        \hline
+        \textbf{Basile} & Conception du \texttt{contrôleur} :
+        \begin{itemize}
+            \item Conception du modèle de Cartes
+            \item Tests de Cartes
+            \item UML de Cartes et Blackjack
+            \item rédaction du rapport
+            \item Aide à la conception des tests Blackjack
+
+        \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Répartition des rôles au sein de l’équipe}
+\end{table}
 
 \vspace{0.5cm}
 
@@ -138,11 +184,11 @@ La planification et la progression du projet de Blackjack se sont organisées au
 \foreach \x/\label/\month in {
     0/Lancement/Septembre,
     2.2/Analyse du sujet/Septembre,
-    4.4/Architecture MVC/Octobre,
-    6.6/Implémentation du Modèle/Octobre,
-    8.8/Implémentation du Contrôleur/Octobre,
-    11/Interface graphique/Octobre,
-    15.4/Tests \& Rapport/Novembre
+    4.4/Architecture MVC Carte/Octobre,
+    6.6/Implémentation du Modèle Carte /Octobre,
+    8.8/Implémentation du Contrôleur Carte/Octobre,
+    12/Implémentation du Contrôleur Carte/Octobre,
+    15/Interface graphique/Octobre,
 } {
     \node[milestone] at (\x,0) {};
     \node[label] at (\x,-1.1) {\label};
@@ -155,9 +201,38 @@ La planification et la progression du projet de Blackjack se sont organisées au
 \end{figure}
 
 
-
 \vspace{0.5cm}
 
+\begin{figure}[H]
+\centering
+\makebox[\textwidth]{%
+\begin{tikzpicture}[
+    timeline/.style={draw, thick},
+    milestone/.style={circle, draw=black, fill=blue!20, minimum size=8pt, inner sep=2pt},
+    label/.style={font=\scriptsize, align=center, text width=2.2cm},
+    date/.style={font=\scriptsize, align=center, text width=2.2cm, color=gray}
+]
+
+% Ligne de base
+\draw[timeline] (0,0) -- (16,0);
+
+% Jalons avec texte
+\foreach \x/\label/\month in {
+    0/Implémentation du Modèle Blackjack/Novembre,
+    4/Implémentation du Contrôleur Blackjack/Novembre,
+    8/Implémentation des tests Cartes/Novembre,
+    12/Modifications du modèle et de la vue Blackjack/Novembre,
+    15.4/Tests Blackjack \& Rapport \& Vue bj /Decembre
+} {
+    \node[milestone] at (\x,0) {};
+    \node[label] at (\x,-1.1) {\label};
+    \node[date] at (\x,-2.0) {\month};
+}
+
+\end{tikzpicture}%
+}
+\caption{Frise chronologique des grandes étapes du projet }
+\end{figure}
 
 \newpage   
 
@@ -167,30 +242,19 @@ La planification et la progression du projet de Blackjack se sont organisées au
 
 \subsection{Structures de données utilisées}
 
-
-
-
-
-\subsection{Algorithmes notables}
-
-
-
-\subsubsection*{4. Évolution génétique multi-niveaux}
-
-
-\subsubsection*{6. Observer Pattern pour l'affichage}
-
+\subsubsection*{1. Observer Pattern }
+\subsubsection*{2. Strategy Pattern}
+\subsubsection*{3. Factory method}
+\subsubsection*{4. Adaptator Pattern}
 
 
 \newpage
 
 
-
-
 % Section 4 : Architecture du projet
 \section{Architecture du projet}
 
-
+\subsection{Architecture de Carte}
 
 \subsection{Contrôleur : orchestration de la simulation}
 
@@ -198,9 +262,26 @@ La planification et la progression du projet de Blackjack se sont organisées au
 
 \subsubsection*{Communication modèle \(\leftrightarrow\) vue}
 
-\subsection{Synthèse : une architecture MV-C }
+\subsection{Synthèse : une architecture M-V-C }
 
-\section{expérimentations et usages}
+\subsection{Architecture de Blackjack}
+
+\subsection{Contrôleur : orchestration de la simulation}
+
+\subsection{Vue : interface graphique réactive}
+
+\subsubsection*{Communication modèle \(\leftrightarrow\) vue}
+
+\subsection{Synthèse : une architecture M-V-C }
+
+
+% 5. Tests du modele
+\section{Tests du modele}
+\subsection{Tests du modele Carte}
+\subsection{Tests du modele Blackjack}
+
+% 6. Cas d'utilisation
+\section{Expérimentations et usages}
 
 \subsection{Cas d’utilisation : }
 
@@ -208,36 +289,22 @@ La planification et la progression du projet de Blackjack se sont organisées au
 
 \subsection{Cas d’utilisation : }
 
-
+\subsection{Cas d’utilisation : }
 
 \subsection{Cas d’utilisation : }
 
-
 \subsection{Cas d’utilisation : }
 
-
-\subsection{Cas d’utilisation : }
-
-\subsection{Performances} 
 
 
 \newpage
 
-% 6. Conclusion
+% 7. Conclusion
 \section{Conclusion}
 
 \subsection*{Récapitulatif des fonctionnalités principales}
 
 \subsection*{Propositions d’améliorations}
-
-
-\newpage   
-
-
-% Bibliographie
-\begin{thebibliography}{9}
-
-\end{thebibliography}
 
 
 \end{document}
