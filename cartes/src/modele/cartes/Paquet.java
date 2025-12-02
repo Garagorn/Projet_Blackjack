@@ -125,6 +125,7 @@ public class Paquet extends AbstractModeleEcoutable {
         fireChangement();
     }
     
+    
         
     @Override
     /**
