@@ -3,57 +3,88 @@ package blackjack.vue;
 import blackjack.controleur.ControleurBlackjack;
 import blackjack.modele.event.EcouteurModele;
 import blackjack.modele.jeu.ModeleBlackjack;
-import blackjack.modele.joueurs.Croupier;
 import blackjack.modele.joueurs.Joueur;
-import blackjack.modele.joueurs.JoueurIA;
 import blackjack.modele.util.EtatPartie;
-import blackjack.vue.adapter.AdaptateurJoueurTable;
+import blackjack.vue.adapter.ModeleTableJoueurs;
+import blackjack.vue.composantscontrol.*;
+import blackjack.vue.composantstable.*;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
 /**
- * Vue principale du jeu Blackjack (JPanel).
- * Intègre tous les sous-panneaux et observe le modèle pour se mettre à jour.
+ * Classe représentant la vue du jeu de Blackjack.
+ * Elle est responsable de l'affichage de l'état du jeu, y compris la table de jeu, 
+ * les informations des joueurs et les contrôles de mise et d'action. 
+ * Elle implémente l'interface {@link EcouteurModele} pour recevoir les mises à jour du modèle et actualiser l'affichage.
  */
 public class VueBlackjack extends JPanel implements EcouteurModele {
     
+    /** Modèle du jeu contenant la logique du jeu */
     private ModeleBlackjack modele;
-    private ControleurBlackjack controleur;
-    private AdaptateurJoueurTable adaptateur;
     
-    // Composants visuels
+    /** Contrôleur du jeu permettant de gérer les actions de l'utilisateur */
+    private ControleurBlackjack controleur;
+    
+    /** Adaptateur pour gérer l'affichage des informations des joueurs dans un tableau */
+    private ModeleTableJoueurs adaptateur;
+    
+    /** 
+     * Composants visuels de la vue */
+    /**
+     *Affiche la table de jeu
+     */
     private PanneauTable panneauTable;
-    private PanneauControles panneauControles;
-    private PanneauInfosJoueur panneauInfos;
-    private JTable tableJoueurs;
-    private JScrollPane scrollPaneTable;
+  
+    /**
+     *Affiche les contrôles pour les mises et actions
+     */
+    private PanneauControles panneauControles; 
     
     /**
-     * Constructeur de la vue Blackjack
+     *Affiche les informations sur le joueur actif
+     */ 
+    private PanneauInfosJoueur panneauInfos;
+    
+    /**
+     *Tableau des joueurs
+     */
+    private JTable tableJoueurs; 
+    
+    /**
+     *Scroll pane pour la liste des joueurs
+     */
+    private JScrollPane scrollPaneTable;                 
+    
+    /**
+     * Constructeur de la vue du jeu de Blackjack.
+     * Initialise les composants visuels et enregistre l'écouteur pour mettre à jour la vue lorsque le modèle change.
+     * 
+     * @param modele Le modèle contenant la logique du jeu
      */
     public VueBlackjack(ModeleBlackjack modele) {
         this.modele = modele;
         initialiserComposants();
-        this.adaptateur = new AdaptateurJoueurTable(this.modele);
-        tableJoueurs.setModel(adaptateur.getModeleTable());
+        this.adaptateur = new ModeleTableJoueurs(this.modele);
+        tableJoueurs.setModel(adaptateur);
         
+        // Ajout de l'écouteur pour recevoir les mises à jour du modèle
         modele.ajouterEcouteur(this);
-       
     }
     
     /**
-     * Initialise les composants de la vue
+     * Initialise les composants visuels de la vue.
+     * Crée les différents panneaux pour l'affichage de la table, les informations des joueurs et les contrôles de jeu.
      */
     private void initialiserComposants() {
         setLayout(new BorderLayout(10, 10));
         setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         
-        // Panneau central : la table de jeu
+        // Panneau principal affichant la table de jeu
         panneauTable = new PanneauTable(this.modele);
         add(panneauTable, BorderLayout.CENTER);
         
-        // Panneau de droite : contrôles + infos
+        // Panneau de droite contenant les informations sur le joueur et les contrôles
         JPanel panneauDroit = new JPanel(new BorderLayout(5, 5));
         
         panneauInfos = new PanneauInfosJoueur();
@@ -64,13 +95,15 @@ public class VueBlackjack extends JPanel implements EcouteurModele {
         
         add(panneauDroit, BorderLayout.EAST);
         
-        // Panneau du bas : table des joueurs
+        // Panneau du bas affichant la liste des joueurs
         JPanel panneauBas = creerPanneauTableJoueurs();
         add(panneauBas, BorderLayout.SOUTH);
     }
     
     /**
-     * Crée le panneau contenant la JTable des joueurs
+     * Crée le panneau affichant la liste des joueurs sous forme de tableau.
+     * 
+     * @return Le panneau contenant la liste des joueurs
      */
     private JPanel creerPanneauTableJoueurs() {
         JPanel panneau = new JPanel(new BorderLayout());
@@ -87,10 +120,10 @@ public class VueBlackjack extends JPanel implements EcouteurModele {
         return panneau;
     }
     
-    
     /**
-     * Définit le contrôleur
-     * @param controleur le contrôleur
+     * Associe un contrôleur à la vue.
+     * 
+     * @param controleur Le contrôleur à associer
      */
     public void setControleur(ControleurBlackjack controleur) {
         this.controleur = controleur;
@@ -98,7 +131,8 @@ public class VueBlackjack extends JPanel implements EcouteurModele {
     }
     
     /**
-     * Actualise l'affichage complet de la vue
+     * Actualise l'affichage de la vue en fonction de l'état actuel du jeu.
+     * Cette méthode est appelée dans modeleMiseAjour() à chaque fois que le modèle change.
      */
     public void actualiserAffichage() {
         if (modele == null) {
@@ -107,15 +141,10 @@ public class VueBlackjack extends JPanel implements EcouteurModele {
         
         EtatPartie etat = modele.getEtatPartie();
         Joueur joueurActif = modele.getJoueurActif();
-        Croupier croupier = modele.getCroupier();
-        
-        // Actualiser la table de jeu
         panneauTable.actualiser();
-        
-        // Actualiser les infos du joueur actif
         panneauInfos.afficherInfos(joueurActif);
         
-        // Actualiser les contrôles selon l'état
+        // Mise à jour de l'affichage en fonction de l'état de la partie
         switch (etat) {
             case EN_ATTENTE:
                 panneauControles.activerMise(true);
@@ -156,65 +185,64 @@ public class VueBlackjack extends JPanel implements EcouteurModele {
                 afficherResultats();
                 break;
         }
-        
-        // Actualiser la JTable des joueurs
-        adaptateur.rafraichirAffichage();
+       
     }
     
     /**
-     * Affiche les résultats de la partie
+     * Affiche les résultats de la partie pour chaque joueur.
+     * Cette méthode affiche un message pour chaque joueur en indiquant s'il a gagné, perdu ou si la partie est une égalité.
      */
     private void afficherResultats() {
         ArrayList<String> resultats;
         resultats = new ArrayList<>();
 
+        // Calcul des résultats pour chaque joueur
         for (Joueur joueur : modele.getJoueurs()) {
-            int bilan = joueur.getBilanSession();
+            int bilan = joueur.getBilanPartie();
             String message;
 
             if (bilan > 0) {
-                message = joueur.getNom() + " gagne " + bilan + " €!";
+                message = joueur.getNom() + " gagne " + bilan + " € dans cette partie";
             } else if (bilan < 0) {
-                message = joueur.getNom() + " perd " + Math.abs(bilan) + " €";
+                message = joueur.getNom() + " perd " + Math.abs(bilan) + " € dans cette partie";
             } else {
-                message = joueur.getNom() + " égalité!";
+                message = joueur.getNom() + " n'a rien perdu dans cette partie";
             }
 
-            resultats.add(message); // Ajouter le résultat à
+            resultats.add(message);
         }
 
-        // Créer un Timer pour afficher les résultats un par un avec un délai
-        final int[] index = {0};  // Utilisation d'un tableau pour une variable mutable dans le Timer
-
-        Timer timer = new Timer(2000, e -> {  // Délai de 1500 ms (1.5 secondes)
+        // Affichage des résultats avec un délai entre chaque message
+        final int[] index = {0};   
+        Timer timer = new Timer(2000, e -> {  
             if (index[0] < resultats.size()) {
-                panneauInfos.afficherMessage(resultats.get(index[0]));  // Afficher le message du joueur
-                index[0]++;  // Passer au joueur suivant
+                panneauInfos.afficherMessage(resultats.get(index[0]));  
+                index[0]++;  
             } else {
-                ((Timer) e.getSource()).stop();  // Arrêter le Timer une fois que tous les résultats sont affichés
+                ((Timer) e.getSource()).stop();  
             }
         });
-
         timer.setRepeats(true);
         timer.start();
     }
 
-
-    
+    /**
+     * Affiche un message dans la vue (généralement dans le panneau d'informations).
+     * 
+     * @param message Le message à afficher
+     */
     public void afficherMessage(String message) {
         panneauInfos.afficherMessage(message);
     }
     
-   
-    public void reinitialiser() {
-        panneauTable.reinitialiser();
-        panneauControles.desactiverBoutons();
-        panneauControles.activerMise(true);
-        panneauInfos.afficherInfos(null);
-        panneauInfos.effacerMessage();
-    }
 
+
+    /**
+     * Méthode appelée par le modèle pour mettre à jour l'affichage.
+     * 
+     * @param source Le modèle qui a été mis à jour
+     */
     public void modeleMiseAJour(Object source) {
-      actualiserAffichage();
+        actualiserAffichage();
     }
 }

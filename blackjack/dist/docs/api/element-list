@@ -8,3 +8,6 @@ blackjack.modele.strategie
 blackjack.modele.util
 blackjack.vue
 blackjack.vue.adapter
+blackjack.vue.composantscontrol
+blackjack.vue.composantstable
+blackjack.vue.menus

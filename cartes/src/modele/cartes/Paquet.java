@@ -70,6 +70,15 @@ public class Paquet extends AbstractModeleEcoutable {
     }
     
     /**
+     * Vide le paquet.
+     * Notifie les observateurs du modèle.
+     */
+    public void viderPaquet(){
+        this.paquet.clear();
+        fireChangement();
+        
+    }
+    /**
      * Tire une carte aléatoire dans le paquet sans la retirer.
      * 
      * @return Une carte aléatoire du paquet.

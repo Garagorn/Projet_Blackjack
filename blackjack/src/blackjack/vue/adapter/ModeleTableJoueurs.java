@@ -1,72 +1,62 @@
 package blackjack.vue.adapter;
 
+import blackjack.modele.event.EcouteurModele;
+import blackjack.modele.jeu.ModeleBlackjack;
 import blackjack.modele.joueurs.Joueur;
 import blackjack.modele.joueurs.JoueurIA;
 import javax.swing.table.AbstractTableModel;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * Modèle de table pour afficher les informations des joueurs dans un JTable.
- * Permet de suivre en temps réel les jetons, mises, scores et gains de chaque joueur.
+ * Adaptateur qui adapte le ModeleBlackjack à l'interface AbstractTableModel de Swing.
+ * Implémente le pattern Adapter ET le pattern Observer en écoutant les changements du modèle.
+ * 
+ * Cette classe adapte l'interface du modèle métier (ModeleBlackjack)
+ * vers l'interface attendue par la JTable (AbstractTableModel), et se met à jour
+ * automatiquement lorsque le modèle change.
  */
-public class ModeleTableJoueurs extends AbstractTableModel {
+public class ModeleTableJoueurs extends AbstractTableModel implements EcouteurModele {
     
     private static final String[] NOMS_COLONNES = {
-        "Joueur", "Type", "Jetons", "Mise", "Score", "Gains/Pertes"
+        "Joueur", "Type", "Jetons", "Mise", "Score", "Gains/Pertes (Total)"
     };
     
-    private List<Joueur> joueurs;
+    /** Référence vers le modèle métier - c'est l'objet qu'on adapte */
+    private ModeleBlackjack modele;
     
     /**
-     * Constructeur du modèle de table
+     * Constructeur de l'adaptateur.
+     * S'enregistre automatiquement comme écouteur du modèle.
+     * 
+     * @param modele Le modèle métier à adapter pour l'affichage en table.
      */
-    public ModeleTableJoueurs() {
-        this.joueurs = new ArrayList<>();
+    public ModeleTableJoueurs(ModeleBlackjack modele) {
+        this.modele = modele;
+        // S'enregistre comme écouteur pour être notifié des changements
+        this.modele.ajouterEcouteur(this);
     }
     
     /**
-     * Définit la liste des joueurs à afficher
-     * @param joueurs la liste des joueurs
+     * Méthode appelée automatiquement par le modèle lorsqu'il change.
+     * Met à jour l'affichage de la table.
+     * 
+     * @param source Le modèle qui a été mis à jour.
      */
-    public void setJoueurs(List<Joueur> joueurs) {
-        this.joueurs = new ArrayList<>(joueurs);
+    @Override
+    public void modeleMiseAJour(Object source) {
         fireTableDataChanged();
     }
     
     /**
-     * Ajoute un joueur à la table
-     * @param joueur le joueur à ajouter
+     * Méthode de nettoyage pour se désabonner du modèle.
+     * À appeler si on veut détruire cet adaptateur proprement.
      */
-    public void ajouterJoueur(Joueur joueur) {
-        if (joueur != null && !joueurs.contains(joueur)) {
-            joueurs.add(joueur);
-            fireTableRowsInserted(joueurs.size() - 1, joueurs.size() - 1);
-        }
-    }
-    
-    /**
-     * Retire un joueur de la table
-     * @param joueur le joueur à retirer
-     */
-    public void retirerJoueur(Joueur joueur) {
-        int index = joueurs.indexOf(joueur);
-        if (index >= 0) {
-            joueurs.remove(index);
-            fireTableRowsDeleted(index, index);
-        }
-    }
-    
-    /**
-     * Actualise l'affichage de la table
-     */
-    public void actualiser() {
-        fireTableDataChanged();
+    public void detacher() {
+        modele.retirerEcouteur(this);
     }
     
     @Override
     public int getRowCount() {
-        return joueurs.size();
+        return modele.getJoueurs().size();
     }
     
     @Override
@@ -82,8 +72,8 @@ public class ModeleTableJoueurs extends AbstractTableModel {
     @Override
     public Class<?> getColumnClass(int column) {
         switch (column) {
-            case 0: // Joueur
-            case 1: // Type
+            case 0: // Nom du joueur
+            case 1: // Type (Humain/IA)
                 return String.class;
             case 2: // Jetons
             case 3: // Mise
@@ -97,38 +87,35 @@ public class ModeleTableJoueurs extends AbstractTableModel {
     
     @Override
     public Object getValueAt(int row, int column) {
-        if (row < 0 || row >= joueurs.size()) {
+        if (row < 0 || row >= modele.getJoueurs().size()) {
             return null;
         }
         
-        Joueur joueur = joueurs.get(row);
+        Joueur joueur = modele.getJoueurs().get(row);
         
         switch (column) {
             case 0: // Nom du joueur
                 return joueur.getNom();
                 
-            case 1: // Type (Humain/IA)
+            case 1: // Type du joueur
                 if (joueur.estHumain()) {
                     return "Humain";
                 } else {
                     JoueurIA joueurIA = (JoueurIA) joueur;
-                    String strategie =  joueurIA.getStrategie() != null ? 
-                        joueurIA.getStrategie().getNom() : "IA";
-                    return strategie;
+                    return "IA " + joueurIA.getStrategie().getNom();
                 }
                 
-            case 2: // Jetons actuels
+            case 2: // Jetons
                 return joueur.getJetons();
                 
-            case 3: // Mise actuelle
+            case 3: // Mise
                 return joueur.getMiseActuelle();
                 
-            case 4: // Score de la main actuelle
+            case 4: // Score
                 return joueur.getScore();
                 
-            case 5: // Bilan de la session (gains - pertes)
-                int bilan = joueur.getBilanSession();
-                return bilan;
+            case 5: // Gains/Pertes
+                return joueur.getBilanSession();
                 
             default:
                 return null;
@@ -137,27 +124,20 @@ public class ModeleTableJoueurs extends AbstractTableModel {
     
     @Override
     public boolean isCellEditable(int row, int column) {
-        // Aucune cellule n'est éditable
         return false;
     }
     
     /**
-     * Retourne le joueur à une ligne donnée
-     * @param row l'index de la ligne
-     * @return le joueur correspondant
+     * Retourne le joueur à une ligne donnée.
+     * Méthode utilitaire pour récupérer le joueur sélectionné dans la table.
+     * 
+     * @param row L'index de la ligne.
+     * @return Le joueur correspondant à la ligne.
      */
     public Joueur getJoueurAt(int row) {
-        if (row >= 0 && row < joueurs.size()) {
-            return joueurs.get(row);
+        if (row >= 0 && row < modele.getJoueurs().size()) {
+            return modele.getJoueurs().get(row);
         }
         return null;
-    }
-    
-    /**
-     * Vide la table
-     */
-    public void vider() {
-        joueurs.clear();
-        fireTableDataChanged();
     }
 }

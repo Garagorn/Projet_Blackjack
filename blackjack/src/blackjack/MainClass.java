@@ -11,6 +11,13 @@ import javax.swing.UIManager;
 public class MainClass {
     
     /**
+     *Constructeur vide
+     */
+    public MainClass(){
+        
+    }
+    
+    /**
      * Point d'entrée de l'application
      * @param args arguments de ligne de commande (non utilisés)
      */

@@ -1,247 +1,136 @@
 package blackjack.vue;
 
+import blackjack.vue.VueBlackjack;
 import blackjack.controleur.ControleurBlackjack;
 import blackjack.modele.jeu.ModeleBlackjack;
+import blackjack.modele.joueurs.Joueur;
 import blackjack.modele.joueurs.JoueurHumain;
 import blackjack.modele.joueurs.JoueurIA;
 import blackjack.modele.strategie.StrategieBasique;
 import blackjack.modele.strategie.StrategieAgressive;
+import blackjack.vue.menus.*;
 import javax.swing.*;
 import java.awt.*;
 
 /**
- * Fenêtre principale de l'application Blackjack.
- * Contient la vue et initialise le modèle MVC.
+ * Fenêtre principale de l'application Blackjack. 
+ * Cette classe est responsable de la création de la fenêtre principale de l'application et 
+ * de l'initialisation des composants nécessaires au jeu, tels que le modèle, la vue et le contrôleur. 
+ * Elle suit le pattern MVC (Modèle-Vue-Contrôleur) pour séparer la logique du jeu, l'affichage et les interactions de l'utilisateur.
  */
 public class AppWindows extends JFrame {
     
-    private ModeleBlackjack modele;
-    private VueBlackjack vue;
-    private ControleurBlackjack controleur;
+    /** L'objet modèle contenant la logique du jeu de Blackjack */
+    protected ModeleBlackjack modele;
+    
+    /** L'objet vue permettant d'afficher l'état actuel du jeu */
+    protected VueBlackjack vue;
+    
+    /** L'objet contrôleur permettant de gérer les interactions entre la vue et le modèle */
+    protected ControleurBlackjack controleur;
     
     /**
-     * Constructeur de la fenêtre principale
+     * Constructeur de la fenêtre principale.
+     * Initialise l'application avec un modèle, une vue, et un contrôleur. 
+     * Crée les joueurs (humain et IA) et les ajoute au modèle.
      */
     public AppWindows() {
         super("Blackjack - Jeu de Cartes");
         initialiser();
     }
-    
+   
     /**
-     * Initialise l'application MVC
+     * Initialisation des composants de l'application : modèle, vue, contrôleur et joueurs.
+     * Configure également les propriétés de la fenêtre.
      */
     private void initialiser() {
-        // Créer le modèle
-        modele = new ModeleBlackjack(10); // Mise minimale = 10
+        // Créer le modèle avec une mise minimale de 10
+        modele = new ModeleBlackjack(10); 
         
-        // Ajouter des joueurs par défaut
-        JoueurHumain joueurHumain = new JoueurHumain("Vous", 1000);
-        JoueurIA ia1 = new JoueurIA("Bot Alice", 1000, new StrategieBasique());
-        JoueurIA ia2 = new JoueurIA("Bot Bob", 1000, new StrategieAgressive());
+        // Créer les joueurs
+        JoueurHumain joueurHumain = new JoueurHumain("Vous", 10000);
+        JoueurIA ia1 = new JoueurIA("Bot Alice", 10000, new StrategieBasique());
+        JoueurIA ia2 = new JoueurIA("Bot Bob", 10000, new StrategieAgressive());
         
+        // Ajouter les joueurs au modèle
         modele.ajouterJoueur(joueurHumain);
         modele.ajouterJoueur(ia1);
         modele.ajouterJoueur(ia2);
         
         // Créer la vue
         vue = new VueBlackjack(modele);
-         
         
         // Créer le contrôleur
         controleur = new ControleurBlackjack(modele, vue);
+        
+        // Lier le contrôleur à la vue
         vue.setControleur(controleur);
         
-        // Configuration de la fenêtre
+        // Configurer la fenêtre
         configurerFenetre();
     }
     
     /**
-     * Configure la fenêtre principale
+     * Configure les propriétés de la fenêtre principale (taille, comportement de fermeture, etc.)
+     * et ajoute la vue à la fenêtre.
      */
     private void configurerFenetre() {
+        // Configurer la fermeture de la fenêtre
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        // Définir la mise en page de la fenêtre
         setLayout(new BorderLayout());
         
-        // Ajouter la vue
+        // Ajouter la vue à la fenêtre
         add(vue, BorderLayout.CENTER);
         
-        // Créer la barre de menu
+        // Ajouter la barre de menus
         setJMenuBar(creerBarreMenu());
         
-        // Taille et centrage
+        // Configurer la taille de la fenêtre
         setSize(1200, 800);
-        setLocationRelativeTo(null);
-        setMinimumSize(new Dimension(1000, 700));
+        setLocationRelativeTo(null);  // Centrer la fenêtre
+        setMinimumSize(new Dimension(1000, 700));  // Taille minimale de la fenêtre
     }
     
     /**
-     * Crée la barre de menu
+     * Crée et retourne la barre de menus de l'application.
+     * Elle contient les menus pour gérer le jeu, les joueurs et l'aide.
+     * 
+     * @return La barre de menus configurée
      */
     private JMenuBar creerBarreMenu() {
         JMenuBar menuBar = new JMenuBar();
         
-        // Menu Jeu
-        JMenu menuJeu = new JMenu("Jeu");
-        
-        JMenuItem itemNouvellePartie = new JMenuItem("Nouvelle Partie");
-        itemNouvellePartie.setAccelerator(KeyStroke.getKeyStroke("F2"));
-        itemNouvellePartie.addActionListener(e -> controleur.actionNouvellePartie());
-        
-        JMenuItem itemReinitialiser = new JMenuItem("Réinitialiser");
-        itemReinitialiser.addActionListener(e -> {
-            int choix = JOptionPane.showConfirmDialog(this,
-                "Voulez-vous vraiment réinitialiser le jeu ?",
-                "Confirmation",
-                JOptionPane.YES_NO_OPTION);
-            if (choix == JOptionPane.YES_OPTION) {
-                modele.resetPartie();
-            }
-        });
-        
-        JMenuItem itemQuitter = new JMenuItem("Quitter");
-        itemQuitter.setAccelerator(KeyStroke.getKeyStroke("alt Q"));
-        itemQuitter.addActionListener(e -> System.exit(0));
-        
-        menuJeu.add(itemNouvellePartie);
-        menuJeu.add(itemReinitialiser);
-        menuJeu.addSeparator();
-        menuJeu.add(itemQuitter);
-        
-        // Menu Joueurs
-        JMenu menuJoueurs = new JMenu("Joueurs");
-        
-        JMenuItem itemAjouterIA = new JMenuItem("Ajouter IA");
-        itemAjouterIA.addActionListener(e -> ajouterJoueurIA());
-        
-        JMenuItem itemRetirerJoueur = new JMenuItem("Retirer Joueur");
-        itemRetirerJoueur.addActionListener(e -> retirerJoueur());
-        
-        menuJoueurs.add(itemAjouterIA);
-        menuJoueurs.add(itemRetirerJoueur);
-        
-        // Menu Aide
-        JMenu menuAide = new JMenu("Aide");
-        
-        JMenuItem itemRegles = new JMenuItem("Règles du Blackjack");
-        itemRegles.addActionListener(e -> afficherRegles());
-        
-        JMenuItem itemAPropos = new JMenuItem("À propos");
-        itemAPropos.addActionListener(e -> afficherAPropos());
-        
-        menuAide.add(itemRegles);
-        menuAide.addSeparator();
-        menuAide.add(itemAPropos);
-        
-        menuBar.add(menuJeu);
-        menuBar.add(menuJoueurs);
-        menuBar.add(menuAide);
+        // Ajouter les menus au menu bar
+        menuBar.add(new MenuJeu(this));       // Menu de gestion du jeu (nouvelle partie, quitter, etc.)
+        menuBar.add(new MenuJoueurs(this));   // Menu de gestion des joueurs (ajouter, retirer, etc.)
+        menuBar.add(new MenuAide(this));      // Menu d'aide (informations, règles, etc.)
         
         return menuBar;
     }
     
+    public void ajouterJoueur(Joueur j){
+        controleur.ajouterJoueur(j);
+    }
+    public void retirerJoueur(Joueur j){
+        controleur.retirerJoueur(j);
+    }
     /**
-     * Ajoute un joueur IA via une boîte de dialogue
+     * accesseur 
+     * 
+     * @return controleur
      */
-    private void ajouterJoueurIA() {
-        String nom = JOptionPane.showInputDialog(this,
-            "Nom du joueur IA :",
-            "Ajouter IA",
-            JOptionPane.QUESTION_MESSAGE);
-        
-        if (nom != null && !nom.trim().isEmpty()) {
-            JoueurIA nouvelleIA = new JoueurIA(nom, 1000, new StrategieBasique());
-            modele.ajouterJoueur(nouvelleIA);
-            JOptionPane.showMessageDialog(this,
-                "Joueur IA " + nom + " ajouté avec succès !");
-        }
+    public ControleurBlackjack getControleur(){
+        return controleur;
     }
     
     /**
-     * Retire un joueur via une boîte de dialogue
+     * accesseur 
+     * 
+     * @return modele
      */
-    private void retirerJoueur() {
-        if (modele.getJoueurs().size() <= 1) {
-            JOptionPane.showMessageDialog(this,
-                "Il faut au moins un joueur dans la partie !",
-                "Erreur",
-                JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
-        String[] nomsJoueurs = modele.getJoueurs().stream()
-            .map(j -> j.getNom())
-            .toArray(String[]::new);
-        
-        String nomChoisi = (String) JOptionPane.showInputDialog(this,
-            "Sélectionnez le joueur à retirer :",
-            "Retirer Joueur",
-            JOptionPane.QUESTION_MESSAGE,
-            null,
-            nomsJoueurs,
-            nomsJoueurs[0]);
-        
-        if (nomChoisi != null) {
-            modele.getJoueurs().stream()
-                .filter(j -> j.getNom().equals(nomChoisi))
-                .findFirst()
-                .ifPresent(j -> {
-                    modele.retirerJoueur(j);
-                    JOptionPane.showMessageDialog(this,
-                        "Joueur " + nomChoisi + " retiré !");
-                });
-        }
+    public ModeleBlackjack getModele(){
+        return modele;
     }
-    
-    /**
-     * Affiche les règles du Blackjack
-     */
-    private void afficherRegles() {
-        String regles = 
-            "RÈGLES DU BLACKJACK\n\n" +
-            "Objectif : Battre le croupier en obtenant un score plus élevé sans dépasser 21.\n\n" +
-            "Valeurs des cartes :\n" +
-            "- As = 1 ou 11\n" +
-            "- Figures (Valet, Dame, Roi) = 10\n" +
-            "- Autres cartes = valeur nominale\n\n" +
-            "Actions disponibles :\n" +
-            "- Tirer : Prendre une carte supplémentaire\n" +
-            "- Rester : Garder sa main actuelle\n" +
-            "- Doubler : Doubler la mise et recevoir une seule carte (score 9-11)\n" +
-            "- Séparer : Séparer deux cartes identiques en deux mains\n" +
-            "- Assurance : Parier contre le blackjack du croupier (si As visible)\n\n" +
-            "Le croupier tire jusqu'à 17, puis reste.\n\n" +
-            "Gains :\n" +
-            "- Blackjack : 3:2 (1.5x la mise)\n" +
-            "- Victoire : 1:1 (mise doublée)\n" +
-            "- Égalité : remboursement";
-
-        JTextArea textArea = new JTextArea(regles);
-        textArea.setEditable(false);
-        JScrollPane scrollPane = new JScrollPane(textArea);
-        scrollPane.setPreferredSize(new Dimension(500, 400));
-
-        JOptionPane.showMessageDialog(this, scrollPane, "Règles du Blackjack",
-            JOptionPane.INFORMATION_MESSAGE);
-    }
-
-    
-    /**
-     * Affiche les informations "À propos"
-     */
-    private void afficherAPropos() {
-        JOptionPane.showMessageDialog(this,
-            "Blackjack - Jeu de Cartes\n\n" +
-            "Version 1.0\n" +
-            "Architecture MVC avec Patterns\n" +
-            "- Strategy (IA)\n" +
-            "- Command (Actions)\n" +
-            "- Adapter (JTable)\n" +
-            "- Observer (Vue/Modèle)\n\n" +
-            "Projet Universitaire 2025",
-            "À propos",
-            JOptionPane.INFORMATION_MESSAGE);
-    }
-    
-     
-     
 }
