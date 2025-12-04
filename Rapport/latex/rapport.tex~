@@ -1,7 +1,9 @@
 \documentclass[12pt,a4paper]{article}
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
+
 \usepackage{graphicx}
 \usepackage{amsmath, amssymb}
 \usepackage{geometry}
@@ -9,22 +11,33 @@
 \usepackage{hyperref}
 \usepackage{array}
 \usepackage[table]{xcolor}
-
-
 \usepackage{caption}
 \usepackage{tikz}
 \usetikzlibrary{positioning}
 \usetikzlibrary{arrows.meta, positioning}
-
-
 \usepackage{float}
 
 \geometry{margin=1.5cm}
+
 \pagestyle{fancy}
-\fancyhead[L]{Projet Blackjack}
-\fancyhead[R]{4 Novembre 2025}
+\fancyhf{}
+\fancyhead[L]{\textbf{Projet Blackjack}}
+\fancyhead[R]{\today}
 \fancyfoot[C]{\thepage}
 
+\definecolor{LightBlue}{RGB}{220,230,255}
+\definecolor{LightGreen}{RGB}{220,255,230}
+\definecolor{LightGrey}{RGB}{245,245,245}
+
+\newcommand{\infobox}[1]{
+    \begin{center}
+    \fcolorbox{black}{LightGrey}{%
+        \begin{minipage}{0.92\textwidth}
+            #1
+        \end{minipage}
+    }
+    \end{center}
+}
 
 \begin{document}
 
@@ -32,46 +45,91 @@
 \begin{titlepage}
     \centering
 
-    %\includegraphics[width=0.6\textwidth]{images/logo.png} 				
-    %\nocite{LogoUnicaen}
+    \includegraphics[width=0.55\textwidth]{images/logo.png} 				
 
-    \vspace{0.5cm}
+    \vspace{1.2cm}
 
     \vfill
-    {\Huge \textbf{Projet 1 :}}\\[1.5cm]
-    {\Huge \textbf{Développement d’un jeu de Blackjack}}\\[2cm]
+    {\Huge \textbf{Développement d’un Jeu de Blackjack}}\\[0.2cm]
+    {\Large \textit{Projet de l'UE – Méthodes de Conception}}\\[1.5cm]
+
     
-    %THOMAS Matthieu : NUM_ETU\\[0.5cm]
-    %SIAGHI Massinissa : 22312276\\[0.5cm]
-    %TELLIER Basile : NUM_ETU\\[1.0cm]
-
-
-
-    {\Large 4 novemvre 2025}
+    \vfill
+    \textbf{THOMAS Matthieu : numetu}\\[0.3cm]
+    \textbf{SIAGHI Massinissa : 22312276}\\[0.3cm]
+    \textbf{TELLIER Basile : 22104032}\\[1cm]
+  
+    {\Large \today}
 
 \end{titlepage}
 
-\newpage
-
+\clearpage
 \tableofcontents
-
-\newpage   
+\clearpage  
 
 
 % 1. Introduction
 \section{Introduction}
 
 \subsection{Présentation générale du projet}
+Le projet s'inscrit dans le cadre de l’UE \textit{Méthodes de conception}. Il consiste à développer un \textbf{jeu complet de Blackjack}, en plusieurs étapes :
 
+
+\infobox{
+\begin{itemize}
+    \item Développer un \textbf{jeu de cartes générique} : cartes, paquet, mélange, tirage…
+    \item Développer un \textbf{jeu de Blackjack} reposant sur ce modèle de cartes.
+    \item Implémenter les règles complètes : distribution, actions, gains, blackjack, bust, split, etc.
+    \item Proposer une \textbf{version évoluée} du jeu adaptée au modèle MVC.
+\end{itemize}
+}
+
+Le projet a donc suivi une progression logique structurée en deux grandes étapes :
+
+
+\vspace{0.5cm}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+        node distance=1.8cm and 2.4cm,
+        box/.style={draw, rounded corners, minimum width=4.8cm, minimum height=1.2cm, align=center, font=\small},
+        arrow/.style={->, thick}
+    ]
+
+    % Étapes principales
+    \node[box, fill=blue!10] (card) {Jeu de Carte \\
+        \footnotesize Base du modèle};
+
+    \node[box, fill=green!10, below=of card] (bj) {Jeu de Blackjack \\
+        \footnotesize Extension utilisant le modèle Carte};
+
+    % Liens
+    \draw[arrow] (card) -- (bj);
+
+    \end{tikzpicture}
+    \caption{Présentation des deux grandes étapes du projet de  Blackjack}
+\end{figure}
+
+\vspace{0.5cm}
 
 
 \subsection{Problématique et points clés}
+\textbf{< A MODIFIER}
 \begin{itemize}
-    \item \textbf{A MODIFIER}
+    \item \textbf{Comprendre et implémenter le langage RedCode}~: Ce langage assembleur spécifique repose sur une sémantique simple en apparence, mais complexe dans ses effets. Chaque instruction (comme \texttt{MOV}, \texttt{ADD}, \texttt{CMP}, etc.) peut manipuler la mémoire avec des effets indirects, via des modes d’adressage variés (immédiat, direct, indirect, pré-décrémenté). Il fallait donc respecter avec rigueur la spécification ICWS-88 tout en permettant une exécution fluide et fidèle.
+
+    \item \textbf{Modéliser la mémoire MARS et le comportement des guerriers}~: La mémoire MARS fonctionne comme un tableau circulaire dans lequel les instructions peuvent être copiées, écrasées ou déplacées. Chaque guerrier y agit indépendamment, via un système de file d’instructions à exécuter. Il a fallu concevoir un système de mémoire robuste, capable de supporter cette logique concurrente sans erreurs de synchronisation.
+
+    \item \textbf{Gérer l’exécution concurrente des guerriers}~: Chaque guerrier possède une file FIFO d'instructions à exécuter. Une mauvaise gestion du multitraitement pouvait conduire à des déséquilibres ou à des comportements incohérents. Il fallait donc un système de file d’exécution stable, isolé et juste.
+
+    \item \textbf{Générer automatiquement des guerriers efficaces}~: Cette partie du projet relève de l’intelligence artificielle. Elle consiste à créer, faire évoluer et sélectionner automatiquement des programmes RedCode efficaces selon des critères de survie, d'agressivité ou de stratégie. Nous avons choisi d’exploiter un algorithme génétique simple pour générer et affiner les programmes au fil des générations. Cela demande un mécanisme de mutation, de croisement et de sélection bien intégré au reste de l’architecture.
+
     \item \textbf{Créer une interface utilisateur explicite et pédagogique}~: L'interface graphique devait à la fois représenter l’état de la mémoire, l’avancement de chaque guerrier, et permettre d’observer l’évolution du match en temps réel. Cela implique une gestion précise des événements et des notifications entre le modèle et la vue (via le pattern Observer).
 
-    \item \textbf{Maintenir la modularité du code}~: Enfin, toute cette architecture devait rester claire, maintenable et évolutive. Le respect du modèle \textbf{MV-C}, ainsi qu’une séparation stricte des responsabilités, ont été déterminants pour conserver une bonne lisibilité du projet.
+    \item \textbf{Maintenir la modularité du code}~: Enfin, toute cette architecture devait rester claire, maintenable et évolutive. Le respect du modèle \textbf{MVC}, ainsi qu’une séparation stricte des responsabilités, ont été déterminants pour conserver une bonne lisibilité du projet.
 \end{itemize}
+\textbf{</ A MODIFIER}
 
 \newpage
 
@@ -94,7 +152,7 @@ Ce rapport a pour objectif de retracer de manière claire et progressive le dév
     \item \textbf{Section 7 – Conclusion} : dresse un bilan général du projet, récapitule les fonctionnalités implémentées et propose plusieurs axes d’amélioration pour la suite.
 \end{itemize}
 
-\newpage   
+\clearpage  
 
 
 % 2. Structuration du projet
@@ -136,7 +194,7 @@ Le travail a été réparti entre les trois membres du groupe de manière à val
             \item Mise en place du Contrôleur Cartes
             \item Mise en place du Contrôleur Blackjack
             \item Mise en place du Modèle \& Vue Blackjack
-            \item Aide à l'uml Blackjack et au rapport
+            \item UML Blackjack et rapport
 
         \end{itemize} \\
         \hline
@@ -218,7 +276,7 @@ La planification et la progression du projet de Blackjack se sont organisées au
 
 % Jalons avec texte
 \foreach \x/\label/\month in {
-    0/Implémentation du Modèle Blackjack/Novembre,
+    0/Implémentation minimaliste du Blackjack/Octobre,
     4/Implémentation du Contrôleur Blackjack/Novembre,
     8/Implémentation des tests Cartes/Novembre,
     12/Modifications du modèle et de la vue Blackjack/Novembre,
@@ -234,70 +292,75 @@ La planification et la progression du projet de Blackjack se sont organisées au
 \caption{Frise chronologique des grandes étapes du projet }
 \end{figure}
 
-\newpage   
+\clearpage  
 
 
 % 3. Éléments techniques
 \section{Éléments techniques}
 
 \subsection{Structures de données utilisées}
-
+< A REMPLIR PAR MASSI
 \subsubsection*{1. Observer Pattern }
 \subsubsection*{2. Strategy Pattern}
 \subsubsection*{3. Factory method}
 \subsubsection*{4. Adaptator Pattern}
+A REMPLIR PAR MASSI />
+
+\subsubsection*{5. Test Mock}
 
 
-\newpage
 
+\clearpage
 
 % Section 4 : Architecture du projet
 \section{Architecture du projet}
 
 \subsection{Architecture de Carte}
 
-\subsection{Contrôleur : orchestration de la simulation}
+\subsubsection{Contrôleur : orchestration de la simulation}
 
-\subsection{Vue : interface graphique réactive}
+\subsubsection{Vue : interface graphique réactive}
 
 \subsubsection*{Communication modèle \(\leftrightarrow\) vue}
 
-\subsection{Synthèse : une architecture M-V-C }
+\subsubsection{Synthèse : une architecture M-V-C }
 
 \subsection{Architecture de Blackjack}
 
-\subsection{Contrôleur : orchestration de la simulation}
+\subsubsection{Contrôleur : orchestration de la simulation}
 
-\subsection{Vue : interface graphique réactive}
+\subsubsection{Vue : interface graphique réactive}
 
-\subsubsection*{Communication modèle \(\leftrightarrow\) vue}
+%\subsubsubsection{Communication modèle \(\leftrightarrow\) vue}
 
-\subsection{Synthèse : une architecture M-V-C }
+\subsubsection{Synthèse : une architecture M-V-C }
 
 
 % 5. Tests du modele
 \section{Tests du modele}
 \subsection{Tests du modele Carte}
+
 \subsection{Tests du modele Blackjack}
+\subsubsection{Tests des actions}
+Des erreurs sont possibles au lancement des tests dû à la nature probabiliste de certains tests sur les actions.
+\subsubsection{Tests des joueurs}
+\subsubsection{Tests du jeu}
+
 
 % 6. Cas d'utilisation
 \section{Expérimentations et usages}
-
-\subsection{Cas d’utilisation : }
-
-\subsection{Cas d’utilisation : }
-
-\subsection{Cas d’utilisation : }
-
-\subsection{Cas d’utilisation : }
-
-\subsection{Cas d’utilisation : }
-
-\subsection{Cas d’utilisation : }
+< A REMPLIR PAR MASSI
+\subsection{Cas d’utilisation :  }%Jeu basique
+\subsection{Cas d’utilisation :  }%Ajouter un joueur
+\subsection{Cas d’utilisation :  }%Retirer un joueur
+\subsection{Cas d’utilisation :  }%Split  ?
+\subsection{Cas d’utilisation :  }%Bust ?
+\subsection{Cas d’utilisation :  }%Blackjack ?
+\subsection{Cas d’utilisation :  }%Assurace ?
+\subsection{Cas d’utilisation :  }%Doublee
 
 
-
-\newpage
+\clearpage
 
 % 7. Conclusion
 \section{Conclusion}

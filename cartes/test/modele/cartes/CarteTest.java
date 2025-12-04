@@ -1,5 +1,6 @@
 package modele.cartes;
 
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -9,50 +10,210 @@ import static org.junit.Assert.*;
  */
 public class CarteTest {
     
-    public CarteTest() {
+    private Carte carteAs;
+    private Carte carteRoi;
+    private Carte carte10;
+    
+    @Before
+    public void setUp(){
+        carteAs = new Carte("As", "Pique");
+        carteRoi = new Carte("Roi", "Coeur");
+        carte10 = new Carte("10", "Carreau");
     }
     
     @Test
+    public void testConstructeur(){
+        Carte carte = new Carte("Dame", "Trefle");
+        
+        assertEquals("Dame", carte.hauteur);
+        assertEquals("Trefle", carte.couleur);
+    }
+    
+    @Test
+    public void testConstructeurAllHauteurs(){
+        String[] hauteurs = {"As", "2", "3", "4", "5", "6", "7", "8", "9", "10", 
+                            "Valet", "Dame", "Roi"};
+        
+        for (String hauteur : hauteurs) {
+            Carte carte = new Carte(hauteur, "Pique");
+            assertEquals(hauteur, carte.hauteur);
+            assertEquals("Pique", carte.couleur);
+        }
+    }
+    
+    @Test
+    public void testConstructeurAllCouleurs(){
+        String[] couleurs = {"Pique", "Coeur", "Carreau", "Trefle"};
+        for (String couleur : couleurs){
+            Carte carte = new Carte("As", couleur);
+            assertEquals("As", carte.hauteur);
+            assertEquals(couleur, carte.couleur);
+        }
+    }
+    
     /**
-     * Test pour la méthode toString de Carte
+     * Tests sur les différentes couleurs
      */
-    public void testToString() {
-        Carte c = new Carte("As", "Pique");
-        assertEquals("Carte : As de ♠", c.toString());
+    @Test
+    public void testGetSymbolePique(){
+        Carte carte = new Carte("As", "Pique");
+        assertEquals("♠", carte.getSymboleCouleur());
+    }
+    
+    @Test
+    public void testGetSymboleCoeur(){
+        Carte carte = new Carte("Roi", "Coeur");
+        assertEquals("♥", carte.getSymboleCouleur());
+    }
+    
+    @Test
+    public void testGetSymboleCarreau(){
+        Carte carte = new Carte("10", "Carreau");
+        assertEquals("♦", carte.getSymboleCouleur());
+    }
+    
+    @Test
+    public void testGetSymboleTrefle(){
+        Carte carte = new Carte("2", "Trefle");
+        assertEquals("♣", carte.getSymboleCouleur());
+    }
+    
+    @Test
+    public void testGetSymboleInconnue(){
+        Carte carte = new Carte("As", "Inconnu");
+        assertEquals("", carte.getSymboleCouleur());
     }
 
     @Test
+    public void testGetSymboleVide(){
+        Carte carte = new Carte("As", "");
+        assertEquals("", carte.getSymboleCouleur());
+    }
+    
+    @Test
+    public void testGetSymboleIncorrect(){
+        Carte carte1 = new Carte("As", "pique");
+        Carte carte2 = new Carte("As", "PIQUE");
+        assertEquals("", carte1.getSymboleCouleur());
+        assertEquals("", carte2.getSymboleCouleur());
+    }
+    
+    
     /**
-     * Test pour la récupération du symbole d'une carte
+     * Tests sur la méthode ToString de Carte
      */
-    public void testGetSymboleCouleur() {
-        Carte c1 = new Carte("Roi", "Pique");
-        Carte c2 = new Carte("Dame", "Coeur");
-        Carte c3 = new Carte("10", "Carreau");
-        Carte c4 = new Carte("2", "Trefle");
-        Carte c5 = new Carte("7", "");
-
-        assertEquals("♠", c1.getSymboleCouleur());
-        assertEquals("♥", c2.getSymboleCouleur());
-        assertEquals("♦", c3.getSymboleCouleur());
-        assertEquals("♣", c4.getSymboleCouleur());
-        assertEquals("", c5.getSymboleCouleur());
+    
+    @Test
+    public void testToStringAsPique(){
+        assertEquals("Carte : As de ♠", carteAs.toString());
+    }
+    
+    @Test
+    public void testToStringRoiCoeur(){
+        assertEquals("Carte : Roi de ♥", carteRoi.toString());
+    }
+    
+    @Test
+    public void testToString10Carreau(){
+        assertEquals("Carte : 10 de ♦", carte10.toString());
+    }
+    
+    @Test
+    public void testToStringDameTrefle(){
+        Carte carte = new Carte("Dame", "Trefle");
+        assertEquals("Carte : Dame de ♣", carte.toString());
+    }
+    
+    @Test
+    public void testToStringAvecCouleurInconnue(){
+        Carte carte = new Carte("As", "Inconnu");
+        assertEquals("Carte : As de ", carte.toString());
+    }
+    
+    @Test
+    public void testToStringToutesLesHauteurs(){
+        String[] hauteurs = {"As", "2", "3", "4", "5", "6", "7", "8", "9", "10", 
+                            "Valet", "Dame", "Roi"};
+        
+        for (String hauteur : hauteurs) {
+            Carte carte = new Carte(hauteur, "Pique");
+            assertTrue(carte.toString().contains(hauteur));
+            assertTrue(carte.toString().contains("♠"));
+        }
+    }
+    
+    /**
+     * Tests sur la méthode Equals de CArte
+     */
+    
+    @Test
+    public void testEqualsSameCartes(){
+        Carte carte1 = new Carte("As", "Coeur");
+        Carte carte2 = new Carte("As", "Coeur");
+        assertTrue(carte1.equals(carte2));
+        assertTrue(carte2.equals(carte1));
+    }
+    
+    @Test
+    public void testEqualsCartesDiffHauteur(){
+        Carte carte1 = new Carte("As", "Coeur");
+        Carte carte2 = new Carte("Roi", "Coeur");
+        assertFalse(carte1.equals(carte2));
+    }
+    
+    @Test
+    public void testEqualsCartesDiffCouleur(){
+        Carte carte1 = new Carte("As", "Coeur");
+        Carte carte2 = new Carte("As", "Pique");
+        assertFalse(carte1.equals(carte2));
+    }
+    
+    @Test
+    public void testEqualsCartesDifferentes(){
+        Carte carte1 = new Carte("As", "Coeur");
+        Carte carte2 = new Carte("Roi", "Pique");
+        assertFalse(carte1.equals(carte2));
+    }
+    
+    @Test
+    public void testEqualsSameObjet(){
+        assertTrue(carteAs.equals(carteAs));
+    }
+    
+    @Test
+    public void testEqualsNull(){
+        assertFalse(carteAs == null);
     }
 
-    @Test
+    
     /**
-     * Test pour la comparaison entre deux cartes
-     * Comparaison réalisée avec HashCode et equals
+     * Tests les méthodes de HashCode de Carte
      */
-    public void testEqualsEtHashCode() {
-        Carte c1 = new Carte("As", "Coeur");
-        Carte c2 = new Carte("As", "Coeur");
-        Carte c3 = new Carte("Roi", "Pique");
-
-        assertTrue(c1.equals(c2));
-        assertEquals(c1.hashCode(), c2.hashCode());
-
-        assertFalse(c1.equals(c3));
-        assertNotEquals(c1.hashCode(), c3.hashCode());
+    
+    @Test
+    public void testHashCodeSameCarte(){
+        Carte carte1 = new Carte("As", "Coeur");
+        Carte carte2 = new Carte("As", "Coeur");
+        assertEquals(carte1.hashCode(), carte2.hashCode());
+    }
+    
+    @Test
+    public void testHashCodeDiffCartes(){
+        Carte carte1 = new Carte("As", "Coeur");
+        Carte carte2 = new Carte("Roi", "Pique");
+        assertNotEquals(carte1.hashCode(), carte2.hashCode());
+    }
+    
+    @Test
+    public void testHashCodeMemeObjet(){
+        assertEquals(carteAs.hashCode(), carteAs.hashCode());
+    }
+    
+    @Test
+    public void testHashCode(){
+        int hash1 = carteAs.hashCode();
+        int hash2 = carteAs.hashCode();
+        assertEquals(hash1, hash2);
     }
 }
+

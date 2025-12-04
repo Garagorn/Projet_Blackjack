@@ -26,6 +26,12 @@ auxiliary.show.customizer.message=<message>
                     <location>src</location>
                     <encoding>UTF-8</encoding>
                 </source-folder>
+                <source-folder>
+                    <label>test</label>
+                    <type>java</type>
+                    <location>test</location>
+                    <encoding>UTF-8</encoding>
+                </source-folder>
             </folders>
             <ide-actions>
                 <action name="build">
@@ -51,6 +57,10 @@ auxiliary.show.customizer.message=<message>
                         <label>src</label>
                         <location>src</location>
                     </source-folder>
+                    <source-folder style="packages">
+                        <label>test</label>
+                        <location>test</location>
+                    </source-folder>
                     <source-file>
                         <location>build.xml</location>
                     </source-file>
@@ -65,10 +75,15 @@ auxiliary.show.customizer.message=<message>
             </view>
             <subprojects/>
         </general-data>
-        <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/1">
+        <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/2">
             <compilation-unit>
                 <package-root>src</package-root>
                 <classpath mode="compile">lib/cartes-0.1.jar</classpath>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+            <compilation-unit>
+                <package-root>test</package-root>
+                <unit-tests/>
                 <source-level>1.5</source-level>
             </compilation-unit>
         </java-data>

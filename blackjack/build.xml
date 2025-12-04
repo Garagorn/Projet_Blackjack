@@ -6,7 +6,9 @@
 <property name="dist.home" value="${basedir}/dist"/>
 <property name="docs.home" value="${basedir}/docs"/>
 <property name="src.home" value="${basedir}/src"/>
+<property name="test.home" value="${basedir}/test"/>
 <property name="lib.home" value="${basedir}/lib"/>
+<property name="reports.home" value="${basedir}/reports"/>
 <property name="javac.encoding" value="UTF-8"/>
 <!--
  ==================== Compile options =========================== 
@@ -22,6 +24,15 @@
 <include name="**/*.jar"/>
 </fileset>
 </path>
+
+<path id="test.classpath">
+<path refid="compile.classpath"/>
+<pathelement path="${build.home}"/>
+<fileset dir="${lib.home}">
+<include name="junit*.jar"/>
+</fileset>
+</path>
+
 <!--
  ==================== All Target ====================================== 
 -->
@@ -32,6 +43,7 @@
 <target name="clean" description="Delete old build and dist directories">
 <delete dir="${build.home}"/>
 <delete dir="${dist.home}"/>
+<delete dir="${reports.home}"/>
 </target>
 <!--
  ==================== Compile Target ================================== 
@@ -45,12 +57,22 @@
 <fileset dir="${src.home}" excludes="**/*.java"/>
 </copy>
 </target>
+
+<target name="compile-tests" depends="compile">
+<javac srcdir="${test.home}" destdir="${build.home}" encoding="UTF-8" includeantruntime="false">
+<classpath refid="test.classpath"/>
+</javac>
+<copy todir="${build.home}">
+<fileset dir="${test.home}" excludes="**/*.java"/>
+</copy>
+</target>
 <!--
  ==================== Prepare Target ================================== 
 -->
 <target name="prepare">
 <mkdir dir="${build.home}"/>
 <mkdir dir="${dist.home}"/>
+<mkdir dir="${reports.home}"/>
 </target>
 <!--
  ==================== Dist Target ===================================== 
@@ -67,6 +89,35 @@
 </manifest>
 </jar>
 </target>
+
+<!--
+ ==================== Test Target ===================================== 
+-->
+
+<target name="test" depends="compile-tests">
+<mkdir dir="${reports.home}"/>
+<junit printsummary="yes" haltonfailure="no">
+<classpath refid="test.classpath"/>
+<formatter type="plain"/>
+<formatter type="xml"/>
+<batchtest todir="${reports.home}">
+<fileset dir="${test.home}">
+<include name="**/*Test.java"/>
+</fileset>
+</batchtest>
+</junit>
+</target>
+
+<!--
+ ==================== JUnit Target ================================== 
+-->
+<target name="junitreport" depends="test">
+<junitreport todir="${reports.home}">
+<fileset dir="${reports.home}" includes="TEST-*.xml"/>
+<report format="frames" todir="${reports.home}/html"/>
+</junitreport>
+</target>
+
 <!--
  ==================== Javadoc Target ================================== 
 -->

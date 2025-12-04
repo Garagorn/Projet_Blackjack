@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.15)  2 DEC 2025 23:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.15)  4 DEC 2025 22:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -695,26 +695,26 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 (./rapport.aux)
 \openout1 = `rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Info: Redefining \degres on input line 29.
-LaTeX Info: Redefining \up on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Info: Redefining \degres on input line 42.
+LaTeX Info: Redefining \up on input line 42.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -772,7 +772,7 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 29.
+Package hyperref Info: Link coloring OFF on input line 42.
 (./rapport.out) (./rapport.out)
 \@outlinefile=\write4
 \openout4 = `rapport.out'.
@@ -780,13 +780,18 @@ Package hyperref Info: Link coloring OFF on input line 29.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
+<images/logo.png, id=151, 259.2084pt x 146.2263pt>
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 48.
+(pdftex.def)             Requested size: 281.68385pt x 158.91718pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
-dvips/cm-super/cm-super-t1.enc}]
-(./rapport.toc
+dvips/cm-super/cm-super-t1.enc} <./images/logo.png>] (./rapport.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
@@ -811,8 +816,15 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.56 \newpage
-              [1]
+l.68 \clearpage
+                [1
+
+]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+20.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -821,7 +833,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[2]
+[2
+
+]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -831,11 +845,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [3]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-20.
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -853,7 +862,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[5]
+[5
+
+]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -871,7 +882,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[7]
+[7
+
+]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -880,34 +893,50 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[8] (./rapport.aux)
+[8
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[9
+
+] (./rapport.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: DAC9615A504688870AC80F3BF2715C45;5932.
+(rerunfilecheck)             Checksum: AD1CBB9EBE7C6EDE490EBFDDA934E3D8;6784.
  ) 
 Here is how much of TeX's memory you used:
- 24705 strings out of 474222
- 453811 string characters out of 5748732
+ 24777 strings out of 474222
+ 455175 string characters out of 5748732
  1946975 words of memory out of 5000000
- 46518 multiletter control sequences out of 15000+600000
- 570640 words of font info for 65 fonts, out of 8000000 for 9000
+ 46579 multiletter control sequences out of 15000+600000
+ 573543 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,87p,428b,830s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,12n,87p,651b,843s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
 r/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/
 type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-supe
 r/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr
 /share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/t
 ype1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super
-/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/
-share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on rapport.pdf (9 pages, 204344 bytes).
+/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/
+share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/ty
+pe1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/
+sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1728.pfb></usr/s
+hare/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on rapport.pdf (10 pages, 300486 bytes).
 PDF statistics:
- 281 PDF objects out of 1000 (max. 8388607)
- 247 compressed objects within 3 object streams
- 52 named destinations out of 1000 (max. 500000)
- 261 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 335 PDF objects out of 1000 (max. 8388607)
+ 290 compressed objects within 3 object streams
+ 59 named destinations out of 1000 (max. 500000)
+ 306 words of extra memory for PDF output out of 10000 (max. 10000000)
 
