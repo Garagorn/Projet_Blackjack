@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="eragon-System-Product-Name" id="0" name="CarteTest" package="modele.cartes" skipped="0" tests="26" time="0.05" timestamp="2025-12-05T17:44:18">
+      <properties>
+          <property name="ant.library.dir" value="/usr/share/ant/lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="cartes" />
+
+          <property name="sun.jnu.encoding" value="UTF-8" />
+
+          <property name="dist.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/dist" />
+
+          <property name="java.class.path" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build/test:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/lib/hamcrest-core-1.3.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/lib/junit-4.13.2.jar:/usr/share/java/ant-launcher-1.10.14.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar" />
+
+          <property name="compile.optimize" value="true" />
+
+          <property name="java.vm.vendor" value="Ubuntu" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="compile.debug" value="true" />
+
+          <property name="java.vendor.url" value="https://ubuntu.com/" />
+
+          <property name="javac.encoding" value="UTF-8" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Linux" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="FR" />
+
+          <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner modele.cartes.CarteTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/RapportTest/TEST-modele.cartes.CarteTest.xml crashfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/junitvmwatcher7304580384393586919.properties propsfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/junit12979031122474902202.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="/home/eragon" />
+
+          <property name="user.language" value="fr" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="java.version.date" value="2025-10-21" />
+
+          <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64" />
+
+          <property name="app.version" value="0.1" />
+
+          <property name="basedir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes" />
+
+          <property name="file.separator" value="/" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="line.separator" value="&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="src.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/test" />
+
+          <property name="build.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build/test" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="user.name" value="eragon" />
+
+          <property name="lib.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/lib" />
+
+          <property name="ant.file" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build.xml" />
+
+          <property name="stdout.encoding" value="UTF-8" />
+
+          <property name="path.separator" value=":" />
+
+          <property name="os.version" value="6.14.0-36-generic" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="junitreport" />
+
+          <property name="test.report.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/RapportTest" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="ant.file.type.cartes" value="file" />
+
+          <property name="app.name" value="cartes" />
+
+          <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+
+          <property name="build.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build" />
+
+          <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21" />
+
+          <property name="java.io.tmpdir" value="/tmp" />
+
+          <property name="java.version" value="21.0.9" />
+
+          <property name="user.dir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="app.fullname" value="cartes-0.1" />
+
+          <property name="ant.home" value="/usr/share/ant" />
+
+          <property name="docs.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/docs" />
+
+          <property name="ant.file.cartes" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build.xml" />
+
+          <property name="native.encoding" value="UTF-8" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.14 compiled on September 25 2023" />
+
+          <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib" />
+
+          <property name="java.vendor" value="Ubuntu" />
+
+          <property name="stderr.encoding" value="UTF-8" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="java.vm.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="compile.deprecation" value="false" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="ant.project.default-target" value="run" />
+
+          <property name="src.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/src" />
+
+      </properties>
+
+      <testcase classname="modele.cartes.CarteTest" name="testEqualsCartesDiffHauteur" time="0.002" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testToStringToutesLesHauteurs" time="0.004" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testEqualsCartesDiffCouleur" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testEqualsCartesDifferentes" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testToStringAsPique" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testGetSymboleTrefle" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testHashCodeDiffCartes" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testConstructeur" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testHashCodeSameCarte" time="0.001" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testGetSymboleCarreau" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testToStringDameTrefle" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testConstructeurAllCouleurs" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testEqualsNull" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testHashCodeMemeObjet" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testToStringAvecCouleurInconnue" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testGetSymboleCoeur" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testGetSymbolePique" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testConstructeurAllHauteurs" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testEqualsSameCartes" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testGetSymboleIncorrect" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testHashCode" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testEqualsSameObjet" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testGetSymboleInconnue" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testToStringRoiCoeur" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testToString10Carreau" time="0.0" />
+
+      <testcase classname="modele.cartes.CarteTest" name="testGetSymboleVide" time="0.0" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="eragon-System-Product-Name" id="1" name="JoueurHumainTest" package="modele.cartes" skipped="0" tests="15" time="0.051" timestamp="2025-12-05T17:44:18">
+      <properties>
+          <property name="ant.library.dir" value="/usr/share/ant/lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="cartes" />
+
+          <property name="sun.jnu.encoding" value="UTF-8" />
+
+          <property name="dist.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/dist" />
+
+          <property name="java.class.path" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build/test:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/lib/hamcrest-core-1.3.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/lib/junit-4.13.2.jar:/usr/share/java/ant-launcher-1.10.14.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar" />
+
+          <property name="compile.optimize" value="true" />
+
+          <property name="java.vm.vendor" value="Ubuntu" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="compile.debug" value="true" />
+
+          <property name="java.vendor.url" value="https://ubuntu.com/" />
+
+          <property name="javac.encoding" value="UTF-8" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Linux" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="FR" />
+
+          <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner modele.cartes.JoueurHumainTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/RapportTest/TEST-modele.cartes.JoueurHumainTest.xml crashfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/junitvmwatcher16609779595071947989.properties propsfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/junit8965131276509799979.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="/home/eragon" />
+
+          <property name="user.language" value="fr" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="java.version.date" value="2025-10-21" />
+
+          <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64" />
+
+          <property name="app.version" value="0.1" />
+
+          <property name="basedir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes" />
+
+          <property name="file.separator" value="/" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="line.separator" value="&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="src.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/test" />
+
+          <property name="build.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build/test" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="user.name" value="eragon" />
+
+          <property name="lib.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/lib" />
+
+          <property name="ant.file" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build.xml" />
+
+          <property name="stdout.encoding" value="UTF-8" />
+
+          <property name="path.separator" value=":" />
+
+          <property name="os.version" value="6.14.0-36-generic" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="junitreport" />
+
+          <property name="test.report.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/RapportTest" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="ant.file.type.cartes" value="file" />
+
+          <property name="app.name" value="cartes" />
+
+          <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+
+          <property name="build.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build" />
+
+          <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21" />
+
+          <property name="java.io.tmpdir" value="/tmp" />
+
+          <property name="java.version" value="21.0.9" />
+
+          <property name="user.dir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="app.fullname" value="cartes-0.1" />
+
+          <property name="ant.home" value="/usr/share/ant" />
+
+          <property name="docs.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/docs" />
+
+          <property name="ant.file.cartes" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build.xml" />
+
+          <property name="native.encoding" value="UTF-8" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.14 compiled on September 25 2023" />
+
+          <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib" />
+
+          <property name="java.vendor" value="Ubuntu" />
+
+          <property name="stderr.encoding" value="UTF-8" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="java.vm.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="compile.deprecation" value="false" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="ant.project.default-target" value="run" />
+
+          <property name="src.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/src" />
+
+      </properties>
+
+      <testcase classname="modele.cartes.JoueurHumainTest" name="testMainsIndependantes" time="0.002" />
+
+      <testcase classname="modele.cartes.JoueurHumainTest" name="testToString" time="0.006" />
+
+      <testcase classname="modele.cartes.JoueurHumainTest" name="testRecevoirDeuxCartes" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurHumainTest" name="testConstructeur" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurHumainTest" name="testGetMainNonNull" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurHumainTest" name="testGetMain" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurHumainTest" name="testGetNomDifferentsJoueurs" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurHumainTest" name="testMainIndependante" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurHumainTest" name="testMainVide" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurHumainTest" name="testRecevoirMemeCarte" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurHumainTest" name="testRecevoirTroisCartes" time="0.001" />
+
+      <testcase classname="modele.cartes.JoueurHumainTest" name="testGetNom" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurHumainTest" name="testRecevoirUneCarte" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurHumainTest" name="testConstructeurNomVide" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurHumainTest" name="testRecevoirCartesMultiples" time="0.001" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="eragon-System-Product-Name" id="2" name="JoueurIATest" package="modele.cartes" skipped="0" tests="21" time="0.051" timestamp="2025-12-05T17:44:18">
+      <properties>
+          <property name="ant.library.dir" value="/usr/share/ant/lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="cartes" />
+
+          <property name="sun.jnu.encoding" value="UTF-8" />
+
+          <property name="dist.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/dist" />
+
+          <property name="java.class.path" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build/test:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/lib/hamcrest-core-1.3.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/lib/junit-4.13.2.jar:/usr/share/java/ant-launcher-1.10.14.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar" />
+
+          <property name="compile.optimize" value="true" />
+
+          <property name="java.vm.vendor" value="Ubuntu" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="compile.debug" value="true" />
+
+          <property name="java.vendor.url" value="https://ubuntu.com/" />
+
+          <property name="javac.encoding" value="UTF-8" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Linux" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="FR" />
+
+          <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner modele.cartes.JoueurIATest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/RapportTest/TEST-modele.cartes.JoueurIATest.xml crashfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/junitvmwatcher7637935384434965611.properties propsfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/junit8122096362026374149.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="/home/eragon" />
+
+          <property name="user.language" value="fr" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="java.version.date" value="2025-10-21" />
+
+          <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64" />
+
+          <property name="app.version" value="0.1" />
+
+          <property name="basedir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes" />
+
+          <property name="file.separator" value="/" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="line.separator" value="&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="src.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/test" />
+
+          <property name="build.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build/test" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="user.name" value="eragon" />
+
+          <property name="lib.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/lib" />
+
+          <property name="ant.file" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build.xml" />
+
+          <property name="stdout.encoding" value="UTF-8" />
+
+          <property name="path.separator" value=":" />
+
+          <property name="os.version" value="6.14.0-36-generic" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="junitreport" />
+
+          <property name="test.report.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/RapportTest" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="ant.file.type.cartes" value="file" />
+
+          <property name="app.name" value="cartes" />
+
+          <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+
+          <property name="build.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build" />
+
+          <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21" />
+
+          <property name="java.io.tmpdir" value="/tmp" />
+
+          <property name="java.version" value="21.0.9" />
+
+          <property name="user.dir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="app.fullname" value="cartes-0.1" />
+
+          <property name="ant.home" value="/usr/share/ant" />
+
+          <property name="docs.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/docs" />
+
+          <property name="ant.file.cartes" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build.xml" />
+
+          <property name="native.encoding" value="UTF-8" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.14 compiled on September 25 2023" />
+
+          <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib" />
+
+          <property name="java.vendor" value="Ubuntu" />
+
+          <property name="stderr.encoding" value="UTF-8" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="java.vm.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="compile.deprecation" value="false" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="ant.project.default-target" value="run" />
+
+          <property name="src.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/src" />
+
+      </properties>
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testRecevoirCarte" time="0.002" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testConstructeurAvecNomVide" time="0.001" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testGetNomDifferents" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testJouerCarteAleatoire" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testToString" time="0.005" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testRecevoirDeuxCartes" time="0.001" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testConstructeur" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testGetMainNonNull" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testGetMain" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testJouerCarteDifferentesCartes" time="0.001" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testJouerCarteAvecUneSeule" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testJouerCarteRetireDeMain" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testMainVide" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testRecevoirMemeCarte" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testRecevoirTroisCartes" time="0.001" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testGetNom" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testJouerCartePlusieursfoIs" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testJouerCarte" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testToStringAvecCartes" time="0.001" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testRecevoirCartesMultiples" time="0.0" />
+
+      <testcase classname="modele.cartes.JoueurIATest" name="testJouerToutesLesCartes" time="0.0" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="eragon-System-Product-Name" id="3" name="PaquetTest" package="modele.cartes" skipped="0" tests="36" time="0.054" timestamp="2025-12-05T17:44:18">
+      <properties>
+          <property name="ant.library.dir" value="/usr/share/ant/lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="cartes" />
+
+          <property name="sun.jnu.encoding" value="UTF-8" />
+
+          <property name="dist.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/dist" />
+
+          <property name="java.class.path" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build/test:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/lib/hamcrest-core-1.3.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/lib/junit-4.13.2.jar:/usr/share/java/ant-launcher-1.10.14.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar" />
+
+          <property name="compile.optimize" value="true" />
+
+          <property name="java.vm.vendor" value="Ubuntu" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="compile.debug" value="true" />
+
+          <property name="java.vendor.url" value="https://ubuntu.com/" />
+
+          <property name="javac.encoding" value="UTF-8" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Linux" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="FR" />
+
+          <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner modele.cartes.PaquetTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/RapportTest/TEST-modele.cartes.PaquetTest.xml crashfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/junitvmwatcher10838410294337763274.properties propsfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/junit5242359075403784495.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="/home/eragon" />
+
+          <property name="user.language" value="fr" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="java.version.date" value="2025-10-21" />
+
+          <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64" />
+
+          <property name="app.version" value="0.1" />
+
+          <property name="basedir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes" />
+
+          <property name="file.separator" value="/" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="line.separator" value="&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="src.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/test" />
+
+          <property name="build.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build/test" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="user.name" value="eragon" />
+
+          <property name="lib.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/lib" />
+
+          <property name="ant.file" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build.xml" />
+
+          <property name="stdout.encoding" value="UTF-8" />
+
+          <property name="path.separator" value=":" />
+
+          <property name="os.version" value="6.14.0-36-generic" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="junitreport" />
+
+          <property name="test.report.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/RapportTest" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="ant.file.type.cartes" value="file" />
+
+          <property name="app.name" value="cartes" />
+
+          <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+
+          <property name="build.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build" />
+
+          <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21" />
+
+          <property name="java.io.tmpdir" value="/tmp" />
+
+          <property name="java.version" value="21.0.9" />
+
+          <property name="user.dir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="app.fullname" value="cartes-0.1" />
+
+          <property name="ant.home" value="/usr/share/ant" />
+
+          <property name="docs.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/docs" />
+
+          <property name="ant.file.cartes" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/build.xml" />
+
+          <property name="native.encoding" value="UTF-8" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.14 compiled on September 25 2023" />
+
+          <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib" />
+
+          <property name="java.vendor" value="Ubuntu" />
+
+          <property name="stderr.encoding" value="UTF-8" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="java.vm.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="compile.deprecation" value="false" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="ant.project.default-target" value="run" />
+
+          <property name="src.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/cartes/src" />
+
+      </properties>
+
+      <testcase classname="modele.cartes.PaquetTest" name="testCarteRandomRetourneCartePresente" time="0.002" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testCouperMemeTaille" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testGetPaquetNonNull" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testEstVidePaquetNonVide" time="0.001" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testAjouter" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testCouperGardeToutesLesCartes" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testMelangerMemesCartes" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testConstructeur" time="0.001" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testNbrCarteApresAjouts" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testAjouter3Cartes" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testMelangerPaquetVide" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testCreerJeu32Contenu" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testContientPaquetVide" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testContientCarte" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testCarteRandomNeSupprimePas" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testEstVidePaquetVide" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testCarteRandomAvecUneSeuleCarte" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testCreerJeu52Couleurs" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testAjouterEtRetirer" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testCreerJeu52Contenu" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testNbrCarteApresRetraits" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testCreerJeu32Couleurs" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testRetirer" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testAjouterMemeCarte" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testNbrCartePaquetVide" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testCreerJeu52Hauteurs" time="0.001" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testToStringPaquetCartes" time="0.005" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testEstVideApresRetrait" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testCreerJeu52Taille" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testCreerJeu328Hauteurs" time="0.001" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testGetPaquet" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testMelangerMemeTaille" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testToStringPaquetVide" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testContientPasCarte" time="0.0" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testCreerJeu32Taille" time="0.001" />
+
+      <testcase classname="modele.cartes.PaquetTest" name="testRetirerJusquaVide" time="0.0" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+</testsuites>

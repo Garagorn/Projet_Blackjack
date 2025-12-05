@@ -1,0 +1,2632 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="eragon-System-Product-Name" id="0" name="ActionAssuranceTest" package="blackjack.modele.actions" skipped="0" tests="21" time="0.052" timestamp="2025-12-05T17:43:31">
+      <properties>
+          <property name="ant.library.dir" value="/usr/share/ant/lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="blackjack" />
+
+          <property name="sun.jnu.encoding" value="UTF-8" />
+
+          <property name="dist.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/dist" />
+
+          <property name="java.class.path" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/cartes-0.1.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/hamcrest-core-1.3.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/junit-4.13.2.jar:/usr/share/java/ant-launcher-1.10.14.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar" />
+
+          <property name="compile.optimize" value="true" />
+
+          <property name="java.vm.vendor" value="Ubuntu" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="compile.debug" value="true" />
+
+          <property name="java.vendor.url" value="https://ubuntu.com/" />
+
+          <property name="javac.encoding" value="UTF-8" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Linux" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="FR" />
+
+          <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner blackjack.modele.actions.ActionAssuranceTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest/TEST-blackjack.modele.actions.ActionAssuranceTest.xml crashfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junitvmwatcher10252333295942639100.properties propsfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junit15808760366113826600.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="/home/eragon" />
+
+          <property name="user.language" value="fr" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="java.version.date" value="2025-10-21" />
+
+          <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64" />
+
+          <property name="app.version" value="0.1" />
+
+          <property name="basedir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="file.separator" value="/" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="line.separator" value="&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="src.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/test" />
+
+          <property name="build.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="user.name" value="eragon" />
+
+          <property name="lib.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib" />
+
+          <property name="ant.file" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="stdout.encoding" value="UTF-8" />
+
+          <property name="path.separator" value=":" />
+
+          <property name="os.version" value="6.14.0-36-generic" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="ant.file.type.blackjack" value="file" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="junitreport" />
+
+          <property name="test.report.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="app.name" value="blackjack" />
+
+          <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+
+          <property name="build.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build" />
+
+          <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21" />
+
+          <property name="java.io.tmpdir" value="/tmp" />
+
+          <property name="ant.file.blackjack" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="java.version" value="21.0.9" />
+
+          <property name="user.dir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="app.fullname" value="blackjack-0.1" />
+
+          <property name="ant.home" value="/usr/share/ant" />
+
+          <property name="docs.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/docs" />
+
+          <property name="native.encoding" value="UTF-8" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.14 compiled on September 25 2023" />
+
+          <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib" />
+
+          <property name="java.vendor" value="Ubuntu" />
+
+          <property name="stderr.encoding" value="UTF-8" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="java.vm.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="compile.deprecation" value="false" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="ant.project.default-target" value="run" />
+
+          <property name="src.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/src" />
+
+      </properties>
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testNePeutPasExecuterAvecTroisCartes" time="0.004" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testExecuter" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testPeutExecuterAvecMainVide" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testPeutExecuterAvecJoueurNull" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testNePeutPasExecuterSansCroupierMontrantAs" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testNePeutPasExecuterSansJetons" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testExecuterCoutAssuranceMoitieMise" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testAssuranceMarqueMain" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testPeutExecuterNecessiteDeuxCartes" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testAssuranceAvecMiseImpaire" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testGetDescription" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testNePeutPasPrendreAssuranceDeuxFois" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testPeutExecuterAvecCarteVisibleNull" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testExecuterAvecJoueurNull" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testAssuranceAvecMise50" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testGetNom" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testPeutExecuterAvecCroupierMontrantAs" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testNePeutPasExecuterAvecCroupierSans10" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testNePeutPasExecuterAvecMainDejaAssuree" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testPeutExecuterAvecJustesAssezJetons" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionAssuranceTest" name="testExecuterSansPermission" time="0.001" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="eragon-System-Product-Name" id="1" name="ActionDoublerTest" package="blackjack.modele.actions" skipped="0" tests="22" time="0.05" timestamp="2025-12-05T17:43:31">
+      <properties>
+          <property name="ant.library.dir" value="/usr/share/ant/lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="blackjack" />
+
+          <property name="sun.jnu.encoding" value="UTF-8" />
+
+          <property name="dist.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/dist" />
+
+          <property name="java.class.path" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/cartes-0.1.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/hamcrest-core-1.3.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/junit-4.13.2.jar:/usr/share/java/ant-launcher-1.10.14.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar" />
+
+          <property name="compile.optimize" value="true" />
+
+          <property name="java.vm.vendor" value="Ubuntu" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="compile.debug" value="true" />
+
+          <property name="java.vendor.url" value="https://ubuntu.com/" />
+
+          <property name="javac.encoding" value="UTF-8" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Linux" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="FR" />
+
+          <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner blackjack.modele.actions.ActionDoublerTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest/TEST-blackjack.modele.actions.ActionDoublerTest.xml crashfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junitvmwatcher7027728358287294199.properties propsfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junit5657136397637680279.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="/home/eragon" />
+
+          <property name="user.language" value="fr" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="java.version.date" value="2025-10-21" />
+
+          <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64" />
+
+          <property name="app.version" value="0.1" />
+
+          <property name="basedir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="file.separator" value="/" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="line.separator" value="&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="src.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/test" />
+
+          <property name="build.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="user.name" value="eragon" />
+
+          <property name="lib.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib" />
+
+          <property name="ant.file" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="stdout.encoding" value="UTF-8" />
+
+          <property name="path.separator" value=":" />
+
+          <property name="os.version" value="6.14.0-36-generic" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="ant.file.type.blackjack" value="file" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="junitreport" />
+
+          <property name="test.report.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="app.name" value="blackjack" />
+
+          <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+
+          <property name="build.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build" />
+
+          <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21" />
+
+          <property name="java.io.tmpdir" value="/tmp" />
+
+          <property name="ant.file.blackjack" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="java.version" value="21.0.9" />
+
+          <property name="user.dir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="app.fullname" value="blackjack-0.1" />
+
+          <property name="ant.home" value="/usr/share/ant" />
+
+          <property name="docs.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/docs" />
+
+          <property name="native.encoding" value="UTF-8" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.14 compiled on September 25 2023" />
+
+          <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib" />
+
+          <property name="java.vendor" value="Ubuntu" />
+
+          <property name="stderr.encoding" value="UTF-8" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="java.vm.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="compile.deprecation" value="false" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="ant.project.default-target" value="run" />
+
+          <property name="src.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/src" />
+
+      </properties>
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testExecuterPeutCauserBuste" time="0.004" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testExecuterDiminuePioche" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testDoublerAvecMise50" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testExecuter" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testNePeutPasDoublerAvecScore12" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testPeutExecuterAvecMainVide" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testPeutExecuterAvecJoueurNull" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testPeutExecuterAvecScore10" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testPeutExecuterAvecScore11" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testNePeutPasDoublerAvecPiocheVide" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testPeutDoublerAvecJustesAssezJetons" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testNePeutPasDoublerDeuxFois" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testGetDescription" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testExecuterAvecJoueurNull" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testExecuterAjouteUneSeuleCarte" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testGetNom" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testNePeutPasDoublerSansJetons" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testDoublerAvecMise200" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testNePeutPasDoublerAvecScore8" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testNePeutPasDoublerAvecTroisCartes" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testExecuterSansPermission" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionDoublerTest" name="testPeutExecuterAvecScore9" time="0.0" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="eragon-System-Product-Name" id="2" name="ActionResterTest" package="blackjack.modele.actions" skipped="0" tests="18" time="0.05" timestamp="2025-12-05T17:43:31">
+      <properties>
+          <property name="ant.library.dir" value="/usr/share/ant/lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="blackjack" />
+
+          <property name="sun.jnu.encoding" value="UTF-8" />
+
+          <property name="dist.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/dist" />
+
+          <property name="java.class.path" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/cartes-0.1.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/hamcrest-core-1.3.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/junit-4.13.2.jar:/usr/share/java/ant-launcher-1.10.14.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar" />
+
+          <property name="compile.optimize" value="true" />
+
+          <property name="java.vm.vendor" value="Ubuntu" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="compile.debug" value="true" />
+
+          <property name="java.vendor.url" value="https://ubuntu.com/" />
+
+          <property name="javac.encoding" value="UTF-8" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Linux" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="FR" />
+
+          <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner blackjack.modele.actions.ActionResterTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest/TEST-blackjack.modele.actions.ActionResterTest.xml crashfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junitvmwatcher5178384194580923016.properties propsfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junit9182747593341904811.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="/home/eragon" />
+
+          <property name="user.language" value="fr" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="java.version.date" value="2025-10-21" />
+
+          <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64" />
+
+          <property name="app.version" value="0.1" />
+
+          <property name="basedir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="file.separator" value="/" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="line.separator" value="&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="src.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/test" />
+
+          <property name="build.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="user.name" value="eragon" />
+
+          <property name="lib.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib" />
+
+          <property name="ant.file" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="stdout.encoding" value="UTF-8" />
+
+          <property name="path.separator" value=":" />
+
+          <property name="os.version" value="6.14.0-36-generic" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="ant.file.type.blackjack" value="file" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="junitreport" />
+
+          <property name="test.report.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="app.name" value="blackjack" />
+
+          <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+
+          <property name="build.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build" />
+
+          <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21" />
+
+          <property name="java.io.tmpdir" value="/tmp" />
+
+          <property name="ant.file.blackjack" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="java.version" value="21.0.9" />
+
+          <property name="user.dir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="app.fullname" value="blackjack-0.1" />
+
+          <property name="ant.home" value="/usr/share/ant" />
+
+          <property name="docs.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/docs" />
+
+          <property name="native.encoding" value="UTF-8" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.14 compiled on September 25 2023" />
+
+          <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib" />
+
+          <property name="java.vendor" value="Ubuntu" />
+
+          <property name="stderr.encoding" value="UTF-8" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="java.vm.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="compile.deprecation" value="false" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="ant.project.default-target" value="run" />
+
+          <property name="src.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/src" />
+
+      </properties>
+
+      <testcase classname="blackjack.modele.actions.ActionResterTest" name="testExecuterNAjoutePasCarte" time="0.004" />
+
+      <testcase classname="blackjack.modele.actions.ActionResterTest" name="testPeutExecuterAvecScoreBas" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.ActionResterTest" name="testExecuter" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionResterTest" name="testPeutExecuterAvecMainNull" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionResterTest" name="testPeutExecuterAvecJoueurNull" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionResterTest" name="testPeutExecuterAvecScore17" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionResterTest" name="testPeutExecuterAvecScore20" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionResterTest" name="testPeutExecuterAvecScore21" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionResterTest" name="testPeutToujoursResterSaufSiBuste" time="0.003" />
+
+      <testcase classname="blackjack.modele.actions.ActionResterTest" name="testPeutExecuterAvecMainBustee" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionResterTest" name="testGetDescription" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionResterTest" name="testExecuterPlusieursfois" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionResterTest" name="testPeutExecuterAvecBlackjack" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionResterTest" name="testExecuterAvecJoueurNull" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionResterTest" name="testPeutExecuterAvecMainNormale" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionResterTest" name="testGetNom" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionResterTest" name="testExecuterNeChangeRien" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionResterTest" name="testExecuterSansPermission" time="0.0" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="eragon-System-Product-Name" id="3" name="ActionSplitTest" package="blackjack.modele.actions" skipped="0" tests="22" time="0.049" timestamp="2025-12-05T17:43:31">
+      <properties>
+          <property name="ant.library.dir" value="/usr/share/ant/lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="blackjack" />
+
+          <property name="sun.jnu.encoding" value="UTF-8" />
+
+          <property name="dist.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/dist" />
+
+          <property name="java.class.path" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/cartes-0.1.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/hamcrest-core-1.3.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/junit-4.13.2.jar:/usr/share/java/ant-launcher-1.10.14.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar" />
+
+          <property name="compile.optimize" value="true" />
+
+          <property name="java.vm.vendor" value="Ubuntu" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="compile.debug" value="true" />
+
+          <property name="java.vendor.url" value="https://ubuntu.com/" />
+
+          <property name="javac.encoding" value="UTF-8" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Linux" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="FR" />
+
+          <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner blackjack.modele.actions.ActionSplitTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest/TEST-blackjack.modele.actions.ActionSplitTest.xml crashfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junitvmwatcher10289334296248869949.properties propsfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junit10772489893789817602.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="/home/eragon" />
+
+          <property name="user.language" value="fr" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="java.version.date" value="2025-10-21" />
+
+          <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64" />
+
+          <property name="app.version" value="0.1" />
+
+          <property name="basedir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="file.separator" value="/" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="line.separator" value="&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="src.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/test" />
+
+          <property name="build.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="user.name" value="eragon" />
+
+          <property name="lib.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib" />
+
+          <property name="ant.file" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="stdout.encoding" value="UTF-8" />
+
+          <property name="path.separator" value=":" />
+
+          <property name="os.version" value="6.14.0-36-generic" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="ant.file.type.blackjack" value="file" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="junitreport" />
+
+          <property name="test.report.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="app.name" value="blackjack" />
+
+          <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+
+          <property name="build.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build" />
+
+          <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21" />
+
+          <property name="java.io.tmpdir" value="/tmp" />
+
+          <property name="ant.file.blackjack" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="java.version" value="21.0.9" />
+
+          <property name="user.dir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="app.fullname" value="blackjack-0.1" />
+
+          <property name="ant.home" value="/usr/share/ant" />
+
+          <property name="docs.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/docs" />
+
+          <property name="native.encoding" value="UTF-8" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.14 compiled on September 25 2023" />
+
+          <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib" />
+
+          <property name="java.vendor" value="Ubuntu" />
+
+          <property name="stderr.encoding" value="UTF-8" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="java.vm.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="compile.deprecation" value="false" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="ant.project.default-target" value="run" />
+
+          <property name="src.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/src" />
+
+      </properties>
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testNePeutPasSpliterCartesDifferentes" time="0.004" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testExecuter" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testMainsMarqueesSplit" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testPeutSpliterAssezJetons" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testNePeutPlusSpliterApresUnSplit" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testExecuterDistribueNouvelllesCartes" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testPeutExecuterAvecMainVide" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testPeutExecuterAvecJoueurNull" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testSplitAvecMise50" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testNePeutPasSpliterAvecTroisCartes" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testPeutExecuterAvecPaireFigures" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testSplitAvecPaireDe10" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testPeutExecuterAvecPaireAs" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testGetDescription" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testSplitAvecAs" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testExecuterAvecJoueurNull" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testGetNom" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testNePeutPasSpliterSansJetons" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testPeutExecuterAvecPaire8" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testExecuterSansPermission" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testJoueurAMainActuelleSurPremiereMainApresSplit" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionSplitTest" name="testNePeutPasSplitPiocheVide" time="0.0" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="eragon-System-Product-Name" id="4" name="ActionTirerTest" package="blackjack.modele.actions" skipped="0" tests="15" time="0.048" timestamp="2025-12-05T17:43:31">
+      <properties>
+          <property name="ant.library.dir" value="/usr/share/ant/lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="blackjack" />
+
+          <property name="sun.jnu.encoding" value="UTF-8" />
+
+          <property name="dist.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/dist" />
+
+          <property name="java.class.path" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/cartes-0.1.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/hamcrest-core-1.3.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/junit-4.13.2.jar:/usr/share/java/ant-launcher-1.10.14.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar" />
+
+          <property name="compile.optimize" value="true" />
+
+          <property name="java.vm.vendor" value="Ubuntu" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="compile.debug" value="true" />
+
+          <property name="java.vendor.url" value="https://ubuntu.com/" />
+
+          <property name="javac.encoding" value="UTF-8" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Linux" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="FR" />
+
+          <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner blackjack.modele.actions.ActionTirerTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest/TEST-blackjack.modele.actions.ActionTirerTest.xml crashfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junitvmwatcher5031602778641652906.properties propsfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junit14338386069830324142.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="/home/eragon" />
+
+          <property name="user.language" value="fr" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="java.version.date" value="2025-10-21" />
+
+          <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64" />
+
+          <property name="app.version" value="0.1" />
+
+          <property name="basedir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="file.separator" value="/" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="line.separator" value="&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="src.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/test" />
+
+          <property name="build.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="user.name" value="eragon" />
+
+          <property name="lib.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib" />
+
+          <property name="ant.file" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="stdout.encoding" value="UTF-8" />
+
+          <property name="path.separator" value=":" />
+
+          <property name="os.version" value="6.14.0-36-generic" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="ant.file.type.blackjack" value="file" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="junitreport" />
+
+          <property name="test.report.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="app.name" value="blackjack" />
+
+          <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+
+          <property name="build.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build" />
+
+          <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21" />
+
+          <property name="java.io.tmpdir" value="/tmp" />
+
+          <property name="ant.file.blackjack" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="java.version" value="21.0.9" />
+
+          <property name="user.dir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="app.fullname" value="blackjack-0.1" />
+
+          <property name="ant.home" value="/usr/share/ant" />
+
+          <property name="docs.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/docs" />
+
+          <property name="native.encoding" value="UTF-8" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.14 compiled on September 25 2023" />
+
+          <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib" />
+
+          <property name="java.vendor" value="Ubuntu" />
+
+          <property name="stderr.encoding" value="UTF-8" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="java.vm.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="compile.deprecation" value="false" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="ant.project.default-target" value="run" />
+
+          <property name="src.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/src" />
+
+      </properties>
+
+      <testcase classname="blackjack.modele.actions.ActionTirerTest" name="testExecuter" time="0.004" />
+
+      <testcase classname="blackjack.modele.actions.ActionTirerTest" name="testPeutExecuterAvecMainVide" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.ActionTirerTest" name="testPeutExecuterAvecJoueurNull" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionTirerTest" name="testPeutExecuterAvecScore21" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionTirerTest" name="testExecuterPlusieursCartes" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.ActionTirerTest" name="testExecuterJusquaBuste" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionTirerTest" name="testPeutExecuterAvecPiocheVide" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionTirerTest" name="testPeutExecuterAvecMainBustee" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionTirerTest" name="testGetDescription" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionTirerTest" name="testExecuterModifieScore" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionTirerTest" name="testPeutExecuterAvecMainDoublee" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionTirerTest" name="testExecuterAvecJoueurNull" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.ActionTirerTest" name="testPeutExecuterAvecMainNormale" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionTirerTest" name="testGetNom" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.ActionTirerTest" name="testExecuterSansPermission" time="0.0" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="eragon-System-Product-Name" id="5" name="GestionnaireActionsTest" package="blackjack.modele.actions" skipped="0" tests="26" time="0.05" timestamp="2025-12-05T17:43:32">
+      <properties>
+          <property name="ant.library.dir" value="/usr/share/ant/lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="blackjack" />
+
+          <property name="sun.jnu.encoding" value="UTF-8" />
+
+          <property name="dist.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/dist" />
+
+          <property name="java.class.path" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/cartes-0.1.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/hamcrest-core-1.3.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/junit-4.13.2.jar:/usr/share/java/ant-launcher-1.10.14.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar" />
+
+          <property name="compile.optimize" value="true" />
+
+          <property name="java.vm.vendor" value="Ubuntu" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="compile.debug" value="true" />
+
+          <property name="java.vendor.url" value="https://ubuntu.com/" />
+
+          <property name="javac.encoding" value="UTF-8" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Linux" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="FR" />
+
+          <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner blackjack.modele.actions.GestionnaireActionsTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest/TEST-blackjack.modele.actions.GestionnaireActionsTest.xml crashfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junitvmwatcher9472719269158516303.properties propsfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junit3605637115201173143.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="/home/eragon" />
+
+          <property name="user.language" value="fr" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="java.version.date" value="2025-10-21" />
+
+          <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64" />
+
+          <property name="app.version" value="0.1" />
+
+          <property name="basedir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="file.separator" value="/" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="line.separator" value="&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="src.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/test" />
+
+          <property name="build.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="user.name" value="eragon" />
+
+          <property name="lib.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib" />
+
+          <property name="ant.file" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="stdout.encoding" value="UTF-8" />
+
+          <property name="path.separator" value=":" />
+
+          <property name="os.version" value="6.14.0-36-generic" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="ant.file.type.blackjack" value="file" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="junitreport" />
+
+          <property name="test.report.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="app.name" value="blackjack" />
+
+          <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+
+          <property name="build.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build" />
+
+          <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21" />
+
+          <property name="java.io.tmpdir" value="/tmp" />
+
+          <property name="ant.file.blackjack" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="java.version" value="21.0.9" />
+
+          <property name="user.dir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="app.fullname" value="blackjack-0.1" />
+
+          <property name="ant.home" value="/usr/share/ant" />
+
+          <property name="docs.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/docs" />
+
+          <property name="native.encoding" value="UTF-8" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.14 compiled on September 25 2023" />
+
+          <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib" />
+
+          <property name="java.vendor" value="Ubuntu" />
+
+          <property name="stderr.encoding" value="UTF-8" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="java.vm.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="compile.deprecation" value="false" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="ant.project.default-target" value="run" />
+
+          <property name="src.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/src" />
+
+      </properties>
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testEnregistrerActionRemplaceSiMemeNom" time="0.004" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testObtenirActionsExecutables" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testExecuterActionInexistante" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testObtenirToutesLesActions" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testExecuterActionRester" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testObtenirActionsExecutablesAvecDoubler" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testToString" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testConstructeur" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testExecuterActionDoubler" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testEnregistrerActionNull" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testObtenirActionsExecutablesAvecAssurance" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testObtenirActionInexistante" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testObtenirNomsActions" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testObtenirActionsExecutablesAvecJoueurNull" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testExecuterActionAvecJoueurNull" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testReinitialiser" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testObtenirAction" time="0.001" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testInitialiserActions" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testExecuterAction" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testEnregistrerAction" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testObtenirActionsExecutablesMainBustee" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testRetirerActionInexistante" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testGetNombreActions" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testRetirerAction" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testObtenirActionsExecutablesAvecSplit" time="0.0" />
+
+      <testcase classname="blackjack.modele.actions.GestionnaireActionsTest" name="testActionExiste" time="0.0" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="eragon-System-Product-Name" id="6" name="GestionnairePaquetTest" package="blackjack.modele.jeu" skipped="0" tests="13" time="0.046" timestamp="2025-12-05T17:43:32">
+      <properties>
+          <property name="ant.library.dir" value="/usr/share/ant/lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="blackjack" />
+
+          <property name="sun.jnu.encoding" value="UTF-8" />
+
+          <property name="dist.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/dist" />
+
+          <property name="java.class.path" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/cartes-0.1.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/hamcrest-core-1.3.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/junit-4.13.2.jar:/usr/share/java/ant-launcher-1.10.14.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar" />
+
+          <property name="compile.optimize" value="true" />
+
+          <property name="java.vm.vendor" value="Ubuntu" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="compile.debug" value="true" />
+
+          <property name="java.vendor.url" value="https://ubuntu.com/" />
+
+          <property name="javac.encoding" value="UTF-8" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Linux" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="FR" />
+
+          <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner blackjack.modele.jeu.GestionnairePaquetTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest/TEST-blackjack.modele.jeu.GestionnairePaquetTest.xml crashfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junitvmwatcher1221408105450518503.properties propsfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junit1644220332373175512.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="/home/eragon" />
+
+          <property name="user.language" value="fr" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="java.version.date" value="2025-10-21" />
+
+          <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64" />
+
+          <property name="app.version" value="0.1" />
+
+          <property name="basedir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="file.separator" value="/" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="line.separator" value="&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="src.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/test" />
+
+          <property name="build.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="user.name" value="eragon" />
+
+          <property name="lib.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib" />
+
+          <property name="ant.file" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="stdout.encoding" value="UTF-8" />
+
+          <property name="path.separator" value=":" />
+
+          <property name="os.version" value="6.14.0-36-generic" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="ant.file.type.blackjack" value="file" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="junitreport" />
+
+          <property name="test.report.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="app.name" value="blackjack" />
+
+          <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+
+          <property name="build.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build" />
+
+          <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21" />
+
+          <property name="java.io.tmpdir" value="/tmp" />
+
+          <property name="ant.file.blackjack" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="java.version" value="21.0.9" />
+
+          <property name="user.dir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="app.fullname" value="blackjack-0.1" />
+
+          <property name="ant.home" value="/usr/share/ant" />
+
+          <property name="docs.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/docs" />
+
+          <property name="native.encoding" value="UTF-8" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.14 compiled on September 25 2023" />
+
+          <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib" />
+
+          <property name="java.vendor" value="Ubuntu" />
+
+          <property name="stderr.encoding" value="UTF-8" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="java.vm.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="compile.deprecation" value="false" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="ant.project.default-target" value="run" />
+
+          <property name="src.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/src" />
+
+      </properties>
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePaquetTest" name="testDistribuerCarteCroupierAvecPaquetVide" time="0.003" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePaquetTest" name="testPaquetContientToutesLesCartes" time="0.001" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePaquetTest" name="testDistribuerCarteJoueurs" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePaquetTest" name="testConstructeur" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePaquetTest" name="testRemelanger" time="0.001" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePaquetTest" name="testDistribuerCarteAvecPaquetVide" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePaquetTest" name="testDistribuerPlusieursCartes" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePaquetTest" name="testDoitRemelangerPaquetVide" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePaquetTest" name="testDistribuerAPlusieurJoueurs" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePaquetTest" name="testDistributionAleatoire" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePaquetTest" name="testGetPaquet" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePaquetTest" name="testDistribuerCarteCroupier" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePaquetTest" name="testDoitRemelangerPaquetNonVide" time="0.0" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="eragon-System-Product-Name" id="7" name="GestionnairePartieTest" package="blackjack.modele.jeu" skipped="0" tests="19" time="0.048" timestamp="2025-12-05T17:43:32">
+      <properties>
+          <property name="ant.library.dir" value="/usr/share/ant/lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="blackjack" />
+
+          <property name="sun.jnu.encoding" value="UTF-8" />
+
+          <property name="dist.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/dist" />
+
+          <property name="java.class.path" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/cartes-0.1.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/hamcrest-core-1.3.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/junit-4.13.2.jar:/usr/share/java/ant-launcher-1.10.14.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar" />
+
+          <property name="compile.optimize" value="true" />
+
+          <property name="java.vm.vendor" value="Ubuntu" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="compile.debug" value="true" />
+
+          <property name="java.vendor.url" value="https://ubuntu.com/" />
+
+          <property name="javac.encoding" value="UTF-8" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Linux" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="FR" />
+
+          <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner blackjack.modele.jeu.GestionnairePartieTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest/TEST-blackjack.modele.jeu.GestionnairePartieTest.xml crashfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junitvmwatcher6371726359374570416.properties propsfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junit7670513196515537254.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="/home/eragon" />
+
+          <property name="user.language" value="fr" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="java.version.date" value="2025-10-21" />
+
+          <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64" />
+
+          <property name="app.version" value="0.1" />
+
+          <property name="basedir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="file.separator" value="/" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="line.separator" value="&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="src.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/test" />
+
+          <property name="build.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="user.name" value="eragon" />
+
+          <property name="lib.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib" />
+
+          <property name="ant.file" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="stdout.encoding" value="UTF-8" />
+
+          <property name="path.separator" value=":" />
+
+          <property name="os.version" value="6.14.0-36-generic" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="ant.file.type.blackjack" value="file" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="junitreport" />
+
+          <property name="test.report.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="app.name" value="blackjack" />
+
+          <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+
+          <property name="build.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build" />
+
+          <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21" />
+
+          <property name="java.io.tmpdir" value="/tmp" />
+
+          <property name="ant.file.blackjack" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="java.version" value="21.0.9" />
+
+          <property name="user.dir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="app.fullname" value="blackjack-0.1" />
+
+          <property name="ant.home" value="/usr/share/ant" />
+
+          <property name="docs.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/docs" />
+
+          <property name="native.encoding" value="UTF-8" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.14 compiled on September 25 2023" />
+
+          <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib" />
+
+          <property name="java.vendor" value="Ubuntu" />
+
+          <property name="stderr.encoding" value="UTF-8" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="java.vm.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="compile.deprecation" value="false" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="ant.project.default-target" value="run" />
+
+          <property name="src.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/src" />
+
+      </properties>
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testResetPartieAvecPlusieursJoueurs" time="0.003" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testGetJoueurActifIndex" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testDemarrerPartie" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testDemarrerPartieAvecBlackjackCroupier" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testResetPartie" time="0.001" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testConstructeur" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testGetEtatPartie" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testGetJoueurActif" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testDeterminerGagnantsEgalite" time="0.001" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testDeterminerGagnantsJoueurBuste" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testDeterminerGagnantsJoueurGagne" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testResetPartieRemelangeSiBesoin" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testTourCroupierTousJoueursBusts" time="0.001" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testGetJoueurActifNull" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testPasserAuJoueurSuivantAvecUnSeulJoueur" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testPasserAuJoueurSuivantAvecDeuxJoueurs" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testPasserAuJoueurSuivantAvecDeuxMains" time="0.001" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testTourCroupier" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.GestionnairePartieTest" name="testPasserAuJoueurSuivantPlusieursMainsEtPlusieursJoueurs" time="0.0" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="eragon-System-Product-Name" id="8" name="ModeleBlackjackTest" package="blackjack.modele.jeu" skipped="0" tests="31" time="0.054" timestamp="2025-12-05T17:43:32">
+      <properties>
+          <property name="ant.library.dir" value="/usr/share/ant/lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="blackjack" />
+
+          <property name="sun.jnu.encoding" value="UTF-8" />
+
+          <property name="dist.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/dist" />
+
+          <property name="java.class.path" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/cartes-0.1.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/hamcrest-core-1.3.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/junit-4.13.2.jar:/usr/share/java/ant-launcher-1.10.14.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar" />
+
+          <property name="compile.optimize" value="true" />
+
+          <property name="java.vm.vendor" value="Ubuntu" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="compile.debug" value="true" />
+
+          <property name="java.vendor.url" value="https://ubuntu.com/" />
+
+          <property name="javac.encoding" value="UTF-8" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Linux" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="FR" />
+
+          <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner blackjack.modele.jeu.ModeleBlackjackTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest/TEST-blackjack.modele.jeu.ModeleBlackjackTest.xml crashfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junitvmwatcher8966527374369259449.properties propsfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junit16897754220384425001.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="/home/eragon" />
+
+          <property name="user.language" value="fr" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="java.version.date" value="2025-10-21" />
+
+          <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64" />
+
+          <property name="app.version" value="0.1" />
+
+          <property name="basedir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="file.separator" value="/" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="line.separator" value="&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="src.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/test" />
+
+          <property name="build.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="user.name" value="eragon" />
+
+          <property name="lib.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib" />
+
+          <property name="ant.file" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="stdout.encoding" value="UTF-8" />
+
+          <property name="path.separator" value=":" />
+
+          <property name="os.version" value="6.14.0-36-generic" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="ant.file.type.blackjack" value="file" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="junitreport" />
+
+          <property name="test.report.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="app.name" value="blackjack" />
+
+          <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+
+          <property name="build.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build" />
+
+          <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21" />
+
+          <property name="java.io.tmpdir" value="/tmp" />
+
+          <property name="ant.file.blackjack" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="java.version" value="21.0.9" />
+
+          <property name="user.dir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="app.fullname" value="blackjack-0.1" />
+
+          <property name="ant.home" value="/usr/share/ant" />
+
+          <property name="docs.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/docs" />
+
+          <property name="native.encoding" value="UTF-8" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.14 compiled on September 25 2023" />
+
+          <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib" />
+
+          <property name="java.vendor" value="Ubuntu" />
+
+          <property name="stderr.encoding" value="UTF-8" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="java.vm.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="compile.deprecation" value="false" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="ant.project.default-target" value="run" />
+
+          <property name="src.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/src" />
+
+      </properties>
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testSetMiseMinimaleZero" time="0.004" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testGetJoueurActifIndex" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testDemarrerPartie" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testResetPartie" time="0.001" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testGetJoueurs" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testGetJoueurHumain" time="0.001" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testConstructeur" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testPartieAvecPlusieursJoueursMixtes" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testGetCroupier" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testSetMiseMinimale" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testGetJoueurActif" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testAjouterPlusieursJoueurs" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testPartieAvecIA" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testPasserAuJoueurSuivant" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testExecuterAction" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testRetirerJoueurInexistant" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testAjouterJoueurNull" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testGetCarteVisibleCroupierAvantPartie" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testAjouterJoueurDeuxFois" time="0.001" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testGetActionsDisponibles" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testGetJoueurHumainAucun" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testGetJoueursRetourneCopie" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testGetNombreJoueurs" time="0.001" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testSetMiseMinimaleNegative" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testGetPioche" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testPartieComplete" time="0.001" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testGetGestionnaireActions" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testRetirerJoueur" time="0.001" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testAjouterJoueur" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testGetCarteVisibleCroupier" time="0.0" />
+
+      <testcase classname="blackjack.modele.jeu.ModeleBlackjackTest" name="testTourCroupier" time="0.0" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="eragon-System-Product-Name" id="9" name="CroupierTest" package="blackjack.modele.joueurs" skipped="0" tests="24" time="0.048" timestamp="2025-12-05T17:43:32">
+      <properties>
+          <property name="ant.library.dir" value="/usr/share/ant/lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="blackjack" />
+
+          <property name="sun.jnu.encoding" value="UTF-8" />
+
+          <property name="dist.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/dist" />
+
+          <property name="java.class.path" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/cartes-0.1.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/hamcrest-core-1.3.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/junit-4.13.2.jar:/usr/share/java/ant-launcher-1.10.14.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar" />
+
+          <property name="compile.optimize" value="true" />
+
+          <property name="java.vm.vendor" value="Ubuntu" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="compile.debug" value="true" />
+
+          <property name="java.vendor.url" value="https://ubuntu.com/" />
+
+          <property name="javac.encoding" value="UTF-8" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Linux" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="FR" />
+
+          <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner blackjack.modele.joueurs.CroupierTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest/TEST-blackjack.modele.joueurs.CroupierTest.xml crashfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junitvmwatcher11047619210042327113.properties propsfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junit3950281997589143089.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="/home/eragon" />
+
+          <property name="user.language" value="fr" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="java.version.date" value="2025-10-21" />
+
+          <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64" />
+
+          <property name="app.version" value="0.1" />
+
+          <property name="basedir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="file.separator" value="/" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="line.separator" value="&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="src.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/test" />
+
+          <property name="build.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="user.name" value="eragon" />
+
+          <property name="lib.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib" />
+
+          <property name="ant.file" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="stdout.encoding" value="UTF-8" />
+
+          <property name="path.separator" value=":" />
+
+          <property name="os.version" value="6.14.0-36-generic" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="ant.file.type.blackjack" value="file" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="junitreport" />
+
+          <property name="test.report.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="app.name" value="blackjack" />
+
+          <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+
+          <property name="build.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build" />
+
+          <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21" />
+
+          <property name="java.io.tmpdir" value="/tmp" />
+
+          <property name="ant.file.blackjack" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="java.version" value="21.0.9" />
+
+          <property name="user.dir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="app.fullname" value="blackjack-0.1" />
+
+          <property name="ant.home" value="/usr/share/ant" />
+
+          <property name="docs.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/docs" />
+
+          <property name="native.encoding" value="UTF-8" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.14 compiled on September 25 2023" />
+
+          <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib" />
+
+          <property name="java.vendor" value="Ubuntu" />
+
+          <property name="stderr.encoding" value="UTF-8" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="java.vm.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="compile.deprecation" value="false" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="ant.project.default-target" value="run" />
+
+          <property name="src.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/src" />
+
+      </properties>
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testPasBlackjack" time="0.002" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testJouerTireTo17" time="0.001" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testEstBust" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testGetPaquetVisibleMainVide" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testPasBust" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testToString" time="0.001" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testConstructeur" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testGetScoreVisible" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testGetScoreVisibleAvecAs" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testGetScoreVisible0SiMainVide" time="0.001" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testJouerPiocheVide" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testReinitialiserMain" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testToStringBuste" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testGetCarteVisibleMainVide" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testFinJouerSi17" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testABlackjack" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testGetCarteVisible" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testJouerAvecAs" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testJouerBuster" time="0.001" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testGetPaquetVisible" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testAjouterCarte" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testCacherDeuxiemeCarte" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testGetScoreVisibleChiffre" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.CroupierTest" name="testAfficherDeuxiemeCarte" time="0.0" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="eragon-System-Product-Name" id="10" name="JoueurHumainTest" package="blackjack.modele.joueurs" skipped="0" tests="28" time="0.048" timestamp="2025-12-05T17:43:32">
+      <properties>
+          <property name="ant.library.dir" value="/usr/share/ant/lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="blackjack" />
+
+          <property name="sun.jnu.encoding" value="UTF-8" />
+
+          <property name="dist.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/dist" />
+
+          <property name="java.class.path" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/cartes-0.1.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/hamcrest-core-1.3.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/junit-4.13.2.jar:/usr/share/java/ant-launcher-1.10.14.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar" />
+
+          <property name="compile.optimize" value="true" />
+
+          <property name="java.vm.vendor" value="Ubuntu" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="compile.debug" value="true" />
+
+          <property name="java.vendor.url" value="https://ubuntu.com/" />
+
+          <property name="javac.encoding" value="UTF-8" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Linux" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="FR" />
+
+          <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner blackjack.modele.joueurs.JoueurHumainTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest/TEST-blackjack.modele.joueurs.JoueurHumainTest.xml crashfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junitvmwatcher9684197638043618741.properties propsfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junit5108242848910075117.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="/home/eragon" />
+
+          <property name="user.language" value="fr" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="java.version.date" value="2025-10-21" />
+
+          <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64" />
+
+          <property name="app.version" value="0.1" />
+
+          <property name="basedir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="file.separator" value="/" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="line.separator" value="&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="src.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/test" />
+
+          <property name="build.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="user.name" value="eragon" />
+
+          <property name="lib.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib" />
+
+          <property name="ant.file" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="stdout.encoding" value="UTF-8" />
+
+          <property name="path.separator" value=":" />
+
+          <property name="os.version" value="6.14.0-36-generic" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="ant.file.type.blackjack" value="file" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="junitreport" />
+
+          <property name="test.report.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="app.name" value="blackjack" />
+
+          <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+
+          <property name="build.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build" />
+
+          <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21" />
+
+          <property name="java.io.tmpdir" value="/tmp" />
+
+          <property name="ant.file.blackjack" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="java.version" value="21.0.9" />
+
+          <property name="user.dir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="app.fullname" value="blackjack-0.1" />
+
+          <property name="ant.home" value="/usr/share/ant" />
+
+          <property name="docs.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/docs" />
+
+          <property name="native.encoding" value="UTF-8" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.14 compiled on September 25 2023" />
+
+          <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib" />
+
+          <property name="java.vendor" value="Ubuntu" />
+
+          <property name="stderr.encoding" value="UTF-8" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="java.vm.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="compile.deprecation" value="false" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="ant.project.default-target" value="run" />
+
+          <property name="src.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/src" />
+
+      </properties>
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testGetMainActuelleVide" time="0.002" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testPasBlackjack" time="0.001" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testGetMiseActuelle" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testReinitialiserMains" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testDemarrerPlusieursMainsConsecutives" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testGetMains" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testGetScore" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testEstBuste" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testConstructeur" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testEstHumain" time="0.001" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testAjouterMain" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testCrediterJetons" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testPasserAMainSuivanteDerniereMain" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testPeutMiser" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testMultiplesDebitsCredits" time="0.001" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testGetBilanSession" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testDebiterJetons" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testReinitialiserSession" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testABlackjack" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testHashCode" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testAjouterCarte" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testAjouterCarteSansMain" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testSetJetons" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testDemarrerNouvelleMain" time="0.001" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testEquals" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testDeuxiemeMain" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testSetNom" time="0.001" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurHumainTest" name="testPasserAMainSuivante" time="0.0" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="eragon-System-Product-Name" id="11" name="JoueurIATest" package="blackjack.modele.joueurs" skipped="0" tests="13" time="0.055" timestamp="2025-12-05T17:43:33">
+      <properties>
+          <property name="ant.library.dir" value="/usr/share/ant/lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="blackjack" />
+
+          <property name="sun.jnu.encoding" value="UTF-8" />
+
+          <property name="dist.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/dist" />
+
+          <property name="java.class.path" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/cartes-0.1.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/hamcrest-core-1.3.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/junit-4.13.2.jar:/usr/share/java/ant-launcher-1.10.14.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar" />
+
+          <property name="compile.optimize" value="true" />
+
+          <property name="java.vm.vendor" value="Ubuntu" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="compile.debug" value="true" />
+
+          <property name="java.vendor.url" value="https://ubuntu.com/" />
+
+          <property name="javac.encoding" value="UTF-8" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Linux" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="FR" />
+
+          <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner blackjack.modele.joueurs.JoueurIATest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest/TEST-blackjack.modele.joueurs.JoueurIATest.xml crashfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junitvmwatcher2791606173234253836.properties propsfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junit4155907919691390494.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="/home/eragon" />
+
+          <property name="user.language" value="fr" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="java.version.date" value="2025-10-21" />
+
+          <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64" />
+
+          <property name="app.version" value="0.1" />
+
+          <property name="basedir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="file.separator" value="/" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="line.separator" value="&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="src.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/test" />
+
+          <property name="build.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="user.name" value="eragon" />
+
+          <property name="lib.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib" />
+
+          <property name="ant.file" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="stdout.encoding" value="UTF-8" />
+
+          <property name="path.separator" value=":" />
+
+          <property name="os.version" value="6.14.0-36-generic" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="ant.file.type.blackjack" value="file" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="junitreport" />
+
+          <property name="test.report.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="app.name" value="blackjack" />
+
+          <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+
+          <property name="build.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build" />
+
+          <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21" />
+
+          <property name="java.io.tmpdir" value="/tmp" />
+
+          <property name="ant.file.blackjack" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="java.version" value="21.0.9" />
+
+          <property name="user.dir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="app.fullname" value="blackjack-0.1" />
+
+          <property name="ant.home" value="/usr/share/ant" />
+
+          <property name="docs.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/docs" />
+
+          <property name="native.encoding" value="UTF-8" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.14 compiled on September 25 2023" />
+
+          <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib" />
+
+          <property name="java.vendor" value="Ubuntu" />
+
+          <property name="stderr.encoding" value="UTF-8" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="java.vm.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="compile.deprecation" value="false" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="ant.project.default-target" value="run" />
+
+          <property name="src.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/src" />
+
+      </properties>
+
+      <testcase classname="blackjack.modele.joueurs.JoueurIATest" name="testConstructeur" time="0.002" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurIATest" name="testEstHumain" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurIATest" name="testDeterminerMiseMiseMinimaleZero" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurIATest" name="testIAAvecJetonsZero" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurIATest" name="testDeterminerMise5PourcentJetons" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurIATest" name="testDeterminerMiseJetonsInsuffisants" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurIATest" name="testGetStrategie" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurIATest" name="testToStringSansStrategie" time="0.009" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurIATest" name="testGestionBudgetIA" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurIATest" name="testDeterminerMiseNePasDepasserJetons" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurIATest" name="testDeterminerMiseAvecJetonsEleves" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurIATest" name="testMultiplesMainsIA" time="0.001" />
+
+      <testcase classname="blackjack.modele.joueurs.JoueurIATest" name="testDeterminerMiseRespecteMiseMinimale" time="0.0" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="eragon-System-Product-Name" id="12" name="MainTest" package="blackjack.modele.joueurs" skipped="0" tests="29" time="0.05" timestamp="2025-12-05T17:43:33">
+      <properties>
+          <property name="ant.library.dir" value="/usr/share/ant/lib" />
+
+          <property name="ant.file.type" value="file" />
+
+          <property name="java.specification.version" value="21" />
+
+          <property name="ant.project.name" value="blackjack" />
+
+          <property name="sun.jnu.encoding" value="UTF-8" />
+
+          <property name="dist.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/dist" />
+
+          <property name="java.class.path" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/cartes-0.1.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/hamcrest-core-1.3.jar:/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib/junit-4.13.2.jar:/usr/share/java/ant-launcher-1.10.14.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar" />
+
+          <property name="compile.optimize" value="true" />
+
+          <property name="java.vm.vendor" value="Ubuntu" />
+
+          <property name="sun.arch.data.model" value="64" />
+
+          <property name="compile.debug" value="true" />
+
+          <property name="java.vendor.url" value="https://ubuntu.com/" />
+
+          <property name="javac.encoding" value="UTF-8" />
+
+          <property name="java.vm.specification.version" value="21" />
+
+          <property name="os.name" value="Linux" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="user.country" value="FR" />
+
+          <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib" />
+
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner blackjack.modele.joueurs.MainTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest/TEST-blackjack.modele.joueurs.MainTest.xml crashfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junitvmwatcher17480078160713426613.properties propsfile=/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/junit17333729281334228876.properties" />
+
+          <property name="jdk.debug" value="release" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="user.home" value="/home/eragon" />
+
+          <property name="user.language" value="fr" />
+
+          <property name="java.specification.vendor" value="Oracle Corporation" />
+
+          <property name="java.version.date" value="2025-10-21" />
+
+          <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64" />
+
+          <property name="app.version" value="0.1" />
+
+          <property name="basedir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="file.separator" value="/" />
+
+          <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+          <property name="line.separator" value="&#xa;" />
+
+          <property name="ant.java.version" value="21" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+          <property name="src.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/test" />
+
+          <property name="build.test.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build/test" />
+
+          <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+          <property name="java.runtime.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="user.name" value="eragon" />
+
+          <property name="lib.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/lib" />
+
+          <property name="ant.file" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="stdout.encoding" value="UTF-8" />
+
+          <property name="path.separator" value=":" />
+
+          <property name="os.version" value="6.14.0-36-generic" />
+
+          <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+          <property name="ant.file.type.blackjack" value="file" />
+
+          <property name="file.encoding" value="UTF-8" />
+
+          <property name="ant.project.invoked-targets" value="junitreport" />
+
+          <property name="test.report.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/RapportTest" />
+
+          <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+          <property name="app.name" value="blackjack" />
+
+          <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+
+          <property name="build.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build" />
+
+          <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21" />
+
+          <property name="java.io.tmpdir" value="/tmp" />
+
+          <property name="ant.file.blackjack" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/build.xml" />
+
+          <property name="java.version" value="21.0.9" />
+
+          <property name="user.dir" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack" />
+
+          <property name="os.arch" value="amd64" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="app.fullname" value="blackjack-0.1" />
+
+          <property name="ant.home" value="/usr/share/ant" />
+
+          <property name="docs.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/docs" />
+
+          <property name="native.encoding" value="UTF-8" />
+
+          <property name="ant.version" value="Apache Ant(TM) version 1.10.14 compiled on September 25 2023" />
+
+          <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib" />
+
+          <property name="java.vendor" value="Ubuntu" />
+
+          <property name="stderr.encoding" value="UTF-8" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="java.vm.version" value="21.0.9+10-Ubuntu-124.04" />
+
+          <property name="compile.deprecation" value="false" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="java.class.version" value="65.0" />
+
+          <property name="ant.project.default-target" value="run" />
+
+          <property name="src.home" value="/home/eragon/Bureau/Université/L3/ConceptionLogic/thomas-siaghi-tellier/livraison/blackjack/src" />
+
+      </properties>
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testEstBust" time="0.003" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testCalculerScoreAs" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testPasEstBust" time="0.001" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testNePeutPasDoublerScore8" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testPasBlackjackSans21" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testSplit" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testCalculerScorePlusieursAs" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testEstBlackjackAsDix" time="0.001" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testToString" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testConstructeur" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testPeutDoublerScore10" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testPeutDoublerScore11" time="0.001" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testRetirerCarte" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testNePeutPasDoublerScore12" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testPeutSplitFigures" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testReinitialiser" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testPeutSplitCartesIdentiques" time="0.001" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testEstBlackjackAs" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testPeutDoublerScore9" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testPeutSplitAs" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testNePeutPasDoublerDeuxFois" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testNePeutPasSplitAvecTroisCartes" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testAjouterCarte" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testPasBlackjTroisCartes" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testCalculerScoreAsAjuste" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testNePeutPasSplitCartesDifferentes" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testDoubler" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testCalculerScoreCartes" time="0.0" />
+
+      <testcase classname="blackjack.modele.joueurs.MainTest" name="testNePeutPasDoublerAvecTroisCartes" time="0.0" />
+
+      <system-out><![CDATA[]]></system-out>
+
+      <system-err><![CDATA[]]></system-err>
+
+  </testsuite>
+</testsuites>
