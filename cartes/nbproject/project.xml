@@ -3,9 +3,6 @@
     <type>org.netbeans.modules.ant.freeform</type>
     <configuration>
         <general-data xmlns="http://www.netbeans.org/ns/freeform-project/1">
-            <name>cartes</name>
-        </general-data>
-        <general-data xmlns="http://www.netbeans.org/ns/freeform-project/2">
             <!-- Do not use Project Properties customizer when editing this file manually. 
  To prevent the customizer from showing, create nbproject/project.properties file and enter 
 auxiliary.show.customizer=false 
@@ -16,21 +13,14 @@ auxiliary.show.customizer.message=<message>
             <properties/>
             <folders>
                 <source-folder>
-                    <label>cartes</label>
-                    <location>.</location>
-                    <encoding>UTF-8</encoding>
-                </source-folder>
-                <source-folder>
                     <label>src</label>
                     <type>java</type>
                     <location>src</location>
-                    <encoding>UTF-8</encoding>
                 </source-folder>
                 <source-folder>
                     <label>test</label>
                     <type>java</type>
                     <location>test</location>
-                    <encoding>UTF-8</encoding>
                 </source-folder>
             </folders>
             <ide-actions>
@@ -77,7 +67,6 @@ auxiliary.show.customizer.message=<message>
                     <ide-action name="test"/>
                 </context-menu>
             </view>
-            <subprojects/>
         </general-data>
         <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/2">
             <compilation-unit>

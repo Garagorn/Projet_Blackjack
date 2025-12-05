@@ -7,12 +7,39 @@ import java.util.List;
 
 /**
  * Stratégie basique du Blackjack : basée sur les probabilités mathématiques.
- * C'est la stratégie optimale qui minimise l'avantage de la maison.
  * 
- * Suit les règles standard de la "Basic Strategy" utilisée par les joueurs pros.
+ * C'est la stratégie optimale qui minimise l'avantage de la maison en prenant les décisions les plus favorables selon les règles de base du Blackjack.
+ * 
+ * Cette stratégie suit les règles standards de la "Basic Strategy", souvent utilisée par les joueurs professionnels pour maximiser leurs chances de gagner.
  */
 public class StrategieBasique implements StrategieJeu {
     
+    
+    
+     /**
+     *Constructeur vide
+     *
+     */
+    public StrategieBasique(){
+        
+    }
+    /**
+     * Choisit l'action à exécuter en fonction de la main du joueur et de la carte visible du croupier.
+     * 
+     * La décision du joueur est basée sur les règles de la stratégie basique qui dépendent du score de la main du joueur, de la carte visible du croupier, 
+     * ainsi que des actions disponibles. La stratégie couvre toutes les situations possibles, comme le split, le double, tirer, ou rester.
+     * 
+     * - **Split** : Split les cartes spécifiques comme les As et les 8, ou 9 contre des cartes faibles du croupier.
+     * - **Doubler** : Doubler sur 11, 10, 9 ou sur des mains souples avec un As.
+     * - **Main souple (avec As)** : Reste ou tire en fonction du score et de la carte visible du croupier.
+     * - **Main dure (sans As)** : Reste ou tire en fonction du score, généralement reste à 17 ou plus, sinon tire entre 12 et 16 contre un croupier faible.
+     * - **Tirer** : Toujours tirer sur des mains faibles (score inf à 11) ou dans certaines situations spécifiques (par exemple, score entre 12 et 16 contre un croupier fort).
+     * 
+     * @param main la main actuelle du joueur
+     * @param carteVisibleCroupier la carte visible du croupier
+     * @param actionsDisponibles les actions possibles que le joueur peut prendre (tirer, doubler, rester, etc.)
+     * @return l'action choisie par la stratégie (par exemple, tirer, rester, doubler, etc.)
+     */
     @Override
     public Action choisirAction(Main main, Carte carteVisibleCroupier, List<Action> actionsDisponibles) {
         if (main == null || actionsDisponibles == null || actionsDisponibles.isEmpty()) {
@@ -118,7 +145,15 @@ public class StrategieBasique implements StrategieJeu {
     }
     
     /**
-     * Obtient la valeur d'une carte pour la décision
+     * Obtient la valeur d'une carte pour la prise de décision.
+     * 
+     * Cette méthode retourne la valeur numérique de la carte en suivant les règles du Blackjack :
+     * - L'As vaut 11.
+     * - Les cartes de figures (Valet, Dame, Roi) valent 10.
+     * - Les cartes numérotées ont leur valeur respective.
+     * 
+     * @param carte la carte à évaluer
+     * @return la valeur de la carte
      */
     private int obtenirValeurCarte(Carte carte) {
         if (carte == null) return 0;
@@ -140,7 +175,13 @@ public class StrategieBasique implements StrategieJeu {
     }
     
     /**
-     * Trouve une action par son nom dans la liste
+     * Trouve une action par son nom dans la liste d'actions disponibles.
+     * 
+     * Parcourt la liste des actions disponibles et retourne l'action qui correspond au nom fourni.
+     * 
+     * @param nom le nom de l'action à rechercher
+     * @param actions la liste des actions disponibles
+     * @return l'action correspondant au nom, ou null si l'action n'est pas trouvée
      */
     private Action trouverAction(String nom, List<Action> actions) {
         for (Action action : actions) {
@@ -151,11 +192,23 @@ public class StrategieBasique implements StrategieJeu {
         return null;
     }
     
+    /**
+     * Retourne le nom de la stratégie basique.
+     * 
+     * @return le nom de la stratégie : "Stratégie Basique"
+     */
     @Override
     public String getNom() {
         return "Stratégie Basique";
     }
     
+    /**
+     * Retourne une description de la stratégie basique.
+     * 
+     * La stratégie suit les probabilités et les règles mathématiques pour offrir la meilleure chance de victoire.
+     * 
+     * @return une brève description de la stratégie
+     */
     @Override
     public String getDescription() {
         return "Stratégie optimale basée sur les probabilités mathématiques";
