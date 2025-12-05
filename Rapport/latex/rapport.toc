@@ -11,10 +11,10 @@
 \contentsline {subsection}{\numberline {3.1}Structures de données utilisées}{7}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Patterns de conception}{7}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}Observer Pattern}{7}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Strategy Pattern}{7}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2}Strategy Pattern}{8}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}Factory Method}{8}{subsubsection.3.2.3}%
 \contentsline {subsubsection}{\numberline {3.2.4}Adapter Pattern}{9}{subsubsection.3.2.4}%
-\contentsline {subsubsection}{\numberline {3.2.5}Command Pattern}{9}{subsubsection.3.2.5}%
+\contentsline {subsubsection}{\numberline {3.2.5}Command Pattern}{10}{subsubsection.3.2.5}%
 \contentsline {subsection}{\numberline {3.3}Tests Mock}{10}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Architecture du projet}{11}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Architecture de Cartes}{11}{subsection.4.1}%
@@ -37,11 +37,11 @@
 \contentsline {subsection}{\numberline {5.3}Conclusion des tests}{17}{subsection.5.3}%
 \contentsline {section}{\numberline {6}Expérimentations et usages}{18}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Cas d'utilisation : Partie basique}{18}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Cas d'utilisation : Ajouter un joueur}{18}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Cas d'utilisation : Retirer un joueur}{18}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Cas d'utilisation : Split}{18}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Cas d'utilisation : Bust}{18}{subsection.6.5}%
-\contentsline {subsection}{\numberline {6.6}Cas d'utilisation : Blackjack naturel}{18}{subsection.6.6}%
-\contentsline {subsection}{\numberline {6.7}Cas d'utilisation : Assurance}{18}{subsection.6.7}%
-\contentsline {subsection}{\numberline {6.8}Cas d'utilisation : Double}{18}{subsection.6.8}%
-\contentsline {section}{\numberline {7}Conclusion}{19}{section.7}%
+\contentsline {subsection}{\numberline {6.2}Cas d'utilisation : Ajouter un joueur}{19}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Cas d'utilisation : Retirer un joueur}{20}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Cas d'utilisation : Split}{21}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Cas d'utilisation : Bust}{22}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Cas d'utilisation : Blackjack naturel}{23}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Cas d'utilisation : Assurance}{24}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}Cas d'utilisation : Double}{25}{subsection.6.8}%
+\contentsline {section}{\numberline {7}Conclusion}{26}{section.7}%

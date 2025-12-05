@@ -307,7 +307,7 @@ Plusieurs patterns de conception ont été utilisés pour structurer le code :
 Utilisé pour mettre en œuvre la communication entre le modèle et la vue. Lorsque l'état du modèle change (par exemple, une carte est tirée), la vue est automatiquement mise à jour.
 
 \begin{center}
-    \includegraphics[width=0.90\textwidth]{images/images_uml/Observer.png}
+    \includegraphics[width=1.08\textwidth]{images/images_uml/Observer.png}
     \captionof{figure}{Diagramme UML du pattern Observer}
 \end{center}
 
@@ -315,7 +315,7 @@ Utilisé pour mettre en œuvre la communication entre le modèle et la vue. Lors
 Utilisé pour implémenter les différentes stratégies de jeu des joueurs IA. Chaque stratégie (basique, prudente, agressive) implémente une interface commune \texttt{StrategieJeu}.
 
 \begin{center}
-    \includegraphics[width=0.90\textwidth]{images/images_uml/strategie.png}
+    \includegraphics[width=1.06\textwidth]{images/images_uml/strategie.png}
     \captionof{figure}{Diagramme UML du pattern Strategy}
 \end{center}
 
@@ -349,15 +349,15 @@ Ces méthodes utilisent la méthode \texttt{creationPaquet(String[] hauteurs)} p
 Utilisé pour adapter l'affichage des données des joueurs dans une table dynamique \texttt{JTable}, notamment pour l'affichage des scores, gains, pertes, etc.
 
 \begin{center}
-    \includegraphics[width=0.90\textwidth]{images/images_uml/adaptateur.png}
+    \includegraphics[width=1.02\textwidth]{images/images_uml/adaptateur.png}
     \captionof{figure}{Diagramme UML du pattern Adapter combiné avec Observer}
 \end{center}
-
+\clearpage
 \subsubsection{Command Pattern}
 Utilisé pour rendre le jeu extensible et pouvoir ajouter de nouvelles actions simplement.
 
 \begin{center}
-    \includegraphics[width=0.90\textwidth]{images/images_uml/command_pattern.png}
+    \includegraphics[width=1.02\textwidth]{images/images_uml/command_pattern.png}
     \captionof{figure}{Diagramme UML du pattern Command}
 \end{center}
 
@@ -390,7 +390,7 @@ L'architecture MVC du module Cartes assure une séparation claire des responsabi
 Le contrôleur du module Blackjack gère le déroulement d'une partie : distribution des cartes, tour des joueurs, tour du croupier, calcul des gains. Il traduit les actions des joueurs (humains via l'interface, IA via les stratégies) en modifications du modèle.
 
 \begin{center}
-    \includegraphics[width=0.90\textwidth]{images/images_uml/controleur.png}
+    \includegraphics[width=1.05\textwidth]{images/images_uml/controleur.png}
     \captionof{figure}{Diagramme UML des classes du contrôleur}
 \end{center}
 
@@ -398,7 +398,7 @@ Le contrôleur du module Blackjack gère le déroulement d'une partie : distribu
 La vue du module Blackjack affiche la table de jeu : les mains des joueurs, les cartes du croupier, les scores, les soldes, et les boutons d'action (tirer, rester, doubler, etc.). Elle est mise à jour en temps réel à chaque changement d'état du modèle grâce au pattern Observer.
 
 \begin{center}
-    \includegraphics[width=0.90\textwidth]{images/images_uml/Vueblackjack.png}
+    \includegraphics[width=1.08\textwidth]{images/images_uml/Vueblackjack.png}
     \captionof{figure}{Diagramme UML de la vue}
 \end{center}
 
@@ -408,7 +408,7 @@ La vue du module Blackjack affiche la table de jeu : les mains des joueurs, les 
 Le modèle du module Blackjack contient toute la logique métier du jeu : gestion des joueurs, du croupier, des paquets de cartes, des actions, et du déroulement de la partie.
 
 \begin{center}
-    \includegraphics[width=0.90\textwidth]{images/images_uml/modeleBJ.png}
+    \includegraphics[width=1.05\textwidth]{images/images_uml/modeleBJ.png}
     \captionof{figure}{Diagramme UML du modèle}
 \end{center}
 
@@ -418,7 +418,7 @@ Le modèle du module Blackjack contient toute la logique métier du jeu : gestio
 Comme pour le module Cartes, la communication entre le modèle et la vue se fait via le pattern Observer. Le modèle notifie la vue à chaque changement (nouvelle carte tirée, changement d'état d'un joueur, etc.).
 
 \begin{center}
-    \includegraphics[width=0.90\textwidth]{images/images_uml/mvc.png}
+    \includegraphics[width=1.08\textwidth]{images/images_uml/mvc.png}
     \captionof{figure}{Schéma explicatif de la communication entre la vue et le modèle}
 \end{center}
 
@@ -428,7 +428,7 @@ Comme pour le module Cartes, la communication entre le modèle et la vue se fait
 L'architecture MVC du module Blackjack permet une gestion claire et modulaire du jeu. Le modèle contient toute la logique métier, la vue est responsable de l'affichage, et le contrôleur gère le flux du jeu et les interactions.
 
 \begin{center}
-    \includegraphics[width=1.05\textwidth]{images/images_uml/mvc_fonctionnement_example.png}
+    \includegraphics[width=1.08\textwidth]{images/images_uml/mvc_fonctionnement_example.png}
     \captionof{figure}{Exemple de fonctionnement du MVC}
 \end{center}
 
@@ -503,28 +503,66 @@ L'ensemble des tests réalisés, couvrant les cartes, les actions, les joueurs e
 
 \subsection{Cas d'utilisation : Partie basique}
 Une partie simple avec un joueur humain et le croupier. Le joueur mise, reçoit deux cartes, décide de tirer ou rester, puis le croupier joue selon les règles. Le système calcule automatiquement le gagnant et met à jour le solde.
+\begin{center}
+    \includegraphics[width=1.05\textwidth]{images/images_bj/partieBasique.png}
+    \captionof{figure}{Example d'une partie basique}
+\end{center}
 
+\clearpage
 \subsection{Cas d'utilisation : Ajouter un joueur}
 L'utilisateur peut ajouter un joueur (humain ou IA) à la table. Le nouveau joueur est inclus dans la manche suivante avec un solde initial.
+\begin{center}
+    \includegraphics[width=1.05\textwidth]{images/images_bj/ajouterJoueur.png}
+    \captionof{figure}{L'ajout d'un joueur}
+\end{center}
 
+\clearpage
 \subsection{Cas d'utilisation : Retirer un joueur}
 Un joueur peut quitter la table. S'il quitte en cours de manche, sa main est terminée et il perd sa mise.
-
+\begin{center}
+    \includegraphics[width=1.05\textwidth]{images/images_bj/ajouterJoueur.png}
+    \captionof{figure}{Le retrait d'un joueur}
+\end{center}
+\clearpage
 \subsection{Cas d'utilisation : Split}
 Lorsqu'un joueur a deux cartes de même valeur, il peut choisir de splitter. Le système crée deux mains distinctes, chacune recevant une carte supplémentaire, et le joueur joue chaque main séparément.
+\begin{center}
+    \includegraphics[width=1.05\textwidth]{images/images_bj/split.png}
+    \captionof{figure}{quand est ce qu'on peut spliter}
+\end{center}
+\begin{center}
+    \includegraphics[width=1.05\textwidth]{images/images_bj/apresSplit.png}
+    \captionof{figure}{Après le split}
+\end{center}
 
 \subsection{Cas d'utilisation : Bust}
 Lorsqu'un joueur dépasse 21, il fait bust. Le système marque automatiquement le joueur comme perdant et retire sa mise.
+\begin{center}
+    \includegraphics[width=1.05\textwidth]{images/images_bj/Bust.png}
+    \captionof{figure}{Un joueur est BUST !}
+\end{center}
 
+\clearpage
 \subsection{Cas d'utilisation : Blackjack naturel}
 Si un joueur obtient un blackjack naturel (As + carte valant 10) dès la distribution, il est payé 3:2 (sauf si le croupier a aussi un blackjack).
-
+\begin{center}
+    \includegraphics[width=1.05\textwidth]{images/images_bj/aBlackjack.png}
+    \captionof{figure}{Alice a un BLACKJACK !!!}
+\end{center}
+\clearpage
 \subsection{Cas d'utilisation : Assurance}
 Lorsque le croupier montre un As, les joueurs peuvent prendre une assurance. Le système gère les mises d'assurance et les rembourse si le croupier a un blackjack.
-
+\begin{center}
+    \includegraphics[width=1.05\textwidth]{images/images_bj/assurance.png}
+    \captionof{figure}{Quand est ce qu'on peut prendre une assurance}
+\end{center}
+\clearpage
 \subsection{Cas d'utilisation : Double}
-Un joueur peut doubler sa mise après la distribution initiale. Il reçoit alors une seule carte supplémentaire et ne peut plus tirer.
-
+Un joueur peut doubler sa mise après la distribution initiale si son score est entre 9 et 11 inclus. Il reçoit alors une seule carte supplémentaire et ne peut plus tirer.
+\begin{center}
+    \includegraphics[width=1.05\textwidth]{images/images_bj/doubler.png}
+    \captionof{figure}{quand est ce qu'on peut doubler}
+\end{center}
 \clearpage
 
 % 7. Conclusion

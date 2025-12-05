@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.15)  5 DEC 2025 16:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.15)  5 DEC 2025 18:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -906,23 +906,17 @@ File: images/images_uml/Observer.png Graphic file (type png)
 <use images/images_uml/Observer.png>
 Package pdftex.def Info: images/images_uml/Observer.png  used on input line 310
 .
-(pdftex.def)             Requested size: 460.93153pt x 275.01205pt.
+(pdftex.def)             Requested size: 553.12253pt x 330.01447pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 311.
 See the caption package documentation for explanation.
 
-<images/images_uml/strategie.png, id=287, 1214.5375pt x 421.575pt>
-File: images/images_uml/strategie.png Graphic file (type png)
-<use images/images_uml/strategie.png>
-Package pdftex.def Info: images/images_uml/strategie.png  used on input line 31
-8.
-(pdftex.def)             Requested size: 460.93153pt x 159.98787pt.
 
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 319.
-See the caption package documentation for explanation.
+Overfull \hbox (40.9729pt too wide) in paragraph at lines 310--311
+ [] 
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -933,6 +927,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7 <./images/images_uml/Observer.png>]
+<images/images_uml/strategie.png, id=293, 1214.5375pt x 421.575pt>
+File: images/images_uml/strategie.png Graphic file (type png)
+<use images/images_uml/strategie.png>
+Package pdftex.def Info: images/images_uml/strategie.png  used on input line 31
+8.
+(pdftex.def)             Requested size: 542.87735pt x 188.43974pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 319.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (30.72772pt too wide) in paragraph at lines 318--319
+ [] 
+ []
+
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
@@ -950,23 +961,17 @@ File: images/images_uml/adaptateur.png Graphic file (type png)
 <use images/images_uml/adaptateur.png>
 Package pdftex.def Info: images/images_uml/adaptateur.png  used on input line 3
 52.
-(pdftex.def)             Requested size: 460.93153pt x 299.20149pt.
+(pdftex.def)             Requested size: 522.3948pt x 339.09653pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 353.
 See the caption package documentation for explanation.
 
-<images/images_uml/command_pattern.png, id=320, 1224.575pt x 652.4375pt>
-File: images/images_uml/command_pattern.png Graphic file (type png)
-<use images/images_uml/command_pattern.png>
-Package pdftex.def Info: images/images_uml/command_pattern.png  used on input l
-ine 360.
-(pdftex.def)             Requested size: 460.93153pt x 245.57935pt.
 
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 361.
-See the caption package documentation for explanation.
+Overfull \hbox (10.24518pt too wide) in paragraph at lines 352--353
+ [] 
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -978,8 +983,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [9
 
- <./images/images_uml/adaptateur.png> <./images/images_uml/command_pattern.png>
-]
+ <./images/images_uml/adaptateur.png>]
+<images/images_uml/command_pattern.png, id=326, 1224.575pt x 652.4375pt>
+File: images/images_uml/command_pattern.png Graphic file (type png)
+<use images/images_uml/command_pattern.png>
+Package pdftex.def Info: images/images_uml/command_pattern.png  used on input l
+ine 360.
+(pdftex.def)             Requested size: 522.3948pt x 278.3226pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 361.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (10.24518pt too wide) in paragraph at lines 360--361
+ [] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -988,7 +1009,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[10]
+[10
+
+ <./images/images_uml/command_pattern.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 381.
@@ -1002,11 +1025,16 @@ File: images/images_uml/controleur.png Graphic file (type png)
 <use images/images_uml/controleur.png>
 Package pdftex.def Info: images/images_uml/controleur.png  used on input line 3
 93.
-(pdftex.def)             Requested size: 460.93153pt x 209.1641pt.
+(pdftex.def)             Requested size: 537.75867pt x 244.02478pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 394.
 See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.60904pt too wide) in paragraph at lines 393--394
+ [] 
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1024,12 +1052,17 @@ File: images/images_uml/Vueblackjack.png Graphic file (type png)
 <use images/images_uml/Vueblackjack.png>
 Package pdftex.def Info: images/images_uml/Vueblackjack.png  used on input line
  401.
-(pdftex.def)             Requested size: 460.93153pt x 298.41502pt.
+(pdftex.def)             Requested size: 553.12253pt x 358.1104pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 402.
 See the caption package documentation for explanation.
+
+
+Overfull \hbox (40.9729pt too wide) in paragraph at lines 401--402
+ [] 
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1045,12 +1078,17 @@ File: images/images_uml/modeleBJ.png Graphic file (type png)
 <use images/images_uml/modeleBJ.png>
 Package pdftex.def Info: images/images_uml/modeleBJ.png  used on input line 411
 .
-(pdftex.def)             Requested size: 460.93153pt x 402.189pt.
+(pdftex.def)             Requested size: 537.75867pt x 469.21368pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 412.
 See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.60904pt too wide) in paragraph at lines 411--412
+ [] 
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1075,11 +1113,16 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 File: images/images_uml/mvc.png Graphic file (type png)
 <use images/images_uml/mvc.png>
 Package pdftex.def Info: images/images_uml/mvc.png  used on input line 421.
-(pdftex.def)             Requested size: 460.93153pt x 181.77545pt.
+(pdftex.def)             Requested size: 553.12253pt x 218.1417pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 422.
 See the caption package documentation for explanation.
+
+
+Overfull \hbox (40.9729pt too wide) in paragraph at lines 421--422
+ [] 
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1098,7 +1141,7 @@ File: images/images_uml/mvc_fonctionnement_example.png Graphic file (type png)
 <use images/images_uml/mvc_fonctionnement_example.png>
 Package pdftex.def Info: images/images_uml/mvc_fonctionnement_example.png  used
  on input line 431.
-(pdftex.def)             Requested size: 537.75867pt x 420.13243pt.
+(pdftex.def)             Requested size: 553.12253pt x 432.14015pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
@@ -1106,7 +1149,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (25.60904pt too wide) in paragraph at lines 431--432
+Overfull \hbox (40.9729pt too wide) in paragraph at lines 431--432
  [] 
  []
 
@@ -1141,6 +1184,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [17]
+<images/images_bj/partieBasique.png, id=377, 1854.93pt x 1050.92625pt>
+File: images/images_bj/partieBasique.png Graphic file (type png)
+<use images/images_bj/partieBasique.png>
+Package pdftex.def Info: images/images_bj/partieBasique.png  used on input line
+ 507.
+(pdftex.def)             Requested size: 537.75867pt x 304.6646pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 508.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.60904pt too wide) in paragraph at lines 507--508
+ [] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1151,7 +1211,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [18
 
-]
+ <./images/images_bj/partieBasique.png>]
+<images/images_bj/ajouterJoueur.png, id=385, 1207.51125pt x 805.0075pt>
+File: images/images_bj/ajouterJoueur.png Graphic file (type png)
+<use images/images_bj/ajouterJoueur.png>
+Package pdftex.def Info: images/images_bj/ajouterJoueur.png  used on input line
+ 515.
+(pdftex.def)             Requested size: 537.75867pt x 358.5036pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 516.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.60904pt too wide) in paragraph at lines 515--516
+ [] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1162,6 +1239,195 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [19
 
+ <./images/images_bj/ajouterJoueur.png>]
+File: images/images_bj/ajouterJoueur.png Graphic file (type png)
+<use images/images_bj/ajouterJoueur.png>
+Package pdftex.def Info: images/images_bj/ajouterJoueur.png  used on input line
+ 523.
+(pdftex.def)             Requested size: 537.75867pt x 358.5036pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 524.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.60904pt too wide) in paragraph at lines 523--524
+ [] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20
+
+]
+<images/images_bj/split.png, id=397, 1840.8775pt x 1043.9pt>
+File: images/images_bj/split.png Graphic file (type png)
+<use images/images_bj/split.png>
+Package pdftex.def Info: images/images_bj/split.png  used on input line 530.
+(pdftex.def)             Requested size: 537.75867pt x 304.95325pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 531.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.60904pt too wide) in paragraph at lines 530--531
+ [] 
+ []
+
+<images/images_bj/apresSplit.png, id=398, 1840.8775pt x 1043.9pt>
+File: images/images_bj/apresSplit.png Graphic file (type png)
+<use images/images_bj/apresSplit.png>
+Package pdftex.def Info: images/images_bj/apresSplit.png  used on input line 53
+4.
+(pdftex.def)             Requested size: 537.75867pt x 304.95325pt.
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 535.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.60904pt too wide) in paragraph at lines 534--535
+ [] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[21
+
+ <./images/images_bj/split.png> <./images/images_bj/apresSplit.png>]
+<images/images_bj/Bust.png, id=407, 1848.9075pt x 1043.9pt>
+File: images/images_bj/Bust.png Graphic file (type png)
+<use images/images_bj/Bust.png>
+Package pdftex.def Info: images/images_bj/Bust.png  used on input line 541.
+(pdftex.def)             Requested size: 537.75867pt x 303.61525pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 542.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.60904pt too wide) in paragraph at lines 541--542
+ [] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[22 <./images/images_bj/Bust.png>]
+<images/images_bj/aBlackjack.png, id=414, 1855.93375pt x 1045.9075pt>
+File: images/images_bj/aBlackjack.png Graphic file (type png)
+<use images/images_bj/aBlackjack.png>
+Package pdftex.def Info: images/images_bj/aBlackjack.png  used on input line 54
+9.
+(pdftex.def)             Requested size: 537.75867pt x 303.05006pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 550.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.60904pt too wide) in paragraph at lines 549--550
+ [] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[23
+
+ <./images/images_bj/aBlackjack.png>]
+<images/images_bj/assurance.png, id=421, 1855.93375pt x 1045.9075pt>
+File: images/images_bj/assurance.png Graphic file (type png)
+<use images/images_bj/assurance.png>
+Package pdftex.def Info: images/images_bj/assurance.png  used on input line 556
+.
+(pdftex.def)             Requested size: 537.75867pt x 303.05006pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 557.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.60904pt too wide) in paragraph at lines 556--557
+ [] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24
+
+ <./images/images_bj/assurance.png>]
+<images/images_bj/doubler.png, id=429, 1855.93375pt x 1045.9075pt>
+File: images/images_bj/doubler.png Graphic file (type png)
+<use images/images_bj/doubler.png>
+Package pdftex.def Info: images/images_bj/doubler.png  used on input line 563.
+(pdftex.def)             Requested size: 537.75867pt x 303.05006pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 564.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (25.60904pt too wide) in paragraph at lines 563--564
+ [] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25
+
+ <./images/images_bj/doubler.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[26
+
 ] (./rapport.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -1171,10 +1437,10 @@ Package rerunfilecheck Info: File `rapport.out' has not changed.
 (rerunfilecheck)             Checksum: E0FBB18C1C1980395274F05C9E907663;9037.
  ) 
 Here is how much of TeX's memory you used:
- 26563 strings out of 474222
- 480437 string characters out of 5748732
- 2045975 words of memory out of 5000000
- 48315 multiletter control sequences out of 15000+600000
+ 26637 strings out of 474222
+ 482647 string characters out of 5748732
+ 2046975 words of memory out of 5000000
+ 48373 multiletter control sequences out of 15000+600000
  573092 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,12n,87p,482b,1268s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1189,10 +1455,10 @@ share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/ty
 pe1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/
 sfti1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/s
 hare/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on rapport.pdf (20 pages, 1187937 bytes).
+Output written on rapport.pdf (27 pages, 1717431 bytes).
 PDF statistics:
- 472 PDF objects out of 1000 (max. 8388607)
- 398 compressed objects within 4 object streams
- 97 named destinations out of 1000 (max. 500000)
- 431 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 530 PDF objects out of 1000 (max. 8388607)
+ 432 compressed objects within 5 object streams
+ 113 named destinations out of 1000 (max. 500000)
+ 471 words of extra memory for PDF output out of 10000 (max. 10000000)
 
