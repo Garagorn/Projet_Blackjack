@@ -17,12 +17,12 @@ public class VueCarte extends JPanel {
     /**
      * La carte associée à cette vue.
      */
-    private final Carte carte;
+    protected Carte carte;
 
     /**
      * Indique si la carte est affichée face visible (true) ou dos caché (false).
      */
-    private final boolean visible;
+    protected boolean visible;
 
     /**
      * Construit une vue graphique pour une carte.
@@ -69,7 +69,7 @@ public class VueCarte extends JPanel {
             g2.drawString(carte.getSymboleCouleur(), 10, 45);
         } else {
             // Afficher dos de carte
-            g2.setColor(Color.BLUE);
+            g2.setColor(Color.RED);
             g2.fillRect(10, 10, getWidth() - 20, getHeight() - 20);
         }
     }

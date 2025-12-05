@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
-
+\usepackage{listings}
 \usepackage{graphicx}
 \usepackage{amsmath, amssymb}
 \usepackage{geometry}
@@ -16,6 +16,16 @@
 \usetikzlibrary{positioning}
 \usetikzlibrary{arrows.meta, positioning}
 \usepackage{float}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{lightgray}, 
+    basicstyle=\footnotesize\ttfamily, 
+    breaklines=true,
+    frame=single,
+    captionpos=b,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green},
+    stringstyle=\color{red},
+}
 
 \geometry{margin=1.5cm}
 
@@ -50,8 +60,8 @@
     \vspace{1.2cm}
 
     \vfill
-    {\Huge \textbf{Développement d’un Jeu de Blackjack}}\\[0.2cm]
-    {\Large \textit{Projet de l'UE – Méthodes de Conception}}\\[1.5cm]
+    {\Huge \textbf{Développement d'un Jeu de Blackjack}}\\[0.2cm]
+    {\Large \textit{Méthodes de Conception}}\\[1.5cm]
 
     
     \vfill
@@ -72,8 +82,7 @@
 \section{Introduction}
 
 \subsection{Présentation générale du projet}
-Le projet s'inscrit dans le cadre de l’UE \textit{Méthodes de conception}. Il consiste à développer un \textbf{jeu complet de Blackjack}, en plusieurs étapes :
-
+Le projet s'inscrit dans le cadre de l'UE \textit{Méthodes de conception}. Il consiste à développer un \textbf{jeu complet de Blackjack}, en plusieurs étapes :
 
 \infobox{
 \begin{itemize}
@@ -86,7 +95,6 @@ Le projet s'inscrit dans le cadre de l’UE \textit{Méthodes de conception}. Il
 
 Le projet a donc suivi une progression logique structurée en deux grandes étapes :
 
-
 \vspace{0.5cm}
 
 \begin{figure}[H]
@@ -98,74 +106,129 @@ Le projet a donc suivi une progression logique structurée en deux grandes étap
     ]
 
     % Étapes principales
-    \node[box, fill=blue!10] (card) {Jeu de Carte \\
+    \node[box, fill=blue!10] (card) {Jeu de Cartes \\
         \footnotesize Base du modèle};
 
     \node[box, fill=green!10, below=of card] (bj) {Jeu de Blackjack \\
-        \footnotesize Extension utilisant le modèle Carte};
+        \footnotesize Extension utilisant le modèle Cartes};
 
     % Liens
     \draw[arrow] (card) -- (bj);
 
     \end{tikzpicture}
-    \caption{Présentation des deux grandes étapes du projet de  Blackjack}
+    \caption{Présentation des deux grandes étapes du projet de Blackjack}
 \end{figure}
 
 \vspace{0.5cm}
 
-
 \subsection{Problématique et points clés}
-\textbf{< A MODIFIER}
+Le développement de ce jeu de Blackjack a posé plusieurs défis techniques et de conception :
+
 \begin{itemize}
-    \item \textbf{Comprendre et implémenter le langage RedCode}~: Ce langage assembleur spécifique repose sur une sémantique simple en apparence, mais complexe dans ses effets. Chaque instruction (comme \texttt{MOV}, \texttt{ADD}, \texttt{CMP}, etc.) peut manipuler la mémoire avec des effets indirects, via des modes d’adressage variés (immédiat, direct, indirect, pré-décrémenté). Il fallait donc respecter avec rigueur la spécification ICWS-88 tout en permettant une exécution fluide et fidèle.
+    \item \textbf{Modélisation d'un jeu de cartes générique} : Créer une base solide et réutilisable pour représenter les cartes, les paquets, les mélanges et les tirages, tout en garantissant l'intégrité des données et en évitant les incohérences.
 
-    \item \textbf{Modéliser la mémoire MARS et le comportement des guerriers}~: La mémoire MARS fonctionne comme un tableau circulaire dans lequel les instructions peuvent être copiées, écrasées ou déplacées. Chaque guerrier y agit indépendamment, via un système de file d’instructions à exécuter. Il a fallu concevoir un système de mémoire robuste, capable de supporter cette logique concurrente sans erreurs de synchronisation.
+    \item \textbf{Implémentation des règles complexes du Blackjack} : Le Blackjack comporte de nombreuses règles spécifiques (blackjack naturel, assurance, split, double, etc.) qui doivent être implémentées de manière précise et cohérente. La gestion des états des joueurs (bust, blackjack, stand) et du croupier a nécessité une attention particulière.
 
-    \item \textbf{Gérer l’exécution concurrente des guerriers}~: Chaque guerrier possède une file FIFO d'instructions à exécuter. Une mauvaise gestion du multitraitement pouvait conduire à des déséquilibres ou à des comportements incohérents. Il fallait donc un système de file d’exécution stable, isolé et juste.
+    \item \textbf{Architecture MVC pour les deux modules} : Adopter le modèle MVC à la fois pour le jeu de cartes générique et pour le jeu de Blackjack a demandé une réflexion sur la séparation des responsabilités. Il fallait garantir que le modèle soit indépendant de la vue, et que le contrôleur orchestre correctement les interactions.
 
-    \item \textbf{Générer automatiquement des guerriers efficaces}~: Cette partie du projet relève de l’intelligence artificielle. Elle consiste à créer, faire évoluer et sélectionner automatiquement des programmes RedCode efficaces selon des critères de survie, d'agressivité ou de stratégie. Nous avons choisi d’exploiter un algorithme génétique simple pour générer et affiner les programmes au fil des générations. Cela demande un mécanisme de mutation, de croisement et de sélection bien intégré au reste de l’architecture.
+    \item \textbf{Gestion des joueurs et des stratégies} : Le système devait supporter différents types de joueurs (humains, IA) avec des stratégies de jeu variées. L'implémentation de l'IA, en particulier, a nécessité la définition de comportements basés sur les règles classiques du Blackjack.
 
-    \item \textbf{Créer une interface utilisateur explicite et pédagogique}~: L'interface graphique devait à la fois représenter l’état de la mémoire, l’avancement de chaque guerrier, et permettre d’observer l’évolution du match en temps réel. Cela implique une gestion précise des événements et des notifications entre le modèle et la vue (via le pattern Observer).
+    \item \textbf{Interface graphique interactive} : La vue devait présenter de manière claire l'état du jeu (mains des joueurs, cartes du croupier, scores, soldes) et permettre aux joueurs d'effectuer leurs actions (tirer, rester, doubler, split, etc.). La synchronisation entre le modèle et la vue via le pattern Observer a été cruciale.
 
-    \item \textbf{Maintenir la modularité du code}~: Enfin, toute cette architecture devait rester claire, maintenable et évolutive. Le respect du modèle \textbf{MVC}, ainsi qu’une séparation stricte des responsabilités, ont été déterminants pour conserver une bonne lisibilité du projet.
+    \item \textbf{Tests exhaustifs} : Assurer la fiabilité du modèle à travers des tests unitaires couvrant les cas normaux et les cas limites, notamment pour les règles complexes comme le split et l'assurance.
+
+    \item \textbf{Maintenir la modularité et l'évolutivité} : Le code devait être structuré de manière à faciliter l'ajout de nouvelles fonctionnalités (nouvelles règles, nouveaux types de joueurs, nouvelles interfaces) sans compromettre la stabilité du système existant.
 \end{itemize}
-\textbf{</ A MODIFIER}
-
-\newpage
 
 \subsection{Présentation du plan du rapport}
-
-Ce rapport a pour objectif de retracer de manière claire et progressive le développement du projet \textbf{Blackjack}. Il est structuré en septs sections, chacune correspondant à une phase essentielle du projet :
+Ce rapport a pour objectif de retracer de manière claire et progressive le développement du projet \textbf{Blackjack}. Il est structuré en sept sections, chacune correspondant à une phase essentielle du projet :
 
 \begin{itemize}
     \item \textbf{Section 1 – Introduction} : Pose le contexte du projet, ses objectifs pédagogiques et les motivations ayant guidé notre équipe.
     
-    \item \textbf{Section 2 – Structuration du projet} : décrit les besoins fonctionnels et techniques, les fonctionnalités envisagées, ainsi que l’organisation du travail collaboratif.
-    \item \textbf{Section 3 – Éléments techniques} : détaille les algorithmes et structures de données au cœur de la simulation, notamment le moteur d’exécution, la mémoire circulaire, et les opérateurs génétiques.
-    \textbf{A MODIFIER}
-    \item \textbf{Section 4 – Architecture du projet} : propose une vue d’ensemble de l’architecture logicielle, articulée autour du patron MVC. Cette partie s’appuie sur des diagrammes UML pour illustrer les relations entre les différentes classes et modules.
+    \item \textbf{Section 2 – Structuration du projet} : Décrit les besoins fonctionnels et techniques, les fonctionnalités envisagées, ainsi que l'organisation du travail collaboratif.
     
-    \item \textbf{Section 5 – Tests du modele} : démontre les différents tests réalisés pour éprouver la robustesse des méthodes des modele de Cartes et de Blackjack.
+    \item \textbf{Section 3 – Éléments techniques} : Détaille les algorithmes, structures de données et patterns de conception utilisés, notamment le moteur de jeu, la gestion des paquets de cartes, et les stratégies de jeu.
     
-    \item \textbf{Section 6 – Expérimentations et usages} : illustre l’utilisation concrète du simulateur à travers des cas d’usage commentés et des captures d’écran, en soulignant les résultats observés.
+    \item \textbf{Section 4 – Architecture du projet} : Propose une vue d'ensemble de l'architecture logicielle, articulée autour du patron MVC pour les deux modules (Cartes et Blackjack). Cette partie s'appuie sur des diagrammes UML pour illustrer les relations entre les différentes classes et modules.
     
-    \item \textbf{Section 7 – Conclusion} : dresse un bilan général du projet, récapitule les fonctionnalités implémentées et propose plusieurs axes d’amélioration pour la suite.
+    \item \textbf{Section 5 – Tests du modèle} : Démontre les différents tests réalisés pour éprouver la robustesse des méthodes des modèles de Cartes et de Blackjack.
+    
+    \item \textbf{Section 6 – Expérimentations et usages} : Illustre l'utilisation concrète du jeu à travers des cas d'usage commentés et des captures d'écran, en soulignant les résultats observés.
+    
+    \item \textbf{Section 7 – Conclusion} : Dresse un bilan général du projet, récapitule les fonctionnalités implémentées et propose plusieurs axes d'amélioration pour la suite.
 \end{itemize}
 
 \clearpage  
-
 
 % 2. Structuration du projet
 \section{Structuration du projet}
 
 \subsection{Analyse des besoins}
+Les besoins fonctionnels identifiés pour le projet Blackjack sont les suivants :
 
+\begin{itemize}
+    \item \textbf{Jeu de cartes générique} :
+    \begin{itemize}
+        \item Représentation des cartes (valeur, couleur)
+        \item Gestion d'un paquet de cartes (création, mélange, tirage)
+        \item Support pour différentes tailles de jeux (52 cartes, 32 cartes)
+    \end{itemize}
+    
+    \item \textbf{Jeu de Blackjack} :
+    \begin{itemize}
+        \item Distribution initiale des cartes
+        \item Tour de jeu pour chaque joueur (tirer, rester, doubler, split, assurance)
+        \item Tour du croupier selon les règles standard
+        \item Calcul des gains et des pertes
+        \item Gestion des soldes des joueurs
+    \end{itemize}
+    
+    \item \textbf{Interface utilisateur} :
+    \begin{itemize}
+        \item Interface graphique pour le Blackjack (table, mains, scores, actions)
+        \item Support pour plusieurs joueurs (humains et IA)
+    \end{itemize}
+    
+    \item \textbf{Architecture logicielle} :
+    \begin{itemize}
+        \item Respect du modèle MVC pour une séparation claire des responsabilités
+        \item Code modulaire et extensible
+        \item Tests unitaires complets
+    \end{itemize}
+\end{itemize}
 
 \subsection{Fonctionnalités implémentées}
+Les fonctionnalités suivantes ont été implémentées avec succès :
 
+\begin{itemize}
+    \item \textbf{Module Cartes} :
+    \begin{itemize}
+        \item Classes \texttt{Carte}, \texttt{Paquet} avec toutes les opérations de base
+        \item Factory pour créer des jeux de cartes standards (52, 32 cartes)
+        \item Mélange, coupe, tirage aléatoire
+        \item Modèle MVC complet avec vue graphique interactive
+    \end{itemize}
+    
+    \item \textbf{Module Blackjack} :
+    \begin{itemize}
+        \item Implémentation complète des règles du Blackjack
+        \item Gestion des joueurs (humains et IA) avec différentes stratégies
+        \item Actions spéciales : split, double, assurance
+        \item Calcul automatique des scores (avec gestion de l'As flexible)
+        \item Détermination des gagnants selon les règles professionnelles
+        \item Modèle MVC avec vue graphique complète
+    \end{itemize}
+    
+    \item \textbf{Intégration} :
+    \begin{itemize}
+        \item Le module Blackjack utilise le module Cartes comme base
+        \item Interface graphique unifiée permettant de jouer au Blackjack
+        \item Tests unitaires couvrant les deux modules
+    \end{itemize}
+\end{itemize}
 
 \subsection{Organisation du travail}
-
 Le travail a été réparti entre les trois membres du groupe de manière à valoriser les compétences de chacun :
 
 \vspace{0.5cm}
@@ -177,188 +240,290 @@ Le travail a été réparti entre les trois membres du groupe de manière à val
         \hline
         \textbf{Membre} & \textbf{Responsabilités principales} \\
         \hline
-        \textbf{Matthieu} & Implémentation du \texttt{modèle} :
+        \textbf{Matthieu} & Implémentation du \textbf{modèle Blackjack} :
         \begin{itemize}
             \item Conception de la logique modèle du Blackjack
             \item Tests pour le modèle de Blackjack
-            \item UML des classes de  Blackjack
-            \item Aide au rapport
-
-
+            \item Aide à la conception des tests Cartes
+            \item UML des classes de Blackjack
+            \item Rédaction du rapport
         \end{itemize} \\
         \hline
-        \textbf{Massinissa} & Développement de la \texttt{vue} :
+        \textbf{Massinissa} & Développement de la \textbf{vue} et du \textbf{contrôleur} :
         \begin{itemize}
-            \item Interfaces graphiques (\texttt{Cartes}, \texttt{Blackjack}, etc.)
-            \item Modèle MVC Cartes \& Blackjack
+            \item Interfaces graphiques (Cartes, Blackjack, etc.)
+            \item Mise en place du MVC pour Cartes \& Blackjack
             \item Mise en place du Contrôleur Cartes
             \item Mise en place du Contrôleur Blackjack
             \item Mise en place du Modèle \& Vue Blackjack
-            \item UML Blackjack et rapport
-
+            \item UML Blackjack
+            \item Rédaction du rapport
         \end{itemize} \\
         \hline
-        \textbf{Basile} & Conception du \texttt{contrôleur} :
+        \textbf{Basile} & Conception du \textbf{modèle Cartes} :
         \begin{itemize}
             \item Conception du modèle de Cartes
             \item Tests de Cartes
-            \item UML de Cartes et Blackjack
-            \item rédaction du rapport
+            \item UML de Cartes 
+            \item UML de Blackjack
+            \item Rédaction du rapport
             \item Aide à la conception des tests Blackjack
-
         \end{itemize} \\
         \hline
     \end{tabular}
-    \caption{Répartition des rôles au sein de l’équipe}
+    \caption{Répartition des rôles au sein de l'équipe}
 \end{table}
 
 \vspace{0.5cm}
 
-Une collaboration régulière a été assurée via un dépôt Git, avec un suivi des commits et une validation croisée du code. Des séances hebdomadaires de synchronisation ont permis de maintenir une vision partagée de l’avancement.
+Une collaboration régulière a été assurée via un dépôt Git, avec un suivi des commits et une validation croisée du code. Des séances hebdomadaires de synchronisation ont permis de maintenir une vision partagée de l'avancement.
 
 \newpage   
-
-
-\subsection{Frise chronologique du projet}
-
-La planification et la progression du projet de Blackjack se sont organisées autour de jalons bien définis. La frise suivante illustre les grandes étapes de développement, depuis la compréhension du sujet jusqu’à la rédaction finale du rapport. Chaque étape a mobilisé les membres du groupe selon leur domaine d’expertise et les modules en charge.
-
-\vspace{0.5cm}
-
-\begin{figure}[H]
-\centering
-\makebox[\textwidth]{%
-\begin{tikzpicture}[
-    timeline/.style={draw, thick},
-    milestone/.style={circle, draw=black, fill=blue!20, minimum size=8pt, inner sep=2pt},
-    label/.style={font=\scriptsize, align=center, text width=2.2cm},
-    date/.style={font=\scriptsize, align=center, text width=2.2cm, color=gray}
-]
-
-% Ligne de base
-\draw[timeline] (0,0) -- (16,0);
-
-% Jalons avec texte
-\foreach \x/\label/\month in {
-    0/Lancement/Septembre,
-    2.2/Analyse du sujet/Septembre,
-    4.4/Architecture MVC Carte/Octobre,
-    6.6/Implémentation du Modèle Carte /Octobre,
-    8.8/Implémentation du Contrôleur Carte/Octobre,
-    12/Implémentation du Contrôleur Carte/Octobre,
-    15/Interface graphique/Octobre,
-} {
-    \node[milestone] at (\x,0) {};
-    \node[label] at (\x,-1.1) {\label};
-    \node[date] at (\x,-2.0) {\month};
-}
-
-\end{tikzpicture}%
-}
-\caption{Frise chronologique des grandes étapes du projet }
-\end{figure}
-
-
-\vspace{0.5cm}
-
-\begin{figure}[H]
-\centering
-\makebox[\textwidth]{%
-\begin{tikzpicture}[
-    timeline/.style={draw, thick},
-    milestone/.style={circle, draw=black, fill=blue!20, minimum size=8pt, inner sep=2pt},
-    label/.style={font=\scriptsize, align=center, text width=2.2cm},
-    date/.style={font=\scriptsize, align=center, text width=2.2cm, color=gray}
-]
-
-% Ligne de base
-\draw[timeline] (0,0) -- (16,0);
-
-% Jalons avec texte
-\foreach \x/\label/\month in {
-    0/Implémentation minimaliste du Blackjack/Octobre,
-    4/Implémentation du Contrôleur Blackjack/Novembre,
-    8/Implémentation des tests Cartes/Novembre,
-    12/Modifications du modèle et de la vue Blackjack/Novembre,
-    15.4/Tests Blackjack \& Rapport \& Vue bj /Decembre
-} {
-    \node[milestone] at (\x,0) {};
-    \node[label] at (\x,-1.1) {\label};
-    \node[date] at (\x,-2.0) {\month};
-}
-
-\end{tikzpicture}%
-}
-\caption{Frise chronologique des grandes étapes du projet }
-\end{figure}
-
-\clearpage  
-
-
+ 
 % 3. Éléments techniques
 \section{Éléments techniques}
 
 \subsection{Structures de données utilisées}
-< A REMPLIR PAR MASSI
-\subsubsection*{1. Observer Pattern }
-\subsubsection*{2. Strategy Pattern}
-\subsubsection*{3. Factory method}
-\subsubsection*{4. Adaptator Pattern}
-A REMPLIR PAR MASSI />
+Les principales structures de données utilisées dans le projet sont :
 
-\subsubsection*{5. Test Mock}
+\begin{itemize}
+    \item \textbf{Classe Carte} : Représente une carte à jouer avec une valeur et une couleur. 
+    
+    \item \textbf{Classe Paquet} : Représente un ensemble de cartes. Utilise une \texttt{List<Carte>} pour stocker les cartes et fournit des méthodes pour mélanger, tirer, couper, etc.
+    
+    \item \textbf{Classe Main} : Représente la main d'un joueur au Blackjack. Gère la liste des cartes, calcule le score (avec gestion de l'As flexible) et détermine l'état (blackjack, bust, etc.).
+    
+    \item \textbf{Classe Joueur} : Classe de base pour les joueurs. Contient le solde, la mise, la main, et l'état du joueur.
+    
+    \item \textbf{Classe Croupier} : Représente le croupier avec des règles spécifiques pour le tirage des cartes.
+    
+    \item \textbf{Classe Action} : Représente une action parmi les actions que le joueur peut exécuter et qui agit sur sa main.
+\end{itemize}
 
+\subsection{Patterns de conception}
+Plusieurs patterns de conception ont été utilisés pour structurer le code :
 
+\subsubsection{Observer Pattern}
+Utilisé pour mettre en œuvre la communication entre le modèle et la vue. Lorsque l'état du modèle change (par exemple, une carte est tirée), la vue est automatiquement mise à jour.
+
+\begin{center}
+    \includegraphics[width=0.90\textwidth]{images/images_uml/Observer.png}
+    \captionof{figure}{Diagramme UML du pattern Observer}
+\end{center}
+
+\subsubsection{Strategy Pattern}
+Utilisé pour implémenter les différentes stratégies de jeu des joueurs IA. Chaque stratégie (basique, prudente, agressive) implémente une interface commune \texttt{StrategieJeu}.
+
+\begin{center}
+    \includegraphics[width=0.90\textwidth]{images/images_uml/strategie.png}
+    \captionof{figure}{Diagramme UML du pattern Strategy}
+\end{center}
+
+\subsubsection{Factory Method}
+Utilisé dans la classe \texttt{Paquet} pour créer des jeux de cartes standards (52 ou 32 cartes) via les méthodes \texttt{creerPaquet52()} et \texttt{creerPaquet32()}. Voici l'implémentation de ces méthodes :
+
+\begin{lstlisting}[language=Java, style=mystyle]
+private final static String[] TABLE_VAL_32 = {
+    "As", "7", "8", "9", "10", "Valet", "Dame", "Roi"
+};
+public static Paquet creerJeu32() {
+    return creationPaquet(TABLE_VAL_32);
+} 
+public static Paquet creationPaquet(String[] hauteurs){
+    String[] couleurs = {"Trefle", "Carreau", "Coeur", "Pique"};
+    Paquet p = new Paquet();
+    for (String couleur : couleurs) {
+        for (String hauteur : hauteurs) {
+            p.ajouter(new Carte(hauteur, couleur));
+        }
+    }
+    return p;
+}
+\end{lstlisting}
+
+Ces méthodes utilisent la méthode \texttt{creationPaquet(String[] hauteurs)} pour générer les paquets avec les hauteurs et couleurs appropriées.
+
+\clearpage
+
+\subsubsection{Adapter Pattern}
+Utilisé pour adapter l'affichage des données des joueurs dans une table dynamique \texttt{JTable}, notamment pour l'affichage des scores, gains, pertes, etc.
+
+\begin{center}
+    \includegraphics[width=0.90\textwidth]{images/images_uml/adaptateur.png}
+    \captionof{figure}{Diagramme UML du pattern Adapter combiné avec Observer}
+\end{center}
+
+\subsubsection{Command Pattern}
+Utilisé pour rendre le jeu extensible et pouvoir ajouter de nouvelles actions simplement.
+
+\begin{center}
+    \includegraphics[width=0.90\textwidth]{images/images_uml/command_pattern.png}
+    \captionof{figure}{Diagramme UML du pattern Command}
+\end{center}
+
+\subsection{Tests Mock}
+Nous avons mis en place des mocks dans les tests pour la classe \texttt{JoueurIA} car celle-ci utilise des actions provenant de \texttt{StrategieJeu}, un répertoire différent du modèle. Ceci nous a permis de tester les différentes méthodes propres au \texttt{JoueurIA} sans dépendre du package de stratégie de jeu. Pour les mêmes raisons, nous avons utilisé un mock de \texttt{Strategie} lors des tests de \texttt{ModeleBlackjack}.
 
 \clearpage
 
 % Section 4 : Architecture du projet
 \section{Architecture du projet}
+Ce projet de jeu de Blackjack a été réparti en deux architectures distinctes tout en gardant une dépendance entre les modules Cartes et Blackjack.
 
-\subsection{Architecture de Carte}
+\subsection{Architecture de Cartes}
 
 \subsubsection{Contrôleur : orchestration de la simulation}
+Le contrôleur du module Cartes gère les interactions entre l'utilisateur et le modèle. Il interprète les actions de l'utilisateur (mélanger, tirer une carte, etc.) et met à jour le modèle en conséquence.
 
 \subsubsection{Vue : interface graphique réactive}
+La vue du module Cartes affiche l'état actuel du paquet de cartes (cartes restantes, cartes tirées) et permet à l'utilisateur d'interagir avec le paquet via des boutons (mélanger, tirer, etc.).
 
-\subsubsection*{Communication modèle \(\leftrightarrow\) vue}
+\subsubsection{Communication modèle \(\leftrightarrow\) vue}
+La communication entre le modèle et la vue se fait via le pattern Observer. Le modèle notifie la vue des changements d'état, et la vue se met à jour en conséquence.
 
-\subsubsection{Synthèse : une architecture M-V-C }
+\subsubsection{Synthèse : une architecture M-V-C}
+L'architecture MVC du module Cartes assure une séparation claire des responsabilités : le modèle gère la logique métier, la vue présente les données, et le contrôleur gère les interactions.
 
 \subsection{Architecture de Blackjack}
 
 \subsubsection{Contrôleur : orchestration de la simulation}
+Le contrôleur du module Blackjack gère le déroulement d'une partie : distribution des cartes, tour des joueurs, tour du croupier, calcul des gains. Il traduit les actions des joueurs (humains via l'interface, IA via les stratégies) en modifications du modèle.
+
+\begin{center}
+    \includegraphics[width=0.90\textwidth]{images/images_uml/controleur.png}
+    \captionof{figure}{Diagramme UML des classes du contrôleur}
+\end{center}
 
 \subsubsection{Vue : interface graphique réactive}
+La vue du module Blackjack affiche la table de jeu : les mains des joueurs, les cartes du croupier, les scores, les soldes, et les boutons d'action (tirer, rester, doubler, etc.). Elle est mise à jour en temps réel à chaque changement d'état du modèle grâce au pattern Observer.
 
-%\subsubsubsection{Communication modèle \(\leftrightarrow\) vue}
+\begin{center}
+    \includegraphics[width=0.90\textwidth]{images/images_uml/Vueblackjack.png}
+    \captionof{figure}{Diagramme UML de la vue}
+\end{center}
 
-\subsubsection{Synthèse : une architecture M-V-C }
+\clearpage
+
+\subsubsection{Modèle : le cœur du Blackjack}
+Le modèle du module Blackjack contient toute la logique métier du jeu : gestion des joueurs, du croupier, des paquets de cartes, des actions, et du déroulement de la partie.
+
+\begin{center}
+    \includegraphics[width=0.90\textwidth]{images/images_uml/modeleBJ.png}
+    \captionof{figure}{Diagramme UML du modèle}
+\end{center}
+
+\clearpage
+
+\subsubsection{Communication modèle \(\leftrightarrow\) vue}
+Comme pour le module Cartes, la communication entre le modèle et la vue se fait via le pattern Observer. Le modèle notifie la vue à chaque changement (nouvelle carte tirée, changement d'état d'un joueur, etc.).
+
+\begin{center}
+    \includegraphics[width=0.90\textwidth]{images/images_uml/mvc.png}
+    \captionof{figure}{Schéma explicatif de la communication entre la vue et le modèle}
+\end{center}
+
+\clearpage
+
+\subsubsection{Synthèse : une architecture M-V-C}
+L'architecture MVC du module Blackjack permet une gestion claire et modulaire du jeu. Le modèle contient toute la logique métier, la vue est responsable de l'affichage, et le contrôleur gère le flux du jeu et les interactions.
+
+\begin{center}
+    \includegraphics[width=1.05\textwidth]{images/images_uml/mvc_fonctionnement_example.png}
+    \captionof{figure}{Exemple de fonctionnement du MVC}
+\end{center}
+
+\clearpage
+
+% 5. Tests du modèle
+\section{Tests du modèle}
+
+Afin de valider le bon fonctionnement des différentes méthodes du modèle, nous avons conçu des classes de test couvrant les principaux cas rencontrés lors d'une partie de Blackjack. Ces tests permettent d'assurer la fiabilité des méthodes du jeu indépendamment de l'interface graphique.
+
+\subsection{Tests du modèle de Cartes}
+Les tests des classes liées aux cartes sont répartis en quatre classes de test, chacune ciblant un ensemble précis de fonctionnalités.
 
 
-% 5. Tests du modele
-\section{Tests du modele}
-\subsection{Tests du modele Carte}
+Les tests menés sur la classe \texttt{Paquet} avaient pour objectifs de valider les éléments suivants :
 
-\subsection{Tests du modele Blackjack}
-\subsubsection{Tests des actions}
-Des erreurs sont possibles au lancement des tests dû à la nature probabiliste de certains tests sur les actions.
-\subsubsection{Tests des joueurs}
-\subsubsection{Tests du jeu}
+\begin{itemize}
+    \item \textbf{Gestion du contenu du paquet}
+    \begin{itemize}
+        \item Vérification qu'un paquet nouvellement créé est vide.
+        \item Ajout et retrait de cartes, y compris les cas limites (doublons, retrait jusqu'à épuisement du paquet).
+        \item Vérification de la présence d'une carte via \texttt{contient()}.
+    \end{itemize}
 
+    \item \textbf{Fonctionnalités avancées}
+    \begin{itemize}
+        \item Sélection d'une carte aléatoire sans modifier le paquet.
+        \item Mélange du paquet sans perte de cartes et en conservant sa taille.
+        \item Test de la coupe du paquet en garantissant l'intégrité du contenu.
+    \end{itemize}
+
+    \item \textbf{Factory method}
+    \begin{itemize}
+        \item Création correcte d'un jeu de 52 cartes :
+        \begin{itemize}
+            \item présence des 13 valeurs pour chacune des 4 couleurs ;
+            \item intégrité du contenu.
+        \end{itemize}
+        \item Vérification de la construction d'un paquet de 32 cartes standard.
+    \end{itemize}
+
+    \item \textbf{Méthodes utilitaires}
+    \begin{itemize}
+        \item Tests du \texttt{toString()} sur un paquet vide et non vide.
+        \item Vérification de la cohérence entre \texttt{getPaquet()} et la taille réelle du paquet.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Tests du modèle Blackjack}
+Les tests des classes liées au Blackjack sont répartis en trois parties propres à un dossier du modèle. Certains de ces tests peuvent avoir un comportement probabiliste, suivant certaines conditions les tests peuvent échouer.
+
+
+\subsubsection{Tests du modèle des actions}
+Les tests des actions vérifient que chaque opération (tirer, rester, doubler, etc.) modifie correctement l'état du jeu conformément aux règles du Blackjack. Ils valident également que les actions interdites (par exemple, doubler après plusieurs cartes) sont correctement refusées. Certaines actions impliquant un tirage aléatoire, des scénarios contrôlés ont été utilisés pour garantir la reproductibilité des résultats.
+
+
+\subsubsection{Tests du modèle des joueurs}
+Les tests des joueurs évaluent la gestion des mains, du solde, ainsi que des états particuliers comme le Blackjack ou le bust. Pour le \texttt{JoueurIA}, les tests vérifient la cohérence des décisions pour assurer un comportement conforme aux règles.
+
+
+\subsubsection{Tests du modèle de jeu}
+Les tests du jeu vérifient le déroulement complet d'une manche : distribution initiale, actions successives des joueurs, comportement du croupier et phase finale de résolution. Ils assurent également la mise à jour correcte des gains et pertes, ainsi qu'une réinitialisation cohérente du jeu pour la manche suivante.
+
+
+\subsection{Conclusion des tests}
+L'ensemble des tests réalisés, couvrant les cartes, les actions, les joueurs et le modèle de jeu, a permis de valider la robustesse et la cohérence du modèle. Ces tests ont mis en évidence plusieurs dysfonctionnements au cours du développement et ont assuré une fiabilité globale du système, indépendamment de la vue ou du contrôleur. Ils constituent ainsi une base solide pour garantir un comportement conforme aux règles du Blackjack.
+
+\clearpage
 
 % 6. Cas d'utilisation
 \section{Expérimentations et usages}
-< A REMPLIR PAR MASSI
-\subsection{Cas d’utilisation :  }%Jeu basique
-\subsection{Cas d’utilisation :  }%Ajouter un joueur
-\subsection{Cas d’utilisation :  }%Retirer un joueur
-\subsection{Cas d’utilisation :  }%Split  ?
-\subsection{Cas d’utilisation :  }%Bust ?
-\subsection{Cas d’utilisation :  }%Blackjack ?
-\subsection{Cas d’utilisation :  }%Assurace ?
-\subsection{Cas d’utilisation :  }%Doublee
 
+\subsection{Cas d'utilisation : Partie basique}
+Une partie simple avec un joueur humain et le croupier. Le joueur mise, reçoit deux cartes, décide de tirer ou rester, puis le croupier joue selon les règles. Le système calcule automatiquement le gagnant et met à jour le solde.
+
+\subsection{Cas d'utilisation : Ajouter un joueur}
+L'utilisateur peut ajouter un joueur (humain ou IA) à la table. Le nouveau joueur est inclus dans la manche suivante avec un solde initial.
+
+\subsection{Cas d'utilisation : Retirer un joueur}
+Un joueur peut quitter la table. S'il quitte en cours de manche, sa main est terminée et il perd sa mise.
+
+\subsection{Cas d'utilisation : Split}
+Lorsqu'un joueur a deux cartes de même valeur, il peut choisir de splitter. Le système crée deux mains distinctes, chacune recevant une carte supplémentaire, et le joueur joue chaque main séparément.
+
+\subsection{Cas d'utilisation : Bust}
+Lorsqu'un joueur dépasse 21, il fait bust. Le système marque automatiquement le joueur comme perdant et retire sa mise.
+
+\subsection{Cas d'utilisation : Blackjack naturel}
+Si un joueur obtient un blackjack naturel (As + carte valant 10) dès la distribution, il est payé 3:2 (sauf si le croupier a aussi un blackjack).
+
+\subsection{Cas d'utilisation : Assurance}
+Lorsque le croupier montre un As, les joueurs peuvent prendre une assurance. Le système gère les mises d'assurance et les rembourse si le croupier a un blackjack.
+
+\subsection{Cas d'utilisation : Double}
+Un joueur peut doubler sa mise après la distribution initiale. Il reçoit alors une seule carte supplémentaire et ne peut plus tirer.
 
 \clearpage
 
@@ -366,8 +531,30 @@ Des erreurs sont possibles au lancement des tests dû à la nature probabiliste 
 \section{Conclusion}
 
 \subsection*{Récapitulatif des fonctionnalités principales}
+Le projet \textbf{Blackjack} que nous avons développé propose une plateforme complète et interactive pour jouer à une table de blackjack. Voici les fonctionnalités majeures que nous avons intégrées :
 
-\subsection*{Propositions d’améliorations}
+\begin{itemize}
+    \item \textbf{Jeu de cartes générique} : Un module complet de gestion de cartes avec mélange, tirage, coupe, et factory pour créer des jeux standards.
+    \item \textbf{Blackjack complet} : Implémentation de toutes les règles du Blackjack : blackjack naturel, assurance, split, double, etc.
+    \item \textbf{Interface graphique} : Deux interfaces graphiques (une pour le module Cartes, une pour le Blackjack) interactives et intuitives.
+    \item \textbf{Architecture MVC} : Une architecture bien séparée pour les deux modules, facilitant la maintenance et l'évolution.
+    \item \textbf{Joueurs IA} : Des joueurs artificiels avec différentes stratégies de jeu.
+    \item \textbf{Tests} : Une suite de tests unitaires complète pour valider le bon fonctionnement des modèles.
+\end{itemize}
 
+\subsection*{Propositions d'améliorations}
+Plusieurs axes d'amélioration peuvent être envisagés pour enrichir encore le projet :
+
+\begin{itemize}
+    \item \textbf{Des tests plus poussés} : Notamment des tests statistiques pour vérifier que le mélange est bien uniforme, ou des tests sur un grand nombre de parties pour valider les stratégies des joueurs IA.
+    \item \textbf{Plus de stratégies IA} : Implémenter des stratégies plus avancées (comptage de cartes, apprentissage par renforcement) pour rendre les IA plus réalistes.
+    \item \textbf{Multijoueur en réseau} : Permettre à plusieurs joueurs humains de se connecter à une même table via le réseau.
+    \item \textbf{Animations graphiques} : Ajouter des animations pour le tirage des cartes, le mélange, etc., pour améliorer l'expérience utilisateur.
+    \item \textbf{Gestion du bankroll} : Ajouter des fonctionnalités de gestion de bankroll pour les joueurs (limites de mise, historiques des parties, etc.).
+    \item \textbf{Variantes du Blackjack} : Implémenter d'autres variantes du jeu (Blackjack espagnol, Blackjack avec jokers, etc.).
+    \item \textbf{Utilisation du pattern Composite pour l'UI} : Permettre le traitement uniforme d'objets (JPanel) et de collections d'objets.
+\end{itemize}
+
+En conclusion, ce projet nous a permis de mettre en pratique les concepts vus en cours de méthodes de conception, en particulier le modèle MVC, les patterns de conception, et les tests unitaires. Le résultat est un jeu de Blackjack fonctionnel, modulaire et extensible.
 
 \end{document}
